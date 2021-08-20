@@ -1,0 +1,6 @@
+framework module Pods_Bam {
+  umbrella header "Pods-Bam-umbrella.h"
+
+  export *
+  module * { export * }
+}

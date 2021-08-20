@@ -1,0 +1,283 @@
+/* 
+  Localizable.strings
+  Bam
+
+  Created by ADS N URL on 25/06/21.
+  
+*/
+
+"Arabic" = "عربى";
+"English" = "English";
+
+"Notification" = "";
+
+//Login/ Signup Section
+"Create new password to login your account." = "";
+"Confirm New Password" = "";
+"Enter the registered mobile number or email address to reset your bamthobe password." = "";
+"Send OTP" =  "";
+
+"Email ID" = "";
+
+"Sign Up" = "";
+"Log In" = "";
+"Continue" = "";
+"Continue as Guest" = "";
+"Full Name" = "";
+"Mobile Number" = "";
+"Email" = "";
+"Password" = "";
+"Confirm Password" = "";
+"Don't have an Account? Sign In" = "";
+"Don't have an Account? Sign Up" = "";
+"Sign In" = "";
+"Mobile Number/Email ID" = "";
+"Full name is required" = "";
+"Mobile number is required" = "";
+"Email is required" = "";
+"Invalid Email" = "";
+"Password is required" = "";
+"Confirm password is required" = "";
+"Password and Confirm password are not matching" = "";
+"Enter OTP" = "";
+"Next" = "";
+"Resend OTP" = "";
+"Resend" = "";
+
+
+
+//Tab Bar Section
+"Home" = "";
+"Cart" = "";
+"Orders" = "";
+"Profile" = "";
+"Design Your Own" = "";
+"Accessories" = "";
+"NO DATA FOUND" = "";
+"View All" = "";
+
+
+//Menu Section
+"My Orders" = "";
+"Offers" = "";
+"Loyality Points" = "";
+"Gift Card" = "";
+"Scan QR Code" = "";
+"Address Book" = "";
+"My Appointments" = "";
+"My Measurements" = "";
+"Settings" = "";
+"Rate Our App" = "";
+"Sign Out" = "";
+
+
+//Design Thobe
+"Do you want to continue with the measurement you selected" = "";
+"Yes" = "";
+"No" = "";
+"Customize your Thobe" = "";
+"Fabric" = "";
+"Collar" = "";
+"Cuffs" = "";
+"Pocket" = "";
+"Placket" = "";
+"Button" = "";
+"Side Pocket" = "";
+"Summer" = "";
+"Winter" = "";
+"View Fabric" = "";
+"Select Collar" = "";
+"Select Cuffs" = "";
+"Select Fabric" = "";
+"Select Pocket" = "";
+"Select Placket" = "";
+"Select Button" = "";
+"Measurement" = "";
+"Side Pocket options" = "";
+"Want to add coin pocket?" = "";
+"Choose Side Pocket" = "";
+"Sides to add coin pocket?" = "";
+"Both Side" = "";
+"One Side" = "";
+"Which side you want?" = "";
+"Left" = "";
+"Right" = "";
+"Saved Measurement" = "";
+"New Measurement" = "";
+"Branch Appointment" = "";
+"Home Visit" = "";
+"Appointment" = "";
+"Enter Details" = "";
+"eg: Jaison" = "";
+"eg: +92271212333" = "";
+"Select Date of Appointment" = "";
+"Select Time of Appointment" = "";
+"eg: dd/mm/yy" = "";
+"eg: 10: 30 AM" = "";
+"Select Branch" = "";
+"Choose" = "";
+"Enter Name" = "";
+"Enter mobile Number" = "";
+"My Thobe" = "";
+"Side Pocket + Coin Pocket" = "";
+"Go to Home" = "";
+"Add To Cart" = "";
+"Close" = "";
+
+
+//Orders Section
+"Ongoing Order" = "";
+"Previous Order" = "";
+"Order ID:" = "";
+"Placed On:" = "";
+"Link" = "";
+"Reciepent Name" = "";
+"Phone Number" = "";
+"Date & Time" = "";
+"Request For Invoice" = "";
+"Total Items:" = "";
+"View Details" = "";
+"Estimated Delivery" = "";
+"Scan QR Code To Pay" = "";
+"Item Details" = "";
+"Delivered On" = "";
+"Qty:" = "";
+"Delivery Address" = "";
+"Price Details(1 Item)" = "";
+"Customized Thobe Total" = "";
+"Sub-Total" = "";
+"Invoice will be sent to your registered Email ID" = "";
+
+
+//Loyality/Gift Section
+"TOTAL AVAILABLE POINTS" = "";
+"ORDER ID" = "";
+"POINTS EARNED" = "";
+"DATE" = "";
+"Gift" = "";
+"Create Gift" = "";
+"Price:" = "";
+"Select Date" = "";
+"Select Time" = "";
+"eg: 02/05/2021" = "";
+"eg: 10:02AM" = "";
+"Enter the details to continue" = "";
+"To" = "";
+"eg. Jaison" = "";
+"Type your card message here..." = "";
+"From" = "";
+"Share Your Feelings with a" = "";
+"Send Anonymously" = "";
+"Add" = "";
+"Enter To Email ID" = "";
+"Enter From Email ID" = "";
+"Gift Details" = "";
+"Your gift card is added to the cart" = "";
+"Go to Cart" = "";
+"Save" = "";
+"Cancel" = "";
+"Done" = "";
+
+
+
+//Cart Section
+"My Cart" = "";
+"Less Details" = "";
+"Items" = "";
+"Checkout" = "";
+"Do you have any discount code?" = "";
+"Use Loyality Points" = "";
+"Apply" = "";
+"Details" = "";
+"Grand Total" = "";
+"Thode Total" = "";
+"Accessories Total" = "";
+"Gift Card Amount" = "";
+"Delivery Charges" = "";
+"Coupon Applied(Save20)" = "";
+"Enter Discount Code" = "";
+"Thode Details" = "";
+"Customization Total Charges" = "";
+"Visiting Charges" = "";
+"Advance Payment of 25%" = "";
+"Remaining Amount" = "";
+"Place Order" = "";
+"Home Delivery" = "";
+"Store Pickup" = "";
+"Saved Address" = "";
+"Payment" = "";
+"Add" = "";
+"Credit Card/Debit Card" = "";
+"Make Payment" = "";
+"Thank you" = "";
+"View Order Status" = "";
+"Continue Shopping" = "";
+"Order Confirmation" = "";
+
+
+//Profile Section
+"Edit Profile" = "";
+"Profile" = "";
+"Male" = "";
+"Female" = "";
+"Save Changes" = "";
+
+
+//Address Section
+"Add A New Address" = "";
+"Address" = "";
+"Other" = "";
+"Address(House No., Building, Street, Area)" = "";
+"Delete Address" = "";
+"Confirm Appointment" = "";
+"Select Address" = "";
+"Add Address" = "";
+
+//Contact us Section
+"Message" = "";
+"Type your message here…" = "";
+"eg: jamesbond@gmail.com" = "";
+"eg: +919233778273" = "";
+"eg: James Bond" = "";
+"Submit" = "";
+
+
+//Appointments Section
+"Older Appointment" = "";
+"Ongoing Appointment" = "";
+"SELECT BRANCH" = "";
+"CODE: SAVE20" = "";
+"Expiry: 25 Feb 2021" = "";
+"Booking ID:" = "";
+"Store Name:" = "";
+"Store Address:" = "";
+
+
+
+//Setting Section
+"Terms & Condition" = "";
+"About Us" = "";
+"FAQ's" = "";
+"Contact Us" = "";
+"Privacy Policy" = "";
+
+
+//Product Detail
+"Product" = "";
+"Reviews" = "";
+"Add" = "";
+"Go to Cart" = "";
+"Choose your Thobe" = "";
+"Customer Reviews" = "";
+"Brand" = "";
+"CATEGORY" = "";
+"Size" = "";
+"MATERIAL" = "";
+"REVIEWS" = "";
+"Reviews" = "";
+"Write a Review" = "";
+"Type your message" = "";
+"Search here" = "";
+"Cancel" = "";
+
+

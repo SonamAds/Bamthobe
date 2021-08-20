@@ -1,0 +1,30 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'Bam' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Bam
+
+  pod 'OTPFieldView'
+  pod 'SideMenu'
+  pod 'IQKeyboardManagerSwift'
+  pod 'Alamofire'
+  pod 'SwiftyJSON'
+  pod 'SDWebImage', '~> 5.0'
+  pod 'MBProgressHUD'
+  pod 'ImageSlideshow/SDWebImage'
+  pod 'ISTimeline'
+#  pod 'GoogleMaps'
+#  pod 'GooglePlaces'
+ # pod 'GoogleSignIn'
+ # pod 'TwitterKit5'
+ # pod 'FBSDKLoginKit'
+#  pod 'FBSDKShareKit'
+  #pod 'Firebase/Analytics', '~> 7.0'
+ # pod 'Firebase/Messaging'
+ # pod 'Firebase/Core'
+  pod 'Firebase'
+#  source 'https://github.com/CocoaPods/Specs.git' https://firebase.google.com/docs/ios/setup#available-pods
+end

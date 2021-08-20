@@ -1,0 +1,284 @@
+/* 
+  Localizable.strings
+  Bam
+
+  Created by ADS N URL on 25/06/21.
+  
+*/
+"Arabic" = "عربى";
+"English" = "English";
+
+"Notification" = "Notification";
+
+//Login/ Signup Section
+"Create new password to login your account." = "Create new password to login your account.";
+"Confirm New Password" = "Confirm New Password";
+"Enter the registered mobile number or email address to reset your bamthobe password." = "Enter the registered mobile number or email address to reset your bamthobe password.";
+"Send OTP" =  "Send OTP";
+
+"Email ID" = "Email ID";
+
+"Sign Up" = "Sign Up";
+"Log In" = "Log In";
+"Continue" = "Continue";
+"Continue as Guest" = "Continue as Guest";
+"Full Name" = "Full Name";
+"Mobile Number" = "Mobile Number";
+"Email" = "Email";
+"Password" = "Password";
+"Confirm Password" = "Confirm Password";
+"Don't have an Account? Sign In" = "Don't have an Account? Sign In";
+"Don't have an Account? Sign Up" = "Don't have an Account? Sign Up";
+"Sign In" = "Sign In";
+"Mobile Number/Email ID" = "Mobile Number/Email ID";
+"Full name is required" = "Full name is required";
+"Mobile number is required" = "Mobile number is required";
+"Email is required" = "Email is required";
+"Invalid Email" = "Invalid Email";
+"Password is required" = "Password is required";
+"Confirm password is required" = "Confirm password is required";
+"Password and Confirm password are not matching" = "Password and Confirm password are not matching";
+"Enter OTP" = "Enter OTP";
+"Next" = "Next";
+"Resend OTP" = "Resend OTP";
+"Resend" = "Resend";
+
+
+
+//Tab Bar Section
+"Home" = "Home";
+"Cart" = "Cart";
+"Orders" = "Orders";
+"Profile" = "Profile";
+"Design Your Own" = "Design Your Own";
+"Accessories" = "Accessories";
+"NO DATA FOUND" = "NO DATA FOUND";
+"View All" = "View All";
+
+
+//Menu Section
+"My Orders" = "My Orders";
+"Offers" = "Offers";
+"Loyality Points" = "Loyality Points";
+"Gift Card" = "Gift Card";
+"Scan QR Code" = "Scan QR Code";
+"Address Book" = "Address Book";
+"My Appointments" = "My Appointments";
+"My Measurements" = "My Measurements";
+"Settings" = "Settings";
+"Rate Our App" = "Rate Our App";
+"Sign Out" = "Sign Out";
+
+
+//Design Thobe
+"Do you want to continue with the measurement you selected" = "Do you want to continue with the measurement you selected";
+"Yes" = "Yes";
+"No" = "No";
+"Customize your Thobe" = "Customize your Thobe";
+"Fabric" = "Fabric";
+"Collar" = "Collar";
+"Cuffs" = "Cuffs";
+"Pocket" = "Pocket";
+"Placket" = "Placket";
+"Button" = "Button";
+"Side Pocket" = "Side Pocket";
+"Summer" = "Summer";
+"Winter" = "Winter";
+"View Fabric" = "View Fabric";
+"Select Collar" = "Select Collar";
+"Select Cuffs" = "Select Cuffs";
+"Select Fabric" = "Select Fabric";
+"Select Pocket" = "Select Pocket";
+"Select Placket" = "Select Placket";
+"Select Button" = "Select Button";
+"Measurement" = "Measurement";
+"Side Pocket options" = "Side Pocket options";
+"Want to add coin pocket?" = "Want to add coin pocket?";
+"Choose Side Pocket" = "Choose Side Pocket";
+"Sides to add coin pocket?" = "Sides to add coin pocket?";
+"Both Side" = "Both Side";
+"One Side" = "One Side";
+"Which side you want?" = "Which side you want?";
+"Left" = "Left";
+"Right" = "Right";
+"Saved Measurement" = "Saved Measurement";
+"New Measurement" = "New Measurement";
+"Branch Appointment" = "Branch Appointment";
+"Home Visit" = "Home Visit";
+"Appointment" = "Appointment";
+"Enter Details" = "Enter Details";
+"eg: Jaison" = "eg: Jaison";
+"eg: +92271212333" = "eg: +92271212333";
+"Select Date of Appointment" = "Select Date of Appointment";
+"Select Time of Appointment" = "Select Time of Appointment";
+"eg: dd/mm/yy" = "eg: dd/mm/yy";
+"eg: 10: 30 AM" = "eg: 10: 30 AM";
+"Select Branch" = "Select Branch";
+"Choose" = "Choose";
+"Enter Name" = "Enter Name";
+"Enter mobile Number" = "Enter mobile Number";
+"My Thobe" = "My Thobe";
+"Side Pocket + Coin Pocket" = "Side Pocket + Coin Pocket";
+"Go to Home" = "Go to Home";
+"Add To Cart" = "Add To Cart";
+"Close" = "Close";
+
+
+//Orders Section
+"Ongoing Order" = "Ongoing Order";
+"Previous Order" = "Previous Order";
+"Order ID:" = "Order ID:";
+"Placed On:" = "Placed On:";
+"Link" = "Link";
+"Reciepent Name" = "Reciepent Name";
+"Phone Number" = "Phone Number";
+"Date & Time" = "Date & Time";
+"Request For Invoice" = "Request For Invoice";
+"Total Items:" = "Total Items:";
+"View Details" = "View Details";
+"Estimated Delivery" = "Estimated Delivery";
+"Scan QR Code To Pay" = "Scan QR Code To Pay";
+"Item Details" = "Item Details";
+"Delivered On" = "Delivered On";
+"Qty:" = "Qty:";
+"Delivery Address" = "Delivery Address";
+"Price Details(1 Item)" = "Price Details(1 Item)";
+"Customized Thobe Total" = "Customized Thobe Total";
+"Sub-Total" = "Sub-Total";
+"Invoice will be sent to your registered Email ID" = "Invoice will be sent to your registered Email ID";
+
+
+//Loyality/Gift Section
+"TOTAL AVAILABLE POINTS" = "TOTAL AVAILABLE POINTS";
+"ORDER ID" = "ORDER ID";
+"POINTS EARNED" = "POINTS EARNED";
+"DATE" = "DATE";
+"Gift" = "Gift";
+"Create Gift" = "Create Gift";
+"Price:" = "Price:";
+"Select Date" = "Select Date";
+"Select Time" = "Select Time";
+"eg: 02/05/2021" = "eg: 02/05/2021";
+"eg: 10:02AM" = "eg: 10:02AM";
+"Enter the details to continue" = "Enter the details to continue";
+"To" = "To";
+"eg. Jaison" = "eg. Jaison";
+"Type your card message here..." = "Type your card message here....";
+"From" = "From";
+"Share Your Feelings with a" = "Share Your Feelings with a";
+"Send Anonymously" = "Send Anonymously";
+"Add" = "Add";
+"Enter To Email ID" = "Enter To Email ID";
+"Enter From Email ID" = "Enter From Email ID";
+"Gift Details" = "Gift Details";
+"Your gift card is added to the cart" = "Your gift card is added to the cart";
+"Go to Cart" = "Go to Cart";
+"Save" = "Save";
+"Cancel" = "Cancel";
+"Done" = "Done";
+
+
+
+//Cart Section
+"My Cart" = "My Cart";
+"Less Details" = "Less Details";
+"Items" = "Items";
+"Checkout" = "Checkout";
+"Do you have any discount code?" = "Do you have any discount code?";
+"Use Loyality Points" = "Use Loyality Points";
+"Apply" = "Apply";
+"Details" = "Details";
+"Grand Total" = "Grand Total";
+"Thode Total" = "Thobe Total";
+"Accessories Total" = "Accessories Total";
+"Gift Card Amount" = "Gift Card Amount";
+"Delivery Charges" = "Delivery Charges";
+"Coupon Applied(Save20)" = "Coupon Applied(Save20)";
+"Enter Discount Code" = "Enter Discount Code";
+"Thode Details" = "Thobe Details";
+"Customization Total Charges" = "Customization Total Charges";
+"Visiting Charges" = "Visiting Charges";
+"Advance Payment of 25%" = "Advance Payment of 25%";
+"Remaining Amount" = "Remaining Amount";
+"Place Order" = "Place Order";
+"Home Delivery" = "Home Delivery";
+"Store Pickup" = "Store Pickup";
+"Saved Address" = "Saved Address";
+"Payment" = "Payment";
+"Add" = "Add";
+"Credit Card/Debit Card" = "Credit Card/Debit Card";
+"Make Payment" = "Make Payment";
+"Thank you" = "Thank you";
+"View Order Status" = "View Order Status";
+"Continue Shopping" = "Continue Shopping";
+"Order Confirmation" = "Order Confirmation";
+
+
+//Profile Section
+"Edit Profile" = "Edit Profile";
+"Profile" = "Profile";
+"Male" = "Male";
+"Female" = "Female";
+"Save Changes" = "Save Changes";
+
+
+//Address Section
+"Add A New Address" = "Add A New Address";
+"Address" = "Address";
+"Other" = "Other";
+"Address(House No., Building, Street, Area)" = "Address(House No., Building, Street, Area)";
+"Delete Address" = "Delete Address";
+"Confirm Appointment" = "Confirm Appointment";
+"Select Address" = "Select Address";
+"Add Address" = "Add Address";
+
+//Contact us Section
+"Message" = "Message";
+"Type your message here…" = "Type your message here…";
+"eg: jamesbond@gmail.com" = "eg: jamesbond@gmail.com";
+"eg: +919233778273" = "eg: +919233778273";
+"eg: James Bond" = "eg: James Bond";
+"Submit" = "Submit";
+
+
+
+//Appointments Section
+"Older Appointment" = "Older Appointment";
+"Ongoing Appointment" = "Ongoing Appointment";
+"SELECT BRANCH" = "SELECT BRANCH";
+"CODE: SAVE20" = "CODE: SAVE20";
+"Expiry: 25 Feb 2021" = "Expiry: 25 Feb 2021";
+"Booking ID:" = "Booking ID:";
+"Store Name:" = "Store Name:";
+"Store Address:" = "Store Address:";
+
+
+
+//Setting Section
+"Terms & Condition" = "Terms & Condition";
+"About Us" = "About Us";
+"FAQ's" = "FAQ's";
+"Contact Us" = "Contact Us";
+"Privacy Policy" = "Privacy Policy";
+
+
+//Product Detail
+"Product" = "Product";
+"Reviews" = "Reviews";
+"Add" = "Add";
+"Go to Cart" = "Go to Cart";
+"Choose your Thobe" = "Choose your Thobe";
+"Customer Reviews" = "Customer Reviews";
+"Brand" = "Brand";
+"CATEGORY" = "Category";
+"Size" = "Size";
+"MATERIAL" = "Material";
+"REVIEWS" = "REVIEWS";
+"Reviews" = "Reviews";
+"Write a Review" = "Write a Review";
+"Type your message" = "Type your message";
+"Search here" = "Search here";
+"Cancel" = "Cancel";
+
+
+
