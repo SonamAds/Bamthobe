@@ -31,18 +31,19 @@ class OtpVerifyVC: UIViewController {
     
     
     //For Localizable files
-//    let firstNameMessage        = NSLocalizedString("First name is required.", comment: "")
-//    let lastNameMessage         = NSLocalizedString("Last name is required.", comment: "")
+//    let firstNameMessage        = LocalizationSystem.sharedInstance.localizedStringForKey(key: "First name is required.", comment: "")
+//    let lastNameMessage         = LocalizationSystem.sharedInstance.localizedStringForKey(key: "Last name is required.", comment: "")
     
     //MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.backBtn.transform = CGAffineTransform(rotationAngle: CGFloat(M_PI_2))
-        
-//        btn_Submit.setTitle(LocalizationSystem.sharedInstance.localizedStringForKey(key: "Sign Up", comment: ""), for: .normal)
-//        sentOtp.text = LocalizationSystem.sharedInstance.localizedStringForKey(key: "Send OTP", comment: "")
-//        resendLbl.text = LocalizationSystem.sharedInstance.localizedStringForKey(key: "Resend", comment: "")
-//        resendTimerLbl.text = LocalizationSystem.sharedInstance.localizedStringForKey(key: "Resend:", comment: "")
+//        let quote = "Don't have an Account? Sign Up"
+//        let attributedQuote = NSMutableAttributedString(string: quote)
+//        attributedQuote.addAttribute(.foregroundColor, value: UIColor.red, range: NSRange(location: 23, length: 7))
+//        dontAccountLbl.attributedText = attributedQuote
+
+        //            resendTimerLbl.text = LocalizationSystem.sharedInstance.localizedStringForKey(key: "Resend:", comment: "")
         
         apiHelper.responseDelegate = self
         setupOtpView()
@@ -159,32 +160,6 @@ extension OtpVerifyVC {
 //            txtFirstName.showError(message: firstNameMessage)
 //            return false
 //        }
-//
-//        guard !txtLastName.text!.isEmptyStr else {
-//            txtLastName.showError(message: lastNameMessage)
-//            return false
-//        }
-//
-//        guard !txtEmail.text!.isEmptyStr else {
-//            txtEmail.showError(message: emailMessage)
-//            return false
-//        }
-//
-//        guard !txtPassword.text!.isEmptyStr else {
-//            txtPassword.showError(message: passwordMessage)
-//            return false
-//        }
-//
-//        guard !txtConfirmPassword.text!.isEmptyStr else {
-//            txtConfirmPassword.showError(message: confirmPasswordMessage)
-//            return false
-//        }
-//
-//        guard txtPassword.text == txtConfirmPassword.text else {
-//            txtConfirmPassword.showError(message: mismatchPasswordMessage)
-//            return false
-//        }
-//
 //        return true
 //    }
 }

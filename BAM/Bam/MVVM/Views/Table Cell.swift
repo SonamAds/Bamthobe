@@ -80,6 +80,10 @@ class AddressBookTVCell: UITableViewCell {
 //MARK: - Gift Cell
 class GiftTVCell: UITableViewCell {
     
+    //MARK: - Variables
+    var delegate : CartProductDeleteDelegate?
+
+    
     //MARK: - IBOutlets
     @IBOutlet weak var giftIV:UIImageView!
     @IBOutlet weak var descriptionLbl:UILabel!
@@ -89,16 +93,16 @@ class GiftTVCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
      }
 
     //MARK: - Actions
     @IBAction func btnTap_CreatGift(_ sender: Any) {
+        delegate?.showDetails(rows: createGiftBtn.tag, section: 0)
     }
     
 }
@@ -192,6 +196,7 @@ class MyOrderTVCell: UITableViewCell {
     @IBOutlet weak var priceLbl:UILabel!
     @IBOutlet weak var descriptionLbl:UILabel!
     @IBOutlet weak var viewBtn:UIButton!
+    @IBOutlet weak var View_Cell:UIView!
 
 
     override func awakeFromNib() {
@@ -277,13 +282,14 @@ class CartTVCell: UITableViewCell {
     @IBOutlet weak var placketSV:UIStackView!
     @IBOutlet weak var buttonSV:UIStackView!
     @IBOutlet weak var sidePocketSV:UIStackView!
-
+    
     @IBOutlet weak var subTotalPriceLbl:UILabel!
 
     @IBOutlet weak var addCartValueTF:UITextField!
     @IBOutlet weak var plusBtn:UIButton!
     @IBOutlet weak var minusBtn:UIButton!
     @IBOutlet weak var addView:UIView!
+    @IBOutlet var View_Cell:[UIView]!
     
     
     @IBOutlet weak var lessDetailHeightConstraint:NSLayoutConstraint!
@@ -331,13 +337,13 @@ class CartTVCell: UITableViewCell {
     @IBAction func btnTap_MinusCartValue(_ sender: UIButton) {
         let qty = Int(addCartValueTF.text!)
         if addCartValueTF.text == "1" {
-            addCartValueTF.text = "Add"
-            minusBtn.isHidden = true
+            deleteDelegate?.deleteProduct(row: thodeDeleteBtn.tag, section: thodeLbl.tag)
+//            addCartValueTF.text = "Add"
+//            minusBtn.isHidden = true
         } else {
             addCartValueTF.text = "\(qty! - 1)"
+            deleteDelegate?.changeQuantity(rows: giftDeleteBtn.tag, quantity: addCartValueTF.text!, section: giftPriceLbl.tag)
         }
-        
-        deleteDelegate?.changeQuantity(rows: giftDeleteBtn.tag, quantity: addCartValueTF.text!, section: giftPriceLbl.tag)
     }
 }
 

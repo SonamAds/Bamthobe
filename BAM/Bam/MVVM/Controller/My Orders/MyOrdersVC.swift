@@ -105,14 +105,14 @@ extension MyOrdersVC: UITableViewDelegate, UITableViewDataSource {
         
         if selected == 0 {
             if orderModel?.data?.count == 0 {
-                messageLabel.text = "NO DATA FOUND"
-            } else {
+                messageLabel.text = LocalizationSystem.sharedInstance.localizedStringForKey(key: "NO DATA FOUND", comment: "")            } else {
                 messageLabel.text = ""
             }
             return orderModel?.data?.count ?? 0
         } else {
             if previousModel?.data?.count == 0 {
-                messageLabel.text = "NO DATA FOUND"
+                messageLabel.text = LocalizationSystem.sharedInstance.localizedStringForKey(key: "NO DATA FOUND", comment: "")
+                
             } else {
                 messageLabel.text = ""
             }
@@ -123,6 +123,8 @@ extension MyOrdersVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyOrderTVCell", for: indexPath) as! MyOrderTVCell
+        customShadowView(vew: cell.View_Cell, shadowSize: 0.0, shadowOpacity: 0.0)
+
         if selected == 0 {
             let data = orderModel?.data?[indexPath.row]
             cell.userIV.sd_setImage(with: URL(string: data?.image ?? "")!, placeholderImage: nil, options: .refreshCached) { (image, error, cacheType, url) in
@@ -142,6 +144,7 @@ extension MyOrdersVC: UITableViewDelegate, UITableViewDataSource {
             cell.priceLbl.text = "SAR \(data?.price ?? "0")"
             cell.totalItemLbl.text = "\(data?.quantity ?? 0)"
         }
+        getLang(label: [cell.descriptionLbl, cell.priceLbl], btn: nil)
         return cell
     }
     

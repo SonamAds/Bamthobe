@@ -78,11 +78,11 @@ class AddAddressVC: UIViewController {
 
     @IBAction func btnTap_addAddress(_ sender: UIButton) {
         if fullNamelbl.text == "" {
-            SnackBar().showSnackBar(view: self.view, text: "Enter Full Name", interval: 2)
+            SnackBar().showSnackBar(view: self.view, text: LocalizationSystem.sharedInstance.localizedStringForKey(key: "Enter Full Name", comment: ""), interval: 2)
         } else if addressLbl.text == "" {
-            SnackBar().showSnackBar(view: self.view, text: "Enter Address", interval: 2)
+            SnackBar().showSnackBar(view: self.view, text: LocalizationSystem.sharedInstance.localizedStringForKey(key: "Enter Address", comment: ""), interval: 2)
         } else if selectedTag < 0 {
-            SnackBar().showSnackBar(view: self.view, text: "Select Tag", interval: 2)
+            SnackBar().showSnackBar(view: self.view, text: LocalizationSystem.sharedInstance.localizedStringForKey(key: "Select Tag", comment: ""), interval: 2)
         } else {
             apiHit()
         }

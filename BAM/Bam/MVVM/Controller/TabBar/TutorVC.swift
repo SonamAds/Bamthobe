@@ -17,6 +17,10 @@ class TutorVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 //        continueBtn.setTitle(LocalizationSystem.sharedInstance.localizedStringForKey(key: "Continue", comment: ""), for: .normal)
+//        LocalizationSystem.sharedInstance.setLanguage(languageCode: "en")
+        Bundle.setLanguage("en")
+        LocalizationSystem.sharedInstance.setLanguage(languageCode: "en")
+
     }
 
     override func viewWillAppear(_ animated: Bool) {

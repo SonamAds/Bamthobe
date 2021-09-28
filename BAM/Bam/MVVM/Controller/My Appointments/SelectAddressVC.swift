@@ -77,7 +77,7 @@ class SelectAddressVC: UIViewController {
             apiHit()
             }
         } else {
-            SnackBar().showSnackBar(view: self.view, text: "Select Address", interval: 4)
+            SnackBar().showSnackBar(view: self.view, text: LocalizationSystem.sharedInstance.localizedStringForKey(key: "Select Address", comment: ""), interval: 4)
         }
     }
  
@@ -106,7 +106,7 @@ extension SelectAddressVC: UITableViewDelegate, UITableViewDataSource {
         messageLabel.sizeToFit()
         self.tableView.backgroundView = messageLabel;
         if addressModel?.data?.count == 0 {
-            messageLabel.text = "NO DATA FOUND"
+            messageLabel.text = LocalizationSystem.sharedInstance.localizedStringForKey(key: "NO DATA FOUND", comment: "")
         } else {
             messageLabel.text = ""
         }

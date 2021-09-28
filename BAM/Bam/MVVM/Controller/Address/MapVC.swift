@@ -34,6 +34,7 @@ class MapVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Ask for Authorisation from the User.
+        closeBtn.setTitle(LocalizationSystem.sharedInstance.localizedStringForKey(key: "Close", comment: ""), for: .normal)
         if currentLocation != nil {
             getAddressFromLatLon(loc: currentLocation!)
         }
@@ -217,7 +218,7 @@ extension MapVC: CLLocationManagerDelegate,MKMapViewDelegate {
 //            )})
         self.navigationController?.popViewController(animated: true)
         } else {
-            SnackBar().showSnackBar(view: self.view, text: "Select Address", interval: 2)
+            SnackBar().showSnackBar(view: self.view, text: LocalizationSystem.sharedInstance.localizedStringForKey(key: "Select Address", comment: ""), interval: 2)
         }
     }
     

@@ -10,7 +10,7 @@ import SafariServices
 class SettingVC: UIViewController {
 
     // MARK:- Variables
-    private let menuArr = ["Terms & Conditions", "About Us", "FAQ's", "Contact Us", "Privacy Policy"]
+    private let menuArr = ["Terms & Condition", "About Us", "FAQ's", "Contact Us", "Privacy Policy"]
 
     
     // MARK:- IBOutlets

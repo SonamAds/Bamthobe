@@ -50,7 +50,7 @@ class SecondCreateGiftDetailVC: UIViewController {
     // MARK:- View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        messageTF.text = "Type your card message here...."
+        messageTF.text = LocalizationSystem.sharedInstance.localizedStringForKey(key: "Type your card message here...", comment: "")
         messageTF.textColor = UIColor.lightGray
         messageTF.delegate = self
         nameView.layer.borderWidth = 1
@@ -78,7 +78,7 @@ class SecondCreateGiftDetailVC: UIViewController {
     @IBAction func btnTap_Continue(_ sender: UIButton) {
 //        if confirmBtn.currentTitle == "Add" {
 //            if recipentNameTF.text == "" {
-//                SnackBar().showSnackBar(view: self.view, text: "Enter Recipent Name", interval: 4)
+//                SnackBar().showSnackBar(view: self.view, text: LocalizationSystem.sharedInstance.localizedStringForKey(key: "You don't have enough loyality points!", comment: "")"Enter Recipent Name", interval: 4)
 //            } else if recipentMobileTF.text == "" {
 //                SnackBar().showSnackBar(view: self.view, text: "Enter Recipent Phone Number", interval: 4)
 //            } else {
@@ -88,13 +88,13 @@ class SecondCreateGiftDetailVC: UIViewController {
 //
 //        } else {
             if toTF.text == "" {
-                SnackBar().showSnackBar(view: self.view, text: "Enter To Email ID", interval: 4)
+                SnackBar().showSnackBar(view: self.view, text: LocalizationSystem.sharedInstance.localizedStringForKey(key: "Enter To Email ID", comment: ""), interval: 4)
                 
             } else if messageTF.text == "" {
-                SnackBar().showSnackBar(view: self.view, text: "Enter message here...", interval: 4)
+                SnackBar().showSnackBar(view: self.view, text: LocalizationSystem.sharedInstance.localizedStringForKey(key: "Enter message here...", comment: ""), interval: 4)
                 
             } else if fromTF.text == "" {
-                SnackBar().showSnackBar(view: self.view, text: "Enter From Email ID", interval: 4)
+                SnackBar().showSnackBar(view: self.view, text: LocalizationSystem.sharedInstance.localizedStringForKey(key: "Enter From Email ID", comment: ""), interval: 4)
                 
             } else {
                 apiHelper.PostData(urlString: kAddGift, tag: CREATEGIFT, params: ["gift_id": giftId, "date": dateStr, "time": timeStr, "g_to": toTF.text ?? "", "g_from": fromTF.text ?? "", "message": messageTF.text ?? "", "mobile": recipentMobileTF.text ?? "", "receiver_name": recipentNameTF.text ?? ""])
@@ -125,7 +125,7 @@ extension SecondCreateGiftDetailVC: UITextViewDelegate {
     }
     func textViewDidEndEditing(_ textView: UITextView) {
         if messageTF.text.isEmpty {
-            messageTF.text = "Type your card message here...."
+            messageTF.text = LocalizationSystem.sharedInstance.localizedStringForKey(key: "Type your card message here...", comment: "")
             messageTF.textColor = UIColor.lightGray
         }
     }

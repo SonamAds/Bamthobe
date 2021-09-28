@@ -27,17 +27,17 @@ class ForgotPasswordVC: UIViewController {
     
     
     //For Localizable files
-    let MobileNumberMessage         = NSLocalizedString("Mobile Number is required", comment: "")
+    let MobileNumberMessage         = LocalizationSystem.sharedInstance.localizedStringForKey(key: "Mobile number is required", comment: "")
     
     
     //MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.backBtn.transform = CGAffineTransform(rotationAngle: CGFloat(M_PI_2))
-
-//        btn_Send.setTitle(LocalizationSystem.sharedInstance.localizedStringForKey(key: "Send OTP", comment: ""), for: .normal)
-//        forgot.text = LocalizationSystem.sharedInstance.localizedStringForKey(key: "Forgot Password?", comment: "")
-//        txtMobileNumber.placeholder = LocalizationSystem.sharedInstance.localizedStringForKey(key: "Mobile Number/Email ID", comment: "")
+        let quote = "Don't have an Account? Sign Up"
+        let attributedQuote = NSMutableAttributedString(string: quote)
+        attributedQuote.addAttribute(.foregroundColor, value: UIColor.red, range: NSRange(location: 23, length: 7))
+        dontAccountLbl.attributedText = attributedQuote
         apiHelper.responseDelegate = self
     }
     

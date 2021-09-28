@@ -8,12 +8,36 @@
 import Foundation
 import UIKit
 
+
+extension UIDevice {
+    var hasNotch: Bool {
+        let bottom = UIApplication.shared.keyWindow?.safeAreaInsets.bottom ?? 0
+        return bottom > 0
+    }
+}
+
 public extension String {
     
     var isEmptyStr:Bool{
         return self.trimmingCharacters(in: NSCharacterSet.whitespaces).isEmpty
     }
 }
+
+//class UnderlinedLabel: UILabel {
+//
+//override var text: String? {
+//    didSet {
+//        guard let text = text else { return }
+//        let textRange = NSRange(location: 0, length: text.count)
+//        let attributedText = NSMutableAttributedString(string: text)
+//        attributedText.addAttribute(.underlineStyle,
+//                                    value: NSUnderlineStyle.single.rawValue,
+//                                    range: textRange)
+//        // Add other attributes if needed
+//        self.attributedText = attributedText
+//        }
+//    }
+//}
 
 public class UITextFieldX: UITextField {
     

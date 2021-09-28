@@ -13,6 +13,9 @@ class HomeVC: UIViewController {
    
     // MARK:- Variables
     var catIdArr = [[String: String]]()
+    var shawls = "0"
+    var attars = "0"
+    var cufflinks = "0"
     var modelsArray = [[ProductModelData]]()
     var categoryModel: CategoryModel?
     var bannerModel: BannerModel?
@@ -223,7 +226,7 @@ extension HomeVC: UICollectionViewDelegate,UICollectionViewDataSource,UICollecti
             messageLabel.sizeToFit()
             self.CollectioView_categoriesList.backgroundView = messageLabel;
             if categoryModel?.data?.count == 0 {
-                messageLabel.text = "NO DATA FOUND"
+                messageLabel.text = LocalizationSystem.sharedInstance.localizedStringForKey(key: "NO DATA FOUND", comment: "")
             }
             else {
                 messageLabel.text = ""
@@ -239,7 +242,7 @@ extension HomeVC: UICollectionViewDelegate,UICollectionViewDataSource,UICollecti
             messageLabel.sizeToFit()
             self.collectioView_FeaturedProductList.backgroundView = messageLabel;
             if self.modelsArray[0].count == 0 {
-                messageLabel.text = "NO DATA FOUND"
+                messageLabel.text = LocalizationSystem.sharedInstance.localizedStringForKey(key: "NO DATA FOUND", comment: "")
             }
             else {
                 messageLabel.text = ""
@@ -255,7 +258,7 @@ extension HomeVC: UICollectionViewDelegate,UICollectionViewDataSource,UICollecti
             messageLabel.sizeToFit()
             self.collectioView_TrendingList.backgroundView = messageLabel;
             if self.modelsArray[1].count == 0 {
-                    messageLabel.text = "NO DATA FOUND"
+                messageLabel.text = LocalizationSystem.sharedInstance.localizedStringForKey(key: "NO DATA FOUND", comment: "")
             }
             else {
                     messageLabel.text = ""
@@ -271,7 +274,7 @@ extension HomeVC: UICollectionViewDelegate,UICollectionViewDataSource,UICollecti
             messageLabel.sizeToFit()
             self.collectioView_AccessoriesFeaturedProductList.backgroundView = messageLabel;
             if self.modelsArray[2]/*modelsArray[2]*/.count == 0 {
-                messageLabel.text = "NO DATA FOUND"
+                messageLabel.text = LocalizationSystem.sharedInstance.localizedStringForKey(key: "NO DATA FOUND", comment: "")
             }
             else {
                 messageLabel.text = ""
@@ -287,7 +290,7 @@ extension HomeVC: UICollectionViewDelegate,UICollectionViewDataSource,UICollecti
             messageLabel.sizeToFit()
             self.collectioView_AttarsList.backgroundView = messageLabel;
             if self.modelsArray[3]/*modelsArray[3]*/.count == 0 {
-                messageLabel.text = "NO DATA FOUND"
+                messageLabel.text = LocalizationSystem.sharedInstance.localizedStringForKey(key: "NO DATA FOUND", comment: "")
             }
             else {
                 messageLabel.text = ""
@@ -303,7 +306,7 @@ extension HomeVC: UICollectionViewDelegate,UICollectionViewDataSource,UICollecti
             messageLabel.sizeToFit()
             self.collectioView_CustomizeThodeList.backgroundView = messageLabel;
             if self.bannerModel?.data?.count == 0 {
-                messageLabel.text = "NO DATA FOUND"
+                messageLabel.text = LocalizationSystem.sharedInstance.localizedStringForKey(key: "NO DATA FOUND", comment: "")
             }
             else {
                 messageLabel.text = ""
@@ -319,7 +322,7 @@ extension HomeVC: UICollectionViewDelegate,UICollectionViewDataSource,UICollecti
             messageLabel.sizeToFit()
             self.collectioView_AccessoriesList.backgroundView = messageLabel;
             if self.bannerModel?.data?.count ?? 0 < 3 {
-                messageLabel.text = "NO DATA FOUND"
+                messageLabel.text = LocalizationSystem.sharedInstance.localizedStringForKey(key: "NO DATA FOUND", comment: "")
             }
             else {
                 messageLabel.text = ""
@@ -387,7 +390,7 @@ extension HomeVC: UICollectionViewDelegate,UICollectionViewDataSource,UICollecti
                 cell.lbl_Price.text = "SAR \(data.cost ?? "0")"
            
             } else {
-                let data = modelsArray[3][indexPath.row]// modelsArray[3][indexPath.row]
+                let data = modelsArray[3][indexPath.row]
                 let imgUrl = data.image ?? ""
                 cell.img_food.sd_setImage(with: URL(string: imgUrl)!, placeholderImage: nil, options: .refreshCached) { (image, error, cacheType, url) in
                     cell.img_food.image = image
@@ -443,12 +446,14 @@ extension HomeVC: UICollectionViewDelegate,UICollectionViewDataSource,UICollecti
         }
         else {
             let cell = self.collectionView_Banner.dequeueReusableCell(withReuseIdentifier: "BannerCell", for: indexPath) as! BannerCell
-            let url = "\(sliderModel?.data?[indexPath.row].image ?? "")"
+            let url = "\(sliderModel?.data?[indexPath.row].mobile_image ?? sliderModel?.data?[indexPath.row].image ?? "")"
+            if url != "" {
             cell.img_Banner.sd_setImage(with: URL(string: url)!, placeholderImage: nil, options: .refreshCached) { (image, error, cacheType, url) in
                 cell.img_Banner.image = image
             }
-            cell.lbl_Name.text = sliderModel?.data?[indexPath.row].main_title
-            cell.lbl_Descrptn.text = sliderModel?.data?[indexPath.row].sub_title
+            }
+//            cell.lbl_Name.text = sliderModel?.data?[indexPath.row].main_title
+//            cell.lbl_Descrptn.text = sliderModel?.data?[indexPath.row].sub_title
             cornerRadius(viewName: cell.img_Banner, radius: 6.0)
             return cell
         }
@@ -492,6 +497,13 @@ extension HomeVC: UICollectionViewDelegate,UICollectionViewDataSource,UICollecti
                 }
 //            } else if categoryModel?.data?[indexPath.row].type == "Design Your Thobe" {
                 
+            } else if categoryModel?.data?[indexPath.row].type == "gift" {
+                if userManager.getApiToken() != nil {
+                let vc = storyboard?.instantiateViewController(withIdentifier: "GiftListVC") as! GiftListVC
+                self.navigationController?.pushViewController(vc, animated: true)
+                } else {
+                    navigateToLogin()
+                }
             } else {
                 let vc = storyboard?.instantiateViewController(withIdentifier: "ProductVC") as! ProductVC
                 vc.categoryId = "\(categoryModel?.data?[indexPath.row].id ?? 0)"
@@ -539,7 +551,7 @@ extension HomeVC: ApiResponseDelegate{
                     // create session here
                         if categoryModel?.data?.count != 0 {
                             for model in categoryModel?.data ?? [] {
-                                if model.type == "normal" {
+                                if model.type == "normal" || model.type == "model" {
                                     let data = ["id": "\(model.id ?? 0)", "name": model.category_name ?? ""] as [String : String]
                                     catIdArr.append(data)
                                 }
@@ -601,11 +613,13 @@ extension HomeVC: ApiResponseDelegate{
                             
                         } else if i == 1 {
                             lbl_Trending.text = catIdArr[i]["name"]
-                            
+                            cufflinks = catIdArr[i]["id"] ?? "0"
                         } else if i == 3 {
                             lbl_Attars.text = catIdArr[i]["name"]
+                            attars = catIdArr[i]["id"] ?? "0"
                         } else if i == 2 {
                             lbl_FeaturedAccessories.text = catIdArr[i]["name"]
+                            shawls = catIdArr[i]["id"] ?? "0"
                         }
                         apiHelper.GetData(urlString: "\(kGetProducts)\(catIdArr[i]["id"] ?? "")", tag: GETPRODUCT)
                     }
@@ -630,33 +644,33 @@ extension HomeVC: ApiResponseDelegate{
                     // create session here
                     let res = response.data
                     modelsArray.append(res!)
-                    if catIdArr[0]["name"] == lbl_Featured.text { //String((res?[0].category_id)!) {
-//                    if lbl_Featured.text == catIdArr[0]["name"] {
-//                        modelsArray.insert(res!, at: 0)
-                        collectioView_FeaturedProductList.delegate = self
-                        collectioView_FeaturedProductList.dataSource = self
-                        collectioView_FeaturedProductList.reloadData()
-//                    } else if catIdArr[1]["id"] == String((res?[0].category_id)!) {
-                    } else if catIdArr[1]["name"] == lbl_Trending.text { //String((res?[0].category_id)!) {
+                    if catIdArr[1]["id"] == cufflinks && modelsArray.count == 2 { //String((res?[0].category_id)!) {
 
 //                        modelsArray.insert(res!, at: 1)
 
                         collectioView_TrendingList.delegate = self
                         collectioView_TrendingList.dataSource = self
                         collectioView_TrendingList.reloadData()
-                    } else if catIdArr[3]["name"] == lbl_Attars.text { //String((res?[0].category_id)!) {
+                    } else if catIdArr[3]["id"] == attars && modelsArray.count == 4 { //String((res?[0].category_id)!) {
 //                        modelsArray.insert(res!, at: 2)
 
                         collectioView_AttarsList.delegate = self
                         collectioView_AttarsList.dataSource = self
                         collectioView_AttarsList.reloadData()
-                    } else {
+                    } else if catIdArr[2]["id"] == shawls && modelsArray.count == 3 {
 //                        modelsArray.insert(res!, at: 3)
 
                         collectioView_AccessoriesFeaturedProductList.delegate = self
                         collectioView_AccessoriesFeaturedProductList.dataSource = self
                         collectioView_AccessoriesFeaturedProductList.reloadData()
-                    }
+                    } else { //String((res?[0].category_id)!) {
+                        //                    if lbl_Featured.text == catIdArr[0]["name"] {
+                        //                        modelsArray.insert(res!, at: 0)
+                                                collectioView_FeaturedProductList.delegate = self
+                                                collectioView_FeaturedProductList.dataSource = self
+                                                collectioView_FeaturedProductList.reloadData()
+                        //                    } else if catIdArr[1]["id"] == String((res?[0].category_id)!) {
+                                            }
                     print(modelsArray)
 
                 
@@ -698,286 +712,3 @@ extension HomeVC: ApiResponseDelegate{
 
 
 
-//
-////MARK: Webservices
-//extension HomeVC {
-//    func Webservice_AddtoCart(url:String, params:NSDictionary,sender:UIButton!) -> Void {
-//        WebServices().CallGlobalAPI(url: url, headers: [:], parameters:params, httpMethod: "POST", progressView:true, uiView:self.view, networkAlert: true) {(_ jsonResponse:JSON? , _ strErrorMessage:String) in
-//
-//            if strErrorMessage.count != 0 {
-//                showAlertMessage(titleStr: Bundle.main.displayName!, messageStr: strErrorMessage)
-//            }
-//            else {
-//                let responseCode = jsonResponse!["status"]//.stringValue
-//                if responseCode == true/*"1"*/ {
-//                    if self.isAddtoCartSelect == "1" {
-//                        let buttonPosition : CGPoint = sender.convert(sender.bounds.origin, to: self.collectioView_GirdList)
-//                        let indexPath = self.collectioView_GirdList.indexPathForItem(at: buttonPosition)
-//                        let cell = self.collectioView_GirdList.cellForItem(at: indexPath!) as! GridCell
-//                        let imageViewPosition : CGPoint = cell.img_food.convert(cell.img_food.bounds.origin, to: self.view)
-//                        let imgViewTemp = UIImageView(frame: CGRect(x: imageViewPosition.x, y: imageViewPosition.y, width: cell.img_food.frame.size.width, height: cell.img_food.frame.size.height))
-//                        imgViewTemp.image = cell.img_food.image
-//                        self.animation(tempView: imgViewTemp)
-//                    }
-//                    else {
-//                        let buttonPosition : CGPoint = sender.convert(sender.bounds.origin, to: self.collectioView_ExpolerList)
-//                        let indexPath = self.collectioView_ExpolerList.indexPathForItem(at: buttonPosition)
-//                        let cell = self.collectioView_ExpolerList.cellForItem(at: indexPath!) as! GridCell
-//                        let imageViewPosition : CGPoint = cell.img_food.convert(cell.img_food.bounds.origin, to: self.view)
-//                        let imgViewTemp = UIImageView(frame: CGRect(x: imageViewPosition.x, y: imageViewPosition.y, width: cell.img_food.frame.size.width, height: cell.img_food.frame.size.height))
-//                        imgViewTemp.image = cell.img_food.image
-//                        self.animation(tempView: imgViewTemp)
-//                    }
-//                }
-//                else {
-//                    showAlertMessage(titleStr: Bundle.main.displayName!, messageStr: jsonResponse!["message"].stringValue)
-//                }
-//            }
-//        }
-//    }
-//
-//    func Webservice_cartcount(url:String, params:NSDictionary) -> Void {
-//        WebServices().CallGlobalAPI(url: url, headers: [:], parameters:params, httpMethod: "POST", progressView:true, uiView:self.view, networkAlert: true) {(_ jsonResponse:JSON? , _ strErrorMessage:String) in
-//
-//            if strErrorMessage.count != 0 {
-//                showAlertMessage(titleStr: Bundle.main.displayName!, messageStr: strErrorMessage)
-//            }
-//            else {
-//                let responseCode = jsonResponse!["status"]//.stringValue
-//                if responseCode == true/*"1"*/ {
-//                    self.lbl_CartCount.isHidden = false
-//                    let responceCart = jsonResponse!//["catlist"].dictionaryValue
-//                    self.lbl_Cartcount.text = responceCart["quty"/*"cartcount"*/].stringValue
-//                    self.lbl_CartCount.text = responceCart["quty"/*"cartcount"*/].stringValue
-//                    let ItemPrice = formatter.string(for: responceCart["price"].stringValue.toDouble)
-//                    self.lbl_TotalCartPrice.text = "\(rupee)\(ItemPrice!)"//(UserDefaultManager.getStringFromUserDefaults(key: UD_currency))
-//                    if responceCart["quty"/*"cartcount"*/].stringValue == "0" || responceCart["quty"/*"cartcount"*/].stringValue == "" {
-//                        self.gotoCart_View.isHidden = true
-//                        self.goToCart_ViewHeight.constant = 0.0
-//                    }
-//                    else {
-//                        self.gotoCart_View.isHidden = false
-//                        self.goToCart_ViewHeight.constant = 50.0
-//                    }
-//                }
-//                else {
-//                    self.lbl_CartCount.isHidden = false
-//                    self.lbl_CartCount.text = "0"
-//                }
-//            }
-//        }
-//    }
-//
-//
-//    func Webservice_getrestaurantslocation(url:String, params:NSDictionary) -> Void {
-////        WebServices().CallGlobalAPI(url: url, headers: [:], parameters:params, httpMethod: "GET", progressView:true, uiView:self.view, networkAlert: true) {(_ jsonResponse:JSON? , _ strErrorMessage:String) in
-////            if strErrorMessage.count != 0 {
-////                showAlertMessage(titleStr: Bundle.main.displayName!, messageStr: strErrorMessage)
-////            }
-////            else {
-////                let responseCode = jsonResponse!["status"].stringValue
-////                if responseCode == "1" {
-////                    let responseData = jsonResponse!["data"].dictionaryValue
-////                    self.latitued = responseData["lat"]!.stringValue
-////                    self.longitude = responseData["lang"]!.stringValue
-////                    self.openMapForPlace()
-////                }
-////                else {
-////                    showAlertMessage(titleStr: Bundle.main.displayName!, messageStr: jsonResponse!["message"].stringValue)
-////                }
-////            }
-////        }
-//    }
-//}
-
-
-//MARK: Functions
-//extension HomeVC {
-//    func openMapForPlace() {
-//        let latitude: CLLocationDegrees = Double(self.latitued)!
-//        let longitude: CLLocationDegrees = Double(self.longitude)!
-//        let regionDistance:CLLocationDistance = 5000
-//        let coordinates = CLLocationCoordinate2DMake(latitude, longitude)
-//        let regionSpan = MKCoordinateRegion(center: coordinates, latitudinalMeters: regionDistance, longitudinalMeters: regionDistance)
-//        let options = [MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate: regionSpan.center),
-//                       MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: regionSpan.span)]
-//        let placemark = MKPlacemark(coordinate: coordinates, addressDictionary: nil)
-//        let mapItem = MKMapItem(placemark: placemark)
-//        mapItem.name = "Store Location"
-//        mapItem.openInMaps(launchOptions: options)
-//    }
-//
-//    @objc private func refreshData(_ sender: Any) {
-//        self.refreshControl.endRefreshing()
-//        self.pageIndex = 1
-//        self.lastIndex = 0
-//        let urlString = API_URL + "catlist"
-//        self.Webservice_getCategory(url: urlString, params: [:])
-//    }
-//
-//    @objc func btnTap_Favorites_Latest(sender:UIButton!) {
-//        if UserDefaultManager.getStringFromUserDefaults(key: UD_userId) == "" {
-//            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-//            let objVC = storyBoard.instantiateViewController(withIdentifier: "WelcomeVC") as! WelcomeVC
-//            let appNavigation: UINavigationController = UINavigationController(rootViewController: objVC)
-//            appNavigation.setNavigationBarHidden(true, animated: true)
-//            UIApplication.shared.windows[0].rootViewController = appNavigation
-//        }
-//        else {
-//            if self.LatestitemArray[sender.tag]["isFavorite"]! == "0" {
-//                self.isFavoriteSelect = "1"
-//                let urlString = API_URL + "addfavorite"
-//                let params: NSDictionary = ["user_id":UserDefaultManager.getStringFromUserDefaults(key: UD_userId),"token":UserDefaultManager.getStringFromUserDefaults(key: UD_token),"item_id":self.LatestitemArray[sender.tag]["id"]!]
-//                self.Webservice_FavoriteItems(url: urlString, params: params, productIndex: sender.tag)
-//            }
-//        }
-//    }
-//
-//    @objc func btnTap_Favorites_Exploer(sender:UIButton!) {
-//        if UserDefaultManager.getStringFromUserDefaults(key: UD_userId) == "" {
-//            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-//            let objVC = storyBoard.instantiateViewController(withIdentifier: "WelcomeVC") as! WelcomeVC
-//            let appNavigation: UINavigationController = UINavigationController(rootViewController: objVC)
-//            appNavigation.setNavigationBarHidden(true, animated: true)
-//            UIApplication.shared.windows[0].rootViewController = appNavigation
-//        }
-//        else {
-//            if self.exploreItemArray[sender.tag]["isFavorite"]! == "0" {
-//                self.isFavoriteSelect = "2"
-//                let urlString = API_URL + "addfavorite"
-//                let params: NSDictionary = ["user_id":UserDefaultManager.getStringFromUserDefaults(key: UD_userId),"token":UserDefaultManager.getStringFromUserDefaults(key: UD_token),"item_id":self.exploreItemArray[sender.tag]["id"]!]
-//                self.Webservice_FavoriteItems(url: urlString, params: params, productIndex: sender.tag)
-//            }
-//        }
-//    }
-//
-//    @objc func btnTap_AddtoCart_Latest(sender:UIButton!) {
-//        if UserDefaultManager.getStringFromUserDefaults(key: UD_userId) == "" {
-//            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-//            let objVC = storyBoard.instantiateViewController(withIdentifier: "WelcomeVC") as! WelcomeVC
-//            let appNavigation: UINavigationController = UINavigationController(rootViewController: objVC)
-//            appNavigation.setNavigationBarHidden(true, animated: true)
-//            UIApplication.shared.windows[0].rootViewController = appNavigation
-//        }
-//        else {
-//            self.isAddtoCartSelect = "1"
-//            let data = self.LatestitemArray[sender.tag]
-//            let urlString = API_URL + "add_cart"//"cart"
-//            let params: NSDictionary = ["product_id":data["id"]!,
-//                                        "quty":"1",
-//                                        "price":data["item_price"]!.replacingOccurrences(of: ",", with: ""),
-//                                        "user_id":UserDefaultManager.getStringFromUserDefaults(key: UD_userId),
-//                                        "token":UserDefaultManager.getStringFromUserDefaults(key: UD_token)]
-//            self.Webservice_AddtoCart(url: urlString, params:params, sender: sender)
-//        }
-//    }
-//
-//    @objc func btnTap_AddtoCart_Exploer(sender:UIButton!) {
-//        if UserDefaultManager.getStringFromUserDefaults(key: UD_userId) == "" {
-//            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-//            let objVC = storyBoard.instantiateViewController(withIdentifier: "WelcomeVC") as! WelcomeVC
-//            let appNavigation: UINavigationController = UINavigationController(rootViewController: objVC)
-//            appNavigation.setNavigationBarHidden(true, animated: true)
-//            UIApplication.shared.windows[0].rootViewController = appNavigation
-//        }
-//        else {
-//            self.isAddtoCartSelect = "2"
-//            let data = self.exploreItemArray[sender.tag]
-//            let urlString = API_URL + "add_cart"//"cart"
-//            let params: NSDictionary = ["product_id":data["id"]!,
-//                                        "quty":"1",
-//                                        "price":data["item_price"]!.replacingOccurrences(of: ",", with: ""),
-//                                        "user_id":UserDefaultManager.getStringFromUserDefaults(key: UD_userId),
-//                                        "token":UserDefaultManager.getStringFromUserDefaults(key: UD_token)]
-//            self.Webservice_AddtoCart(url: urlString, params:params, sender: sender)
-//        }
-//    }
-//
-//    @objc func btnTap_AddtoCart_BestSelling(sender:UIButton!) {
-//        if UserDefaultManager.getStringFromUserDefaults(key: UD_userId) == "" {
-//            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-//            let objVC = storyBoard.instantiateViewController(withIdentifier: "WelcomeVC") as! WelcomeVC
-//            let appNavigation: UINavigationController = UINavigationController(rootViewController: objVC)
-//            appNavigation.setNavigationBarHidden(true, animated: true)
-//            UIApplication.shared.windows[0].rootViewController = appNavigation
-//        }
-//        else {
-//            self.isAddtoCartSelect = "2"
-//            let data = self.bestSellingItemArray[sender.tag]
-//            let urlString = API_URL + "add_cart"//"cart"
-//            let params: NSDictionary = ["product_id":data["id"]!,
-//                                        "quty":"1",
-//                                        "price":data["item_price"]!.replacingOccurrences(of: ",", with: ""),
-//                                        "user_id":UserDefaultManager.getStringFromUserDefaults(key: UD_userId),
-//                                        "token":UserDefaultManager.getStringFromUserDefaults(key: UD_token)]
-//            self.Webservice_AddtoCart(url: urlString, params:params, sender: sender)
-//        }
-//    }
-//
-//    @objc func btnTap_AddtoCart_TopProduct(sender:UIButton!) {
-//        if UserDefaultManager.getStringFromUserDefaults(key: UD_userId) == "" {
-//            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-//            let objVC = storyBoard.instantiateViewController(withIdentifier: "WelcomeVC") as! WelcomeVC
-//            let appNavigation: UINavigationController = UINavigationController(rootViewController: objVC)
-//            appNavigation.setNavigationBarHidden(true, animated: true)
-//            UIApplication.shared.windows[0].rootViewController = appNavigation
-//        }
-//        else {
-//            self.isAddtoCartSelect = "2"
-//            let data = self.topItemArray[sender.tag]
-//            let urlString = API_URL + "add_cart"//"cart"
-//            let params: NSDictionary = ["product_id":data["id"]!,
-//                                        "quty":"1",
-//                                        "price":data["item_price"]!.replacingOccurrences(of: ",", with: ""),
-//                                        "user_id":UserDefaultManager.getStringFromUserDefaults(key: UD_userId),
-//                                        "token":UserDefaultManager.getStringFromUserDefaults(key: UD_token)]
-//            self.Webservice_AddtoCart(url: urlString, params:params, sender: sender)
-//        }
-//    }
-//
-//    @objc func btnTap_AddtoCart_Previous(sender:UIButton!) {
-//        if UserDefaultManager.getStringFromUserDefaults(key: UD_userId) == "" {
-//            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-//            let objVC = storyBoard.instantiateViewController(withIdentifier: "WelcomeVC") as! WelcomeVC
-//            let appNavigation: UINavigationController = UINavigationController(rootViewController: objVC)
-//            appNavigation.setNavigationBarHidden(true, animated: true)
-//            UIApplication.shared.windows[0].rootViewController = appNavigation
-//        }
-//        else {
-//            self.isAddtoCartSelect = "2"
-//            let data = self.previousItemArray[sender.tag]
-//            let urlString = API_URL + "add_cart"//"cart"
-//            let params: NSDictionary = ["product_id":data["id"]!,
-//                                        "quty":"1",
-//                                        "price":data["item_price"]!.replacingOccurrences(of: ",", with: ""),
-//                                        "user_id":UserDefaultManager.getStringFromUserDefaults(key: UD_userId),
-//                                        "token":UserDefaultManager.getStringFromUserDefaults(key: UD_token)]
-//            self.Webservice_AddtoCart(url: urlString, params:params, sender: sender)
-//        }
-//    }
-//
-//    func animation(tempView : UIView)  {
-//        self.view.addSubview(tempView)
-//        UIView.animate(withDuration: 1.0,
-//                       animations: {
-//                        tempView.animationZoom(scaleX: 1.3, y: 1.3)
-//        }, completion: { _ in
-//            UIView.animate(withDuration: 0.5, animations: {
-//                tempView.animationZoom(scaleX: 0.2, y: 0.2)
-//                tempView.animationRoted(angle: CGFloat(Double.pi))
-//                tempView.frame.origin.x = self.btn_Cart.frame.origin.x
-//                tempView.frame.origin.y = self.btn_Cart.frame.origin.y
-//            }, completion: { _ in
-//                tempView.removeFromSuperview()
-//                UIView.animate(withDuration: 1.0, animations: {
-//                    let urlString = API_URL + "cart_count"//"cartcount"
-//                    let params: NSDictionary = ["user_id":UserDefaultManager.getStringFromUserDefaults(key: UD_userId), "token":UserDefaultManager.getStringFromUserDefaults(key: UD_token)]
-//                    self.Webservice_cartcount(url: urlString, params:params)
-//                    self.btn_Cart.animationZoom(scaleX: 1.1, y: 1.1)
-//                }, completion: {_ in
-//                    self.btn_Cart.animationZoom(scaleX: 1.0, y: 1.0)
-//                })
-//            })
-//        })
-//    }
-//}

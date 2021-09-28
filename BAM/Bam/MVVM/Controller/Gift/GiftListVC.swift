@@ -61,7 +61,7 @@ extension GiftListVC: UITableViewDelegate, UITableViewDataSource {
         messageLabel.sizeToFit()
         self.tableView.backgroundView = messageLabel;
         if giftModel?.data?.count == 0 {
-            messageLabel.text = "NO DATA FOUND"
+            messageLabel.text = LocalizationSystem.sharedInstance.localizedStringForKey(key: "NO DATA FOUND", comment: "")
         } else {
             messageLabel.text = ""
         }
@@ -70,13 +70,19 @@ extension GiftListVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "GiftTVCell", for: indexPath) as! GiftTVCell
+//        let buttonTitleStr = NSMutableAttributedString(string: LocalizationSystem.sharedInstance.localizedStringForKey(key: "Create Gift", comment: ""), attributes:attrs)
+//        attributedString.append(buttonTitleStr)
+//        cell.createGiftBtn.setAttributedTitle(attributedString, for: .normal)
         let data = giftModel?.data?[indexPath.row]
+        cell.createGiftBtn.tag = indexPath.row + 1
         cell.priceLbl.text = "SAR \(data?.price ?? "0")"
         cell.descriptionLbl.text = data?.description
         let url = (data?.image ?? "")
         cell.giftIV.sd_setImage(with: URL(string: url)!, placeholderImage: nil, options: .refreshCached) { (image, error, cacheType, url) in
             cell.giftIV.image = image
         }
+        getLang(label: [cell.descriptionLbl, cell.priceLbl], btn: [cell.createGiftBtn])
+        cell.delegate = self
         return cell
     }
     
@@ -87,6 +93,21 @@ extension GiftListVC: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
+
+//MARK: - Custom Delegate
+extension GiftListVC: CartProductDeleteDelegate {
+    func deleteProduct(row: Int, section: Int) {
+    }
+    
+    func changeQuantity(rows: Int, quantity: String, section: Int) {
+    }
+    
+    func showDetails(rows: Int, section: Int) {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "GiftListViewVC") as! GiftListViewVC
+        vc.giftId = giftModel?.data?[rows - 1].id ?? 0
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+}
 
 //MARk: - API Success
 extension GiftListVC: ApiResponseDelegate {

@@ -12,6 +12,8 @@ class CreateGiftVC: UIViewController {
     //MARK: - Variables
     var giftId = 0
     let datePicker = DatePickerDialog()
+    var dateStr = ""
+    var timestr = ""
     
     
     // MARK:- IBOutlet Properties
@@ -49,9 +51,9 @@ class CreateGiftVC: UIViewController {
         dateComponents.year = 3
         let threeYearLater = Calendar.current.date(byAdding: dateComponents, to: currentDate)
 
-        datePicker.show("Select Date",
-                        doneButtonTitle: "Save",
-                        cancelButtonTitle: "Cancel",
+        datePicker.show(LocalizationSystem.sharedInstance.localizedStringForKey(key: "Select Date", comment: ""),
+                        doneButtonTitle: LocalizationSystem.sharedInstance.localizedStringForKey(key: "Save", comment: ""),
+                        cancelButtonTitle: LocalizationSystem.sharedInstance.localizedStringForKey(key: "Cancel", comment: ""),
                         minimumDate: currentDate,
                         maximumDate: threeYearLater,
                         datePickerMode: .date) { (date) in
@@ -59,6 +61,7 @@ class CreateGiftVC: UIViewController {
                 let formatter = DateFormatter()
                 formatter.dateFormat = "yyyy-MM-dd"
                 self.dateTF.text = formatter.string(from: dt)
+                self.dateStr = "\(dt)"
             }
         }
     }
@@ -69,9 +72,9 @@ class CreateGiftVC: UIViewController {
         dateComponents.year = 3
         let threeYearLater = Calendar.current.date(byAdding: dateComponents, to: currentDate)
 
-        datePicker.show("Select Time",
-                        doneButtonTitle: "Save",
-                        cancelButtonTitle: "Cancel",
+        datePicker.show(LocalizationSystem.sharedInstance.localizedStringForKey(key: "Select Time", comment: ""),
+                        doneButtonTitle: LocalizationSystem.sharedInstance.localizedStringForKey(key: "Save", comment: ""),
+                        cancelButtonTitle: LocalizationSystem.sharedInstance.localizedStringForKey(key: "Cancel", comment: ""),
                         minimumDate: currentDate,
                         maximumDate: threeYearLater,
                         datePickerMode: .time) { (date) in
@@ -82,6 +85,7 @@ class CreateGiftVC: UIViewController {
                 //for weekday name "EEEE HH:mm"
                 //for 24 hour "HH:mm"
                 self.timeTF.text = formatter.string(from: dt)
+                self.timestr = "\(dt)"
             }
         }
     }
@@ -94,9 +98,9 @@ class CreateGiftVC: UIViewController {
     
     @IBAction func btnTap_Continue(_ sender: UIButton) {
         if dateTF.text == "" {
-            SnackBar().showSnackBar(view: self.view, text: "Select Date", interval: 4)
+            SnackBar().showSnackBar(view: self.view, text: LocalizationSystem.sharedInstance.localizedStringForKey(key: "Select Date", comment: ""), interval: 4)
         } else if timeTF.text == "" {
-            SnackBar().showSnackBar(view: self.view, text: "Select Time", interval: 4)
+            SnackBar().showSnackBar(view: self.view, text: LocalizationSystem.sharedInstance.localizedStringForKey(key: "Select Time", comment: ""), interval: 4)
         } else {
             let vc = storyboard?.instantiateViewController(withIdentifier: "SecondCreateGiftDetailVC") as! SecondCreateGiftDetailVC
             vc.dateStr = dateTF.text!

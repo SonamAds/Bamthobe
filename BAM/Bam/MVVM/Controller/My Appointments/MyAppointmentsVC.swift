@@ -29,7 +29,6 @@ class MyAppointmentsVC: UIViewController {
     //MARK:-  View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-//        headingLbl.text = LocalizationSystem.sharedInstance.localizedStringForKey(key: "My Appointments", comment: "")
 //        deleteAddressBtn.setTitle(LocalizationSystem.sharedInstance.localizedStringForKey(key: "Delete Address", comment: ""), for: .normal)
         tableView.backgroundColor = UIColor.white
         tableView.tableFooterView = UIView()
@@ -71,7 +70,7 @@ extension MyAppointmentsVC: UITableViewDelegate, UITableViewDataSource {
         messageLabel.sizeToFit()
         self.tableView.backgroundView = messageLabel;
         if ongoingAppointmentModel?.data?.count == 0 && olderAppointmentModel?.data?.count == 0 {
-            messageLabel.text = "NO DATA FOUND"
+            messageLabel.text = LocalizationSystem.sharedInstance.localizedStringForKey(key: "NO DATA FOUND", comment: "")
         } else {
             messageLabel.text = ""
         }
@@ -160,12 +159,12 @@ extension MyAppointmentsVC: UITableViewDelegate, UITableViewDataSource {
         let label = UILabel(frame: CGRect(x: 10, y: 5, width: UIScreen.main.bounds.width - 20, height: 30))
 
         if ongoingAppointmentModel?.data?.count != 0 && olderAppointmentModel?.data?.count != 0 || ongoingAppointmentModel?.data?.count == 0 {
-            label.text = self.sectionArray[section]
+            label.text = LocalizationSystem.sharedInstance.localizedStringForKey(key: self.sectionArray[section], comment: "")
         } else {
             if ongoingAppointmentModel?.data?.count != 0 && olderAppointmentModel?.data?.count != 0 || ongoingAppointmentModel?.data?.count != 0 {
-                label.text = "Ongoing Appointment"
+                label.text = LocalizationSystem.sharedInstance.localizedStringForKey(key: "Ongoing Appointment", comment: "")
             } else {
-                label.text = "Older Appointment"
+                label.text = LocalizationSystem.sharedInstance.localizedStringForKey(key: "Older Appointment", comment: "")
             }
         }
         returnedView.addSubview(label)

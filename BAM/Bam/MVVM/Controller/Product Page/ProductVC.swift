@@ -63,7 +63,8 @@ extension ProductVC: UICollectionViewDelegate,UICollectionViewDataSource,UIColle
         messageLabel.sizeToFit()
         self.collectionView.backgroundView = messageLabel
         if productModel?.data?.count == 0 {
-            messageLabel.text = "NO DATA FOUND"
+            messageLabel.text = LocalizationSystem.sharedInstance.localizedStringForKey(key: "NO DATA FOUND", comment: "")
+            
         } else {
             messageLabel.text = ""
         }

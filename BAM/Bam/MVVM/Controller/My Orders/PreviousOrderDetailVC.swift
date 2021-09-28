@@ -30,6 +30,7 @@ class PreviousOrderDetailVC: UIViewController {
     @IBOutlet weak var orderIdLbl: UILabel!
     @IBOutlet weak var placedOnLbl: UILabel!
     @IBOutlet weak var deliveryLbl: UILabel!
+    @IBOutlet weak var estimatedLbl: UILabel!
     
     @IBOutlet weak var itemNameLbl: UILabel!
     @IBOutlet weak var qtyLbl: UILabel!
@@ -81,6 +82,7 @@ class PreviousOrderDetailVC: UIViewController {
     @IBAction func btnTap_WriteReview(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "WriteReviewPopupVC") as! WriteReviewPopupVC
+        vc.subOrderId = subOrderId
         vc.modalPresentationStyle = .overCurrentContext
         vc.modalTransitionStyle = .crossDissolve
         self.present(vc, animated: true)
@@ -92,16 +94,21 @@ class PreviousOrderDetailVC: UIViewController {
 //MARk: - API Success
 extension PreviousOrderDetailVC: ApiResponseDelegate {
     func onSuccess(responseData: AFDataResponse<Any>, tag: String) {
-    let jsonDecoder = JSONDecoder()
-    LoadingIndicatorView.hide()
-    switch tag {
-        case TRACKORDER:
+        let jsonDecoder = JSONDecoder()
+        LoadingIndicatorView.hide()
+        switch tag {
+            case TRACKORDER:
             do{
                 print(responseData)
                 orderModel = try jsonDecoder.decode(TrackOrderModel.self, from: responseData.data!)
                 if orderModel?.status == true/*200*/{
                     // create session here
-                    placedOnLbl.text = "Placed On: \(orderModel?.data?.placed_on ?? "")"
+                    orderIdLbl.text = LocalizationSystem.sharedInstance.localizedStringForKey(key: "Order ID", comment: "") + ": \(subOrderId)"
+                    
+                    placedOnLbl.text = LocalizationSystem.sharedInstance.localizedStringForKey(key: "Placed On", comment: "") + ": \(orderModel?.data?.placed_on ?? "")"
+                   
+                    getLang(label: [orderIdLbl, placedOnLbl, descriptionLbl, itemNameLbl, priceLbl, estimatedLbl, addressDetailLbl], btn: nil)
+
                     itemNameLbl.text = orderModel?.data?.title
                     deliveryLbl.text = orderModel?.data?.delivery_time
                     userIV.sd_setImage(with: URL(string: orderModel?.data?.image ?? "")!, placeholderImage: nil, options: .refreshCached) { (image, error, cacheType, url) in
@@ -114,8 +121,10 @@ extension PreviousOrderDetailVC: ApiResponseDelegate {
                     deliveryLbl.text = "SAR \(orderModel?.data?.delivery_charge ?? 0)"
                     couponPriceLbl.text = "-SAR \(orderModel?.data?.coupon_applied ?? 0)"
                     totalLbl.text = "SAR \(orderModel?.data?.price ?? "0")"
-                    priceDetailLbl.text = "Price Details (\(orderModel?.data?.quantity ?? 0) Item)"
-
+                    priceDetailLbl.text = LocalizationSystem.sharedInstance.localizedStringForKey(key: "Price Details", comment: "") + " (\(orderModel?.data?.quantity ?? 0) \(LocalizationSystem.sharedInstance.localizedStringForKey(key: "Items", comment: "")))"
+                    let tagLbl = orderModel?.data?.address?.components(separatedBy: " ")
+                    addressTagLbl.text = tagLbl?[0]//orderModel?.data?.
+                    addressDetailLbl.text = orderModel?.data?.address
                     
                 } else if orderModel?.status == false {
                     LoadingIndicatorView.hide()

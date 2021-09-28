@@ -52,8 +52,10 @@ class ReviewVC: UIViewController {
         if userManager.getApiToken() != "" {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "WriteReviewPopupVC") as! WriteReviewPopupVC
+        vc.productId = "\(productId)"
         vc.modalPresentationStyle = .overCurrentContext
         vc.modalTransitionStyle = .crossDissolve
+        vc.delegate = self
         self.present(vc, animated: true)
         } else {
             navigateToLogin()
@@ -74,7 +76,7 @@ extension ReviewVC: UITableViewDelegate, UITableViewDataSource {
         messageLabel.sizeToFit()
         self.tableView.backgroundView = messageLabel;
         if productDetailModel?.review?.count == 0 {
-            messageLabel.text = "NO DATA FOUND"
+            messageLabel.text = LocalizationSystem.sharedInstance.localizedStringForKey(key: "NO DATA FOUND", comment: "")
         } else {
             messageLabel.text = ""
         }
@@ -129,6 +131,15 @@ extension ReviewVC: UITableViewDelegate, UITableViewDataSource {
             cell.ratingIV1.setTitleColor(UIColor.lightGray, for: .normal)
         }
         return cell
+    }
+    
+}
+
+
+//MARK: - CUSTOM DELEGATE
+extension ReviewVC: PassValueDelegate {
+    func passValue(str: String) {
+        apiHit()
     }
     
 }

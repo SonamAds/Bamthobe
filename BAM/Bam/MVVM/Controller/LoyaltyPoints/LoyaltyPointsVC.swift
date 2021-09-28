@@ -62,7 +62,7 @@ extension LoyaltyPointsVC: UITableViewDelegate, UITableViewDataSource {
         messageLabel.sizeToFit()
         self.tableView.backgroundView = messageLabel;
         if loyaltyModel?.data?.list?.count == 0 {
-            messageLabel.text = "NO DATA FOUND"
+            messageLabel.text = LocalizationSystem.sharedInstance.localizedStringForKey(key: "NO DATA FOUND", comment: "")
         } else {
             messageLabel.text = ""
         }

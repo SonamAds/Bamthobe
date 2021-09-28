@@ -65,8 +65,8 @@ let kPlacket  = "placket"
 let kAddDesignThobeCart = "thobe_cart"
 let kContactUs = "contact_us"
 
-let kAboutUs = "https://quizzical-turing-019ae3.netlify.app/#/about?web=true"
-let kTermsCondition = "https://quizzical-turing-019ae3.netlify.app/#/terms-and-condition?web=true"
-let kPrivacyPolicy = "https://quizzical-turing-019ae3.netlify.app/#/privacy-policy?web=true"
-let kFaq = "https://quizzical-turing-019ae3.netlify.app/#/faqs?web=true"
+let kAboutUs = "https://bamthobe.com/#/about-us?web=true" //"https://quizzical-turing-019ae3.netlify.app/#/about?web=true"
+let kTermsCondition = "https://bamthobe.com/#/terms-and-condition?web=true" //"https://quizzical-turing-019ae3.netlify.app/#/terms-and-condition?web=true"
+let kPrivacyPolicy = "https://bamthobe.com/#/?web=true"// "https://quizzical-turing-019ae3.netlify.app/#/privacy-policy?web=true"
+let kFaq = "https://bamthobe.com/#/faqs?web=true"// "https://quizzical-turing-019ae3.netlify.app/#/faqs?web=true"
 

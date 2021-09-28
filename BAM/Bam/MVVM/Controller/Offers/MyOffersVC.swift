@@ -62,7 +62,7 @@ extension MyOffersVC: UITableViewDelegate, UITableViewDataSource {
         messageLabel.sizeToFit()
         self.tableView.backgroundView = messageLabel;
         if offerModel?.data?.count == 0 {
-            messageLabel.text = "NO DATA FOUND"
+            messageLabel.text = LocalizationSystem.sharedInstance.localizedStringForKey(key: "NO DATA FOUND", comment: "")
         } else {
             messageLabel.text = ""
         }
@@ -72,9 +72,9 @@ extension MyOffersVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! NotificationTVCell
         let data = offerModel?.data?[indexPath.row]
-        cell.dateLbl.text = "Expiry: \(data?.expiry_date ?? "")"
+        cell.dateLbl.text = LocalizationSystem.sharedInstance.localizedStringForKey(key: "Expiry", comment: "") + ": \(data?.expiry_date ?? "")"
         cell.descriptionLbl.text = data?.description
-        cell.unreadBtn.setTitle("CODE: \(data?.code ?? "")", for: .normal)
+        cell.unreadBtn.setTitle(LocalizationSystem.sharedInstance.localizedStringForKey(key: "CODE", comment: "") + ": \(data?.code ?? "")", for: .normal)
 //        cell.titleLbl.text = data?.title
         let url = (data?.image ?? "")
         cell.usrIV.sd_setImage(with: URL(string: url)!, placeholderImage: nil, options: .refreshCached) { (image, error, cacheType, url) in

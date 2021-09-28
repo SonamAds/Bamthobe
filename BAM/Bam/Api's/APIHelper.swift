@@ -8,7 +8,7 @@
 import Foundation
 import Alamofire
 
-let base_url = "http://projects.adsandurl.com/bam_thobe/api/"//"http://bamthode.herokuapp.com/public/api/"//
+let base_url = "https://bamthobe.com/admin/api/"//"http://projects.adsandurl.com/bam_thobe/api/"//"http://bamthode.herokuapp.com/public/api/"//
 
 //"http://bamthode.herokuapp.com/public/api/"//
 protocol ApiResponseDelegate {
@@ -56,7 +56,7 @@ class ApiHelper:NSObject{
            print("params    \(params)")
         print(userManager.getApiToken())
         if Int(tag)! < 0{
-        AF.request(base_url+(newUrl ?? ""),method: .post,parameters:params).responseJSON { response in
+        AF.request(base_url+(newUrl ?? ""),method: .post, parameters:params).responseJSON { response in
               guard let delegate = self.responseDelegate else{
                 LoadingIndicatorView.hide()
                    return

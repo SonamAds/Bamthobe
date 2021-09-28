@@ -26,12 +26,13 @@ class CartVC: UIViewController {
     @IBOutlet weak var itemsLbl: UILabel!
     @IBOutlet weak var headingLbl: UILabel!
     @IBOutlet weak var btn_Checkout: UIButton!
+    @IBOutlet weak var btn_Continue: UIButton!
 
     
     //MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-//        itemsLbl.text = LocalizationSystem.sharedInstance.localizedStringForKey(key: "Items", comment: "")
+        btn_Continue.setTitle(LocalizationSystem.sharedInstance.localizedStringForKey(key: "Continue Shopping", comment: ""), for: .normal)
         apiHelper.responseDelegate = self
     }
     
@@ -108,12 +109,14 @@ extension CartVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "CartTVCell", for: indexPath) as! CartTVCell
+
         cell.giftDeleteBtn.tag = indexPath.row + 1
         cell.thodeDeleteBtn.tag = indexPath.row + 1
         cell.giftPriceLbl.tag = indexPath.section
         cell.thodeLbl.tag = indexPath.section
         cell.deleteDelegate = self
         if indexPath.section == 0 {
+//        customShadowView(vew: cell.View_Thobe, shadowSize: 0.0, shadowOpacity: 0.0)
             let data = cartModel?.data?.normal?[indexPath.row]
             cell.thodeLbl.text = data?.title
             cell.thodeDescriptionLbl.text = data?.description
@@ -129,6 +132,8 @@ extension CartVC: UITableViewDelegate, UITableViewDataSource {
             cell.thodeView.isHidden = false
             cell.lessDetailHeightConstraint.constant = 0
         } else if indexPath.section == 2 {
+//        customShadowView(vew: cell.Gift, shadowSize: 0.0, shadowOpacity: 0.0)
+
             let data = cartModel?.data?.gift_cart?[indexPath.row]
 //            cell.giftLbl.text = data?.title
 //            cell.giftQtyLbl.text = "1"//data?.
@@ -143,6 +148,8 @@ extension CartVC: UITableViewDelegate, UITableViewDataSource {
             cell.priceView.isHidden = true
             cell.lessDetailHeightConstraint.constant = 0
         } else {
+            //        customShadowView(vew: cell.View_Cell, shadowSize: 0.0, shadowOpacity: 0.0)
+
             let data = cartModel?.data?.customize?[indexPath.row]
             let url = (data?.image ?? "")
             cell.thodeIV.sd_setImage(with: URL(string: url)!, placeholderImage: nil, options: .refreshCached) { (image, error, cacheType, url) in
@@ -283,12 +290,7 @@ extension CartVC: ApiResponseDelegate {
                     let response = try jsonDecoder.decode(CartModel.self, from: responseData.data!)
                     if response.status == true/*200*/{
                         cartModel = response
-//                        let data = cartModel?.data
-//                        let cnt = 0
-//                        for i in 0..<(response.data!.count) {
-//                            
-//                        }
-                        itemsLbl.text = "Items (\(cartModel?.data?.total_quantity ?? 0))"
+                        itemsLbl.text = LocalizationSystem.sharedInstance.localizedStringForKey(key: "Items", comment: "") + "(\(cartModel?.data?.total_quantity ?? 0))"
 
                         tableView.reloadData()
                     } else if response.status == false {

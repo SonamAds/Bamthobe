@@ -8,6 +8,12 @@
 import Foundation
 import UIKit
  
+var attrs = [
+    NSAttributedString.Key.font : UIFont(name: "HelveticaNeue-Medium", size: 15.0),/*UIFont.systemFont(ofSize: 17.0)*/
+    NSAttributedString.Key.foregroundColor : UIColor.darkGray,
+    NSAttributedString.Key.underlineStyle : 1] as [NSAttributedString.Key : Any]
+var attributedString = NSMutableAttributedString(string:"")
+
 
 class UserManager: NSObject{
     static let userManager = UserManager()

@@ -35,12 +35,13 @@ struct SliderModelData : Codable {
     let sub_title : String?
     let short_title : String?
     let image : String?
+    let mobile_image : String?
     let created_at : String?
     let updated_at : String?
 
     enum CodingKeys: String, CodingKey {
         case id
-        case main_title, sub_title, short_title, image, created_at, updated_at
+        case main_title, sub_title, short_title, image, created_at, updated_at, mobile_image
     }
 
     init(from decoder: Decoder) throws {
@@ -52,6 +53,7 @@ struct SliderModelData : Codable {
         image = try values.decodeIfPresent(String.self, forKey: .image)
         created_at = try values.decodeIfPresent(String.self, forKey: .created_at)
         updated_at = try values.decodeIfPresent(String.self, forKey: .updated_at)
+        mobile_image = try values.decodeIfPresent(String.self, forKey: .mobile_image)
     }
 
 }

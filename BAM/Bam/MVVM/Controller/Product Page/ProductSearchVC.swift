@@ -43,7 +43,7 @@ class ProductSearchVC: UIViewController {
             searchBrDiscuss.layer.borderColor = UIColor.white.cgColor
 //            searchBrDiscuss.layer.borderWidth = 1
         }
-        UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self]).title = "Back"
+        UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self]).title = LocalizationSystem.sharedInstance.localizedStringForKey(key: "Back", comment: "")
 
         noDataLbl.isHidden = false
         collectionView.isHidden = true
@@ -80,7 +80,7 @@ extension ProductSearchVC: UICollectionViewDelegate,UICollectionViewDataSource,U
         messageLabel.sizeToFit()
         self.collectionView.backgroundView = messageLabel
         if productModel?.data?.count == 0 {
-            messageLabel.text = "NO DATA FOUND"
+            messageLabel.text = LocalizationSystem.sharedInstance.localizedStringForKey(key: "NO DATA FOUND", comment: "")
         } else {
             messageLabel.text = ""
         }

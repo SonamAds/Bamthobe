@@ -36,33 +36,22 @@ class ChooseLanguageVC: UIViewController {
     
     //MARK: - IBActions
     @IBAction func btnTap_English(_ sender: Any) {
+        Bundle.setLanguage("en")
         LocalizationSystem.sharedInstance.setLanguage(languageCode: "en")
-        UIView.appearance().semanticContentAttribute = .forceLeftToRight
 
-//        if LocalizationSystem.sharedInstance.getLanguage() == "ar" {
-//        } else {
-//
-//        }
+//        UserDefaults.standard.set("en", forKey: "lang")
+//        UserDefaults.standard.synchronize()
+        UIView.appearance().semanticContentAttribute = .forceLeftToRight
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "Tutor2VC") as! Tutor2VC
         vc.modalPresentationStyle = .fullScreen
         self.present(vc, animated: true, completion: nil)
     }
 
     @IBAction func btnTap_Arabic(_ sender: Any) {
-//        SnackBar().showSnackBar(view: self.view, text: "Coming Soon", interval: 4)
-//        if LocalizationSystem.sharedInstance.getLanguage() == "ar" {
-//                    LocalizationSystem.sharedInstance.setLanguage(languageCode: "en")
-//                    UIView.appearance().semanticContentAttribute = .forceLeftToRight
-//                } else {
-//                    LocalizationSystem.sharedInstance.setLanguage(languageCode: "ar")
-//                    UIView.appearance().semanticContentAttribute = .forceRightToLeft
-//                }
-                
-//                let vc = self.storyboard?.instantiateViewController(withIdentifier: "vc") as! ViewController
-//                let appDlg = UIApplication.shared.delegate as? AppDelegate
-//                appDlg?.window?.rootViewController = vc
-        
+        Bundle.setLanguage("ar")
         LocalizationSystem.sharedInstance.setLanguage(languageCode: "ar")
+//        UserDefaults.standard.set("ar", forKey: "lang")
+//        UserDefaults.standard.synchronize()
         UIView.appearance().semanticContentAttribute = .forceRightToLeft
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "Tutor2VC") as! Tutor2VC
         vc.modalPresentationStyle = .fullScreen

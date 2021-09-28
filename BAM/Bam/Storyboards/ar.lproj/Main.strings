@@ -1,21 +1,15 @@
 
-/* Class = "UILabel"; text = "Thode Details"; ObjectID = "09k-sz-DVJ"; */
-"09k-sz-DVJ.text" = "تفاصيل الثوب";
-
 /* Class = "UILabel"; text = "Description of item that describes it shdhf jhdjfhjf"; ObjectID = "0Au-6C-Ohi"; */
-"0Au-6C-Ohi.text" = "وصف العنصر الذي يصف";
+"0Au-6C-Ohi.text" = "Description of item that describes it shdhf jhdjfhjf";
 
 /* Class = "UILabel"; text = "My Cart"; ObjectID = "0Cp-AP-rV8"; */
 "0Cp-AP-rV8.text" = "عربة التسوق";
 
 /* Class = "UILabel"; text = "Link"; ObjectID = "0Zr-zB-AV4"; */
-"0Zr-zB-AV4.text" = "Link";
+"0Zr-zB-AV4.text" = "وصلة";
 
 /* Class = "UITextField"; placeholder = "Mobile Number/Email ID"; ObjectID = "0bN-Ag-5PK"; */
-"0bN-Ag-5PK.placeholder" = "رقم الهاتف المحمول / معرف البريد الإلكتروني";
-
-/* Class = "UILabel"; text = "SAR 990"; ObjectID = "0dm-wX-HHA"; */
-"0dm-wX-HHA.text" = "SAR 990";
+"0bN-Ag-5PK.placeholder" = "رقم الهاتف المحمول";
 
 /* Class = "UILabel"; text = "Mobile Number"; ObjectID = "0mN-zi-Ngv"; */
 "0mN-zi-Ngv.text" = "رقم الهاتف المحمول";
@@ -32,14 +26,8 @@
 /* Class = "UITextField"; placeholder = "Address(House No., Building, Street, Area)"; ObjectID = "1K4-XF-kPv"; */
 "1K4-XF-kPv.placeholder" = "العنوان (رقم المنزل ، المبنى ، الشارع ، المنطقة)";
 
-/* Class = "UILabel"; text = "Visiting Charges"; ObjectID = "1Sn-ck-9bH"; */
-"1Sn-ck-9bH.text" = "رسوم الزيارة";
-
-/* Class = "UILabel"; text = "SAR 50"; ObjectID = "1g7-Pb-bfj"; */
-"1g7-Pb-bfj.text" = "SAR 50";
-
-/* Class = "UILabel"; text = "Customization Total Charges"; ObjectID = "1ju-MC-bF1"; */
-"1ju-MC-bF1.text" = "إجمالي رسوم التخصيص";
+/* Class = "UILabel"; text = "0.00"; ObjectID = "1g7-Pb-bfj"; */
+"1g7-Pb-bfj.text" = "0.00";
 
 /* Class = "UILabel"; text = "15 Kg"; ObjectID = "1m8-xe-ann"; */
 "1m8-xe-ann.text" = "15 Kg";
@@ -81,7 +69,7 @@
 "3nx-7s-FQS.text" = "اسم";
 
 /* Class = "UILabel"; text = "Coupon Applied(save20)"; ObjectID = "3vC-bN-MNb"; */
-"3vC-bN-MNb.text" = "الكوبون المطبق (save20)";
+"3vC-bN-MNb.text" = "الكوبون المطبق";
 
 /* Class = "UILabel"; text = "Gift Card Amount"; ObjectID = "41D-j9-pIU"; */
 "41D-j9-pIU.text" = "مبلغ بطاقة الهدايا";
@@ -101,17 +89,14 @@
 /* Class = "UILabel"; text = "Smiley's store  marked your order #1982984 as shipped Smiley's store  marked your order #1982984 as shipped Smiley's store  marked your order #1982984 as shipped Smiley's store  marked your order #1982984 as shipped"; ObjectID = "4mq-hj-MHJ"; */
 "4mq-hj-MHJ.text" = "Smiley's store  marked your order #1982984 as shipped Smiley's store  marked your order #1982984 as shipped Smiley's store  marked your order #1982984 as shipped Smiley's store  marked your order #1982984 as shipped";
 
-/* Class = "UILabel"; text = "Order Delivered"; ObjectID = "4mr-0V-NyU"; */
-"4mr-0V-NyU.text" = "أجل تسليم";
-
 /* Class = "UITextView"; text = "Type your message"; ObjectID = "4od-Kg-w4O"; */
 "4od-Kg-w4O.text" = "اكتب رسالتك";
 
 /* Class = "UILabel"; text = "Details"; ObjectID = "4ox-Bt-Dm0"; */
 "4ox-Bt-Dm0.text" = "تفاصيل";
 
-/* Class = "UILabel"; text = "SAR 150"; ObjectID = "4z9-gj-X1w"; */
-"4z9-gj-X1w.text" = "SAR 0.00";
+/* Class = "UILabel"; text = " SAR 0.00"; ObjectID = "4z9-gj-X1w"; */
+"4z9-gj-X1w.text" = " SAR 0.00";
 
 /* Class = "UIButton"; normalTitle = "Design Your Own"; ObjectID = "4zC-Vn-mvE"; */
 "4zC-Vn-mvE.normalTitle" = "صمم بنفسك";
@@ -121,6 +106,9 @@
 
 /* Class = "UILabel"; text = "My Thobe"; ObjectID = "53b-tR-vsT"; */
 "53b-tR-vsT.text" = "ثوبي";
+
+/* Class = "UIButton"; normalTitle = "Close"; ObjectID = "5A2-Gl-YiP"; */
+"5A2-Gl-YiP.normalTitle" = "يغلق";
 
 /* Class = "UILabel"; text = "3"; ObjectID = "5CN-j0-Gse"; */
 "5CN-j0-Gse.text" = "3";
@@ -133,12 +121,6 @@
 
 /* Class = "UIButton"; normalTitle = "."; ObjectID = "5XO-S7-IkJ"; */
 "5XO-S7-IkJ.normalTitle" = ".";
-
-/* Class = "UILabel"; text = "Attars"; ObjectID = "6X5-47-4gC"; */
-"6X5-47-4gC.text" = "Attars";
-
-/* Class = "UILabel"; text = "Sub Total"; ObjectID = "6ii-iF-zVS"; */
-"6ii-iF-zVS.text" = "المجموع الفرعي";
 
 /* Class = "UIViewController"; title = "DiscussPopup_VC"; ObjectID = "6we-Pf-7iB"; */
 "6we-Pf-7iB.title" = "DiscussPopup_VC";
@@ -163,12 +145,6 @@
 
 /* Class = "UILabel"; text = "Lorem Ipsum is simply Lorem Ipsum is simply  Lorem Ipsum is simply rtfg ghg Lorem Ipsum is simply  sdsd sfsf dfdf Lorem Ipsum is simply "; ObjectID = "7gm-g2-ZOA"; */
 "7gm-g2-ZOA.text" = "Lorem Ipsum is simply Lorem Ipsum is simply  Lorem Ipsum is simply rtfg ghg Lorem Ipsum is simply  sdsd sfsf dfdf Lorem Ipsum is simply ";
-
-/* Class = "UILabel"; text = "Order Ready"; ObjectID = "7il-bi-0pz"; */
-"7il-bi-0pz.text" = "Order Ready";
-
-/* Class = "UILabel"; text = "Order in Process"; ObjectID = "7jV-dW-QMm"; */
-"7jV-dW-QMm.text" = "Order in Process";
 
 /* Class = "UILabel"; text = "OUT OF STOCK"; ObjectID = "7tK-Id-8HG"; */
 "7tK-Id-8HG.text" = "إنتهى من المخزن";
@@ -203,6 +179,9 @@
 /* Class = "UITabBarItem"; title = "Orders"; ObjectID = "8cM-9n-pzM"; */
 "8cM-9n-pzM.title" = "ترتيب";
 
+/* Class = "UILabel"; text = "Placket"; ObjectID = "8w6-qH-VHV"; */
+"8w6-qH-VHV.text" = "Placket";
+
 /* Class = "UILabel"; text = "Smiley's store  marked your order #1982984 as shipped Smiley's store  marked your order"; ObjectID = "9Dh-UT-OeO"; */
 "9Dh-UT-OeO.text" = "Smiley's store  marked your order #1982984 as shipped Smiley's store  marked your order";
 
@@ -210,13 +189,16 @@
 "9In-sE-nei.text" = "Cufflinks";
 
 /* Class = "UILabel"; text = "Order ID: PUBG12345"; ObjectID = "9Is-69-uk9"; */
-"9Is-69-uk9.text" = "معرف الطلب: PUBG12345";
+"9Is-69-uk9.text" = "رقم التعريف الخاص بالطلب:";
 
 /* Class = "UILabel"; text = "Order ID: PUBG12345"; ObjectID = "9Q5-xr-inU"; */
-"9Q5-xr-inU.text" = "معرف الطلب: PUBG12345";
+"9Q5-xr-inU.text" = "رقم التعريف الخاص بالطلب:";
 
 /* Class = "UILabel"; text = "100"; ObjectID = "9XO-jH-ctp"; */
 "9XO-jH-ctp.text" = "100";
+
+/* Class = "UILabel"; text = "Side Pocket"; ObjectID = "9ZS-gL-BKk"; */
+"9ZS-gL-BKk.text" = "جيب جانبي";
 
 /* Class = "UILabel"; text = "Message from the sender"; ObjectID = "9ha-pY-XxD"; */
 "9ha-pY-XxD.text" = "رسالة من المرسل";
@@ -227,8 +209,8 @@
 /* Class = "UIButton"; normalTitle = "Request For Invoice"; ObjectID = "9nq-Sa-4f0"; */
 "9nq-Sa-4f0.normalTitle" = "طلب فاتورة";
 
-/* Class = "UILabel"; text = "SAR 100"; ObjectID = "9xv-hw-NFX"; */
-"9xv-hw-NFX.text" = "SAR 100";
+/* Class = "UILabel"; text = "0.00"; ObjectID = "9xv-hw-NFX"; */
+"9xv-hw-NFX.text" = "0.00";
 
 /* Class = "UIButton"; normalTitle = "Checkout"; ObjectID = "A19-ZX-Cyj"; */
 "A19-ZX-Cyj.normalTitle" = "الدفع";
@@ -242,11 +224,8 @@
 /* Class = "UIButton"; normalTitle = "Continue"; ObjectID = "AJk-7r-0aU"; */
 "AJk-7r-0aU.normalTitle" = "يكمل";
 
-/* Class = "UILabel"; text = "SAR 1000"; ObjectID = "AMA-mY-cR7"; */
-"AMA-mY-cR7.text" = "SAR 1000";
-
 /* Class = "UILabel"; text = "Coupon Applied (Save20)"; ObjectID = "Abx-YV-cfa"; */
-"Abx-YV-cfa.text" = "الكوبون المطبق (وفر 20)";
+"Abx-YV-cfa.text" = "الكوبون المطبق";
 
 /* Class = "UILabel"; text = "Select Time"; ObjectID = "AdF-Yb-AVi"; */
 "AdF-Yb-AVi.text" = "حدد الوقت";
@@ -260,7 +239,7 @@
 /* Class = "UILabel"; text = "5442"; ObjectID = "Avo-9O-O4P"; */
 "Avo-9O-O4P.text" = "5442";
 
-/* Class = "UILabel"; text = "Loyalty Points"; ObjectID = "AxP-YX-ioA"; */
+/* Class = "UILabel"; text = "Loyality Points"; ObjectID = "AxP-YX-ioA"; */
 "AxP-YX-ioA.text" = "نقاط الولاء";
 
 /* Class = "UILabel"; text = "Gift Details"; ObjectID = "Axb-iI-7sG"; */
@@ -275,20 +254,20 @@
 /* Class = "UILabel"; text = "OUT OF STOCK"; ObjectID = "BBU-cb-FQU"; */
 "BBU-cb-FQU.text" = "إنتهى من المخزن";
 
-/* Class = "UILabel"; text = "SAR 780"; ObjectID = "BBp-3s-Uqe"; */
-"BBp-3s-Uqe.text" = "SAR 780";
-
 /* Class = "UILabel"; text = "SAR 430"; ObjectID = "BDu-YK-hhB"; */
 "BDu-YK-hhB.text" = "SAR 430";
 
-/* Class = "UILabel"; text = "SAR 0"; ObjectID = "BL0-E5-wHK"; */
-"BL0-E5-wHK.text" = "SAR 0.00";
+/* Class = "UILabel"; text = " SAR 0.00"; ObjectID = "BL0-E5-wHK"; */
+"BL0-E5-wHK.text" = " SAR 0.00";
 
 /* Class = "UILabel"; text = "Size"; ObjectID = "BWx-qr-Zmy"; */
 "BWx-qr-Zmy.text" = "بحجم";
 
 /* Class = "UILabel"; text = "To"; ObjectID = "BcL-AU-x4w"; */
 "BcL-AU-x4w.text" = "ل";
+
+/* Class = "UIButton"; normalTitle = "Continue"; ObjectID = "BkU-XS-kxZ"; */
+"BkU-XS-kxZ.normalTitle" = "يكمل";
 
 /* Class = "UILabel"; text = "Smiley's store  marked your order #1982984 as shipped Smiley's store  marked your order #1982984 as shipped Smiley's store  marked your order #1982984 as shipped Smiley's store  marked your order #1982984 as shipped"; ObjectID = "BlN-jh-DDQ"; */
 "BlN-jh-DDQ.text" = "Smiley's store  marked your order #1982984 as shipped Smiley's store  marked your order #1982984 as shipped Smiley's store  marked your order #1982984 as shipped Smiley's store  marked your order #1982984 as shipped";
@@ -299,8 +278,8 @@
 /* Class = "UILabel"; text = "Name"; ObjectID = "C6W-ta-UWZ"; */
 "C6W-ta-UWZ.text" = "اسم";
 
-/* Class = "UILabel"; text = "SAR 1000"; ObjectID = "C9k-1v-48C"; */
-"C9k-1v-48C.text" = "SAR 1000";
+/* Class = "UILabel"; text = " SAR 0.00"; ObjectID = "C9k-1v-48C"; */
+"C9k-1v-48C.text" = " SAR 0.00";
 
 /* Class = "UILabel"; text = "Qty: "; ObjectID = "CIr-xY-JHF"; */
 "CIr-xY-JHF.text" = "الكمية:";
@@ -317,7 +296,7 @@
 /* Class = "UITextField"; placeholder = "eg: James Bond"; ObjectID = "Ch2-OD-hCx"; */
 "Ch2-OD-hCx.placeholder" = "على سبيل المثال: جيمس بوند";
 
-/* Class = "UIButton"; normalTitle = "Other"; ObjectID = "Cmj-dW-cy2"; */
+/* Class = "UIButton"; normalTitle = "Work"; ObjectID = "Cmj-dW-cy2"; */
 "Cmj-dW-cy2.normalTitle" = "عمل";
 
 /* Class = "UILabel"; text = "Amul"; ObjectID = "Cor-Uo-5Zr"; */
@@ -351,22 +330,16 @@
 "DyH-8q-abj.text" = "SAR 430";
 
 /* Class = "UILabel"; text = "Phone Number"; ObjectID = "EIf-nK-H6K"; */
-"EIf-nK-H6K.text" = "رقم الهاتف";
+"EIf-nK-H6K.text" = "رقم الهاتف المحمول";
 
 /* Class = "UIButton"; normalTitle = "+ Add Address"; ObjectID = "ENF-pj-zAL"; */
 "ENF-pj-zAL.normalTitle" = "+ أضف العنوان";
-
-/* Class = "UILabel"; text = "Description of item that describes it shdhf jhdjfhjf"; ObjectID = "EOV-js-YD7"; */
-"EOV-js-YD7.text" = "Description of item that describes it shdhf jhdjfhjf";
 
 /* Class = "UITextField"; placeholder = "eg. Jaison"; ObjectID = "EUC-hq-1lG"; */
 "EUC-hq-1lG.placeholder" = "eg. Jaison";
 
 /* Class = "UIButton"; normalTitle = "Go to Cart"; ObjectID = "EXC-bN-xZi"; */
 "EXC-bN-xZi.normalTitle" = "اذهب إلى عربة التسوق";
-
-/* Class = "UILabel"; text = "Attars"; ObjectID = "EkH-ye-zE3"; */
-"EkH-ye-zE3.text" = "Attars";
 
 /* Class = "UILabel"; text = "$00"; ObjectID = "ElR-TX-93T"; */
 "ElR-TX-93T.text" = "$00";
@@ -380,8 +353,8 @@
 /* Class = "UIViewController"; title = "DiscussPopup_VC"; ObjectID = "F33-mC-KqY"; */
 "F33-mC-KqY.title" = "DiscussPopup_VC";
 
-/* Class = "UILabel"; text = "SAR 100"; ObjectID = "F5m-Dk-vXD"; */
-"F5m-Dk-vXD.text" = "SAR 100";
+/* Class = "UILabel"; text = "SAR 0.00"; ObjectID = "F5m-Dk-vXD"; */
+"F5m-Dk-vXD.text" = "SAR 0.00";
 
 /* Class = "UILabel"; text = "Side pocket options"; ObjectID = "F5w-cx-IjL"; */
 "F5w-cx-IjL.text" = "خيارات الجيب الجانبي";
@@ -395,8 +368,8 @@
 /* Class = "UILabel"; text = "Smiley's store"; ObjectID = "FFU-Wf-Eih"; */
 "FFU-Wf-Eih.text" = "Smiley's store";
 
-/* Class = "UILabel"; text = "SAR 30"; ObjectID = "FLo-TX-hvj"; */
-"FLo-TX-hvj.text" = "SAR 0.00";
+/* Class = "UILabel"; text = " SAR 0.00"; ObjectID = "FLo-TX-hvj"; */
+"FLo-TX-hvj.text" = " SAR 0.00";
 
 /* Class = "UILabel"; text = "Thank you!"; ObjectID = "FNx-UA-bbc"; */
 "FNx-UA-bbc.text" = "شكرا لك!";
@@ -434,8 +407,8 @@
 /* Class = "UILabel"; text = "SAR 1000"; ObjectID = "GUU-5a-zSf"; */
 "GUU-5a-zSf.text" = "SAR 1000";
 
-/* Class = "UILabel"; text = "SAR 300"; ObjectID = "GXg-1v-wAw"; */
-"GXg-1v-wAw.text" = "SAR 0.00";
+/* Class = "UILabel"; text = " SAR 0.00"; ObjectID = "GXg-1v-wAw"; */
+"GXg-1v-wAw.text" = " SAR 0.00";
 
 /* Class = "UITextField"; placeholder = "eg. Jaison"; ObjectID = "Gax-Bp-U0h"; */
 "Gax-Bp-U0h.placeholder" = "eg. Jaison";
@@ -455,9 +428,6 @@
 /* Class = "UITextField"; placeholder = "eg: James Bond"; ObjectID = "H0Y-St-gGw"; */
 "H0Y-St-gGw.placeholder" = "على سبيل المثال: جيمس بوند";
 
-/* Class = "UILabel"; text = "Qty: "; ObjectID = "H7D-XY-7dR"; */
-"H7D-XY-7dR.text" = "الكمية:";
-
 /* Class = "UILabel"; text = "Black Floral Print dress with a Belt"; ObjectID = "HTk-UY-tAt"; */
 "HTk-UY-tAt.text" = "Black Floral Print dress with a Belt";
 
@@ -473,23 +443,23 @@
 /* Class = "UILabel"; text = "Milky White"; ObjectID = "Hgv-UM-HDR"; */
 "Hgv-UM-HDR.text" = "Milky White";
 
-/* Class = "UILabel"; text = "01"; ObjectID = "His-n6-kNd"; */
-"His-n6-kNd.text" = "01";
-
-/* Class = "UILabel"; text = "SAR 700"; ObjectID = "HrP-S3-7AU"; */
-"HrP-S3-7AU.text" = "SAR 700";
-
-/* Class = "UILabel"; text = "SAR 500"; ObjectID = "I4u-tw-Oew"; */
-"I4u-tw-Oew.text" = "SAR 500";
+/* Class = "UILabel"; text = " SAR 0.00"; ObjectID = "HrP-S3-7AU"; */
+"HrP-S3-7AU.text" = " SAR 0.00";
 
 /* Class = "UILabel"; text = "$00"; ObjectID = "I7O-Ny-oeT"; */
 "I7O-Ny-oeT.text" = "$00";
 
-/* Class = "UILabel"; text = "SAR 1000"; ObjectID = "ICt-a5-bmJ"; */
-"ICt-a5-bmJ.text" = "SAR 0.00";
+/* Class = "UILabel"; text = " SAR 0.00"; ObjectID = "ICt-a5-bmJ"; */
+"ICt-a5-bmJ.text" = " SAR 0.00";
 
 /* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "ISC-9p-1Qj"; */
 "ISC-9p-1Qj.normalTitle" = "يلغي";
+
+/* Class = "UIButton"; normalTitle = "Collar"; ObjectID = "IXQ-gK-GAG"; */
+"IXQ-gK-GAG.normalTitle" = "طوق";
+
+/* Class = "UILabel"; text = "SAR 0.00"; ObjectID = "IZ3-8N-mV2"; */
+"IZ3-8N-mV2.text" = "SAR 0.00";
 
 /* Class = "UILabel"; text = "Order ID : "; ObjectID = "IdK-wj-EtI"; */
 "IdK-wj-EtI.text" = "رقم التعريف الخاص بالطلب:";
@@ -518,8 +488,8 @@
 /* Class = "UILabel"; text = "Home"; ObjectID = "JrY-uA-dsq"; */
 "JrY-uA-dsq.text" = "منزل، بيت";
 
-/* Class = "UILabel"; text = "SAR 500"; ObjectID = "KD0-iu-vCH"; */
-"KD0-iu-vCH.text" = "SAR 500";
+/* Class = "UILabel"; text = "SAR 0.00"; ObjectID = "KD0-iu-vCH"; */
+"KD0-iu-vCH.text" = "SAR 0.00";
 
 /* Class = "UILabel"; text = "Split"; ObjectID = "KD9-A3-fLZ"; */
 "KD9-A3-fLZ.text" = "Split";
@@ -541,6 +511,9 @@
 
 /* Class = "UIViewController"; title = "DiscussPopup_VC"; ObjectID = "KmD-Ac-vfa"; */
 "KmD-Ac-vfa.title" = "DiscussPopup_VC";
+
+/* Class = "UILabel"; text = "SAR 0.00"; ObjectID = "Kvf-9J-MXh"; */
+"Kvf-9J-MXh.text" = "SAR 0.00";
 
 /* Class = "UILabel"; text = "POINTS EARNED"; ObjectID = "L3d-fb-KWN"; */
 "L3d-fb-KWN.text" = "النقاط التي أحرزتها";
@@ -567,7 +540,7 @@
 "M5Y-Tu-fde.text" = "منزل، بيت";
 
 /* Class = "UILabel"; text = "Remaining Amount(75% after delivery)"; ObjectID = "M63-No-8ca"; */
-"M63-No-8ca.text" = "المبلغ المتبقي (75٪ بعد التسليم)";
+"M63-No-8ca.text" = "المبلغ المتبقي";
 
 /* Class = "UIButton"; normalTitle = "PUBG01234"; ObjectID = "M8h-ao-bhK"; */
 "M8h-ao-bhK.normalTitle" = "PUBG01234";
@@ -575,17 +548,17 @@
 /* Class = "UILabel"; text = "Select Address"; ObjectID = "MFV-Zx-X4J"; */
 "MFV-Zx-X4J.text" = "حدد العنوان";
 
-/* Class = "UILabel"; text = "Home"; ObjectID = "MIq-wk-LLw"; */
-"MIq-wk-LLw.text" = "";
-
 /* Class = "UILabel"; text = "SAR 1000"; ObjectID = "MWa-Af-vyJ"; */
 "MWa-Af-vyJ.text" = "SAR 1000";
 
-/* Class = "UILabel"; text = "Customization Total Charges"; ObjectID = "MX0-js-0ny"; */
-"MX0-js-0ny.text" = "إجمالي رسوم التخصيص";
+/* Class = "UIButton"; normalTitle = "English"; ObjectID = "MXM-XJ-mh3"; */
+"MXM-XJ-mh3.normalTitle" = "English";
 
 /* Class = "UILabel"; text = "Accessories Total"; ObjectID = "Mb7-Gi-bU8"; */
 "Mb7-Gi-bU8.text" = "ملحقات المجموع";
+
+/* Class = "UILabel"; text = "SAR 0.00"; ObjectID = "MfZ-FX-Oe0"; */
+"MfZ-FX-Oe0.text" = "SAR 0.00";
 
 /* Class = "UILabel"; text = "Home"; ObjectID = "MiS-PK-cUe"; */
 "MiS-PK-cUe.text" = "منزل، بيت";
@@ -599,14 +572,11 @@
 /* Class = "UILabel"; text = "Placed On: 12-Jan-2021"; ObjectID = "N9b-KR-gOZ"; */
 "N9b-KR-gOZ.text" = "موضوع على:";
 
-/* Class = "UILabel"; text = "SAR 550"; ObjectID = "NMw-ce-VQ0"; */
-"NMw-ce-VQ0.text" = "SAR 550";
+/* Class = "UILabel"; text = " SAR 0.00"; ObjectID = "NMw-ce-VQ0"; */
+"NMw-ce-VQ0.text" = " SAR 0.00";
 
 /* Class = "UIButton"; normalTitle = "Confirm Appointment"; ObjectID = "NQC-PA-yOz"; */
 "NQC-PA-yOz.normalTitle" = "تأكيد الموعد";
-
-/* Class = "UILabel"; text = "Cufflinks"; ObjectID = "NVU-G8-VrK"; */
-"NVU-G8-VrK.text" = "Cufflinks";
 
 /* Class = "UILabel"; text = "Smiley's store  marked your order #1982984 as shipped"; ObjectID = "Nb1-r0-JWd"; */
 "Nb1-r0-JWd.text" = "Smiley's store  marked your order #1982984 as shipped";
@@ -615,7 +585,7 @@
 "NgP-pY-0kR.text" = "Title 1";
 
 /* Class = "UILabel"; text = "Material 1"; ObjectID = "O1D-AS-lnw"; */
-"O1D-AS-lnw.text" = "المادة 1";
+"O1D-AS-lnw.text" = "Material 1";
 
 /* Class = "UIButton"; normalTitle = "Next"; ObjectID = "O3W-km-AyR"; */
 "O3W-km-AyR.normalTitle" = "التالي";
@@ -626,8 +596,8 @@
 /* Class = "UIButton"; normalTitle = "Less Details"; ObjectID = "OEb-RX-L9g"; */
 "OEb-RX-L9g.normalTitle" = "تفاصيل أقل";
 
-/* Class = "UITextField"; placeholder = "Paste a link"; ObjectID = "OF3-tN-kyO"; */
-"OF3-tN-kyO.placeholder" = "Share";
+/* Class = "UITextField"; placeholder = "Share"; ObjectID = "OF3-tN-kyO"; */
+"OF3-tN-kyO.placeholder" = "يشارك";
 
 /* Class = "UIButton"; normalTitle = "Maroon"; ObjectID = "OIu-Nh-L57"; */
 "OIu-Nh-L57.normalTitle" = "Maroon";
@@ -644,9 +614,6 @@
 /* Class = "UILabel"; text = "Do you want to continue with the measurements you selected."; ObjectID = "ObN-Lb-6cE"; */
 "ObN-Lb-6cE.text" = "هل تريد الاستمرار في القياسات التي حددتها.";
 
-/* Class = "UILabel"; text = "Cufflinks"; ObjectID = "Odm-jV-fdm"; */
-"Odm-jV-fdm.text" = "Cufflinks";
-
 /* Class = "UILabel"; text = "Lorem ipsum"; ObjectID = "Okn-mi-7hu"; */
 "Okn-mi-7hu.text" = "Lorem ipsum";
 
@@ -660,25 +627,22 @@
 "PNB-3W-VeV.normalTitle" = "عرض حالة الطلب";
 
 /* Class = "UILabel"; text = "Phone Number"; ObjectID = "PSA-ik-b0C"; */
-"PSA-ik-b0C.text" = "رقم الهاتف";
+"PSA-ik-b0C.text" = "رقم الهاتف المحمول";
 
-/* Class = "UILabel"; text = "SAR 300"; ObjectID = "PSX-Bc-FtF"; */
-"PSX-Bc-FtF.text" = "SAR 300";
+/* Class = "UILabel"; text = " SAR 0.00"; ObjectID = "PSX-Bc-FtF"; */
+"PSX-Bc-FtF.text" = " SAR 0.00";
 
 /* Class = "UITextField"; placeholder = "Mobile Number/Email ID"; ObjectID = "Pcn-8w-rNG"; */
-"Pcn-8w-rNG.placeholder" = "رقم الهاتف المحمول / معرف البريد الإلكتروني";
+"Pcn-8w-rNG.placeholder" = "رقم الهاتف المحمول";
 
 /* Class = "UITextView"; text = "Type your card message here...."; ObjectID = "PjE-5a-gJe"; */
-"PjE-5a-gJe.text" = "اكتب رسالة بطاقتك هنا ....";
+"PjE-5a-gJe.text" = "اكتب رسالة بطاقتك هنا ...";
 
 /* Class = "UILabel"; text = "Write a Review"; ObjectID = "Prz-Ic-qNW"; */
 "Prz-Ic-qNW.text" = "أكتب مراجعة";
 
 /* Class = "UILabel"; text = "Cuffs"; ObjectID = "Pyd-FE-hhM"; */
 "Pyd-FE-hhM.text" = "Cuffs";
-
-/* Class = "UILabel"; text = "SAR 100"; ObjectID = "Pz6-sR-L4f"; */
-"Pz6-sR-L4f.text" = "SAR 100";
 
 /* Class = "UILabel"; text = "Qty: "; ObjectID = "Q0R-qb-3WZ"; */
 "Q0R-qb-3WZ.text" = "الكمية:";
@@ -692,6 +656,9 @@
 /* Class = "UILabel"; text = "SAR 430"; ObjectID = "QF2-Fe-Jxj"; */
 "QF2-Fe-Jxj.text" = "SAR 430";
 
+/* Class = "UILabel"; text = "SAR 0.00"; ObjectID = "QVG-mj-5Qq"; */
+"QVG-mj-5Qq.text" = "SAR 0.00";
+
 /* Class = "UILabel"; text = "3"; ObjectID = "Qa8-rG-juf"; */
 "Qa8-rG-juf.text" = "3";
 
@@ -702,7 +669,7 @@
 "QuJ-ub-pzF.normalTitle" = "مشاهدة الكل";
 
 /* Class = "UILabel"; text = "Order ID: PUBG12345"; ObjectID = "R3c-H1-ZTe"; */
-"R3c-H1-ZTe.text" = "معرف الطلب: PUBG12345";
+"R3c-H1-ZTe.text" = "رقم التعريف الخاص بالطلب:";
 
 /* Class = "UILabel"; text = "25 Feb 2021"; ObjectID = "R6d-C2-y4O"; */
 "R6d-C2-y4O.text" = "25 Feb 2021";
@@ -710,11 +677,8 @@
 /* Class = "UILabel"; text = "Right"; ObjectID = "RJE-B2-yLL"; */
 "RJE-B2-yLL.text" = "حق";
 
-/* Class = "UILabel"; text = "Enter the registered mobile number or email address to reset your bamthode password."; ObjectID = "RLM-mP-EHh"; */
-"RLM-mP-EHh.text" = "أدخل رقم الهاتف المحمول المسجل أو عنوان البريد الإلكتروني لإعادة تعيين كلمة مرور Bamthobe.";
-
-/* Class = "UILabel"; text = "Place Order"; ObjectID = "RbZ-56-JxO"; */
-"RbZ-56-JxO.text" = "Place Order";
+/* Class = "UILabel"; text = "Enter the registered mobile number or email address to reset your bamthobe password."; ObjectID = "RLM-mP-EHh"; */
+"RLM-mP-EHh.text" = "Enter the registered mobile number or email address to reset your bamthobe password.";
 
 /* Class = "UILabel"; text = "5442897"; ObjectID = "Rcu-31-JKY"; */
 "Rcu-31-JKY.text" = "5442897";
@@ -730,6 +694,9 @@
 
 /* Class = "UILabel"; text = "Enter the details to continue"; ObjectID = "SAT-rl-o9o"; */
 "SAT-rl-o9o.text" = "أدخل التفاصيل للمتابعة";
+
+/* Class = "UILabel"; text = "SAR 0.00"; ObjectID = "SHX-Ar-k2H"; */
+"SHX-Ar-k2H.text" = "SAR 0.00";
 
 /* Class = "UITextField"; placeholder = "Password"; ObjectID = "SON-iw-HLK"; */
 "SON-iw-HLK.placeholder" = "كلمه السر";
@@ -755,8 +722,8 @@
 /* Class = "UILabel"; text = "My Offers"; ObjectID = "Sin-zX-G8t"; */
 "Sin-zX-G8t.text" = "عروضي";
 
-/* Class = "UILabel"; text = "SAR 300"; ObjectID = "StU-Uw-E1n"; */
-"StU-Uw-E1n.text" = "SAR 300";
+/* Class = "UILabel"; text = "SAR 0.00"; ObjectID = "SsV-bt-Pan"; */
+"SsV-bt-Pan.text" = "SAR 0.00";
 
 /* Class = "UILabel"; text = "Delivery Charges"; ObjectID = "SuE-FM-v9i"; */
 "SuE-FM-v9i.text" = "رسوم التوصيل";
@@ -764,8 +731,8 @@
 /* Class = "UILabel"; text = "15 Kg"; ObjectID = "T2l-IO-EzM"; */
 "T2l-IO-EzM.text" = "15 Kg";
 
-/* Class = "UILabel"; text = "SAR 30"; ObjectID = "T39-lP-p42"; */
-"T39-lP-p42.text" = "SAR 30";
+/* Class = "UILabel"; text = " SAR 0.00"; ObjectID = "T39-lP-p42"; */
+"T39-lP-p42.text" = " SAR 0.00";
 
 /* Class = "UITextField"; placeholder = "Full Name"; ObjectID = "T4B-2L-iqT"; */
 "T4B-2L-iqT.placeholder" = "الاسم بالكامل";
@@ -774,19 +741,19 @@
 "TOM-0C-F1K.text" = "ل";
 
 /* Class = "UILabel"; text = "GPO Cheese and Wine Room, 1 Martin PI, Sydney, 110056, AUS"; ObjectID = "TVE-gv-mDr"; */
-"TVE-gv-mDr.text" = "GPO Cheese and Wine Room, 1 Martin PI, Sydney, 110056, AUS";
+"TVE-gv-mDr.text" = "العنوان (رقم المنزل ، المبنى ، الشارع ، المنطقة)";
 
 /* Class = "UILabel"; text = "Coupon Applied(save20)"; ObjectID = "Ta8-Ah-IZf"; */
-"Ta8-Ah-IZf.text" = "الكوبون المطبق (save20)";
+"Ta8-Ah-IZf.text" = "الكوبون المطبق";
 
-/* Class = "UILabel"; text = "SAR 990"; ObjectID = "Trw-vv-K9F"; */
-"Trw-vv-K9F.text" = "SAR 990";
+/* Class = "UILabel"; text = "0.00"; ObjectID = "Trw-vv-K9F"; */
+"Trw-vv-K9F.text" = "0.00";
 
 /* Class = "UIButton"; normalTitle = "Write a Review"; ObjectID = "Tvr-XO-x6q"; */
 "Tvr-XO-x6q.normalTitle" = "أكتب مراجعة";
 
-/* Class = "UILabel"; text = "SAR 1000"; ObjectID = "UDo-S2-J8O"; */
-"UDo-S2-J8O.text" = "SAR 1000";
+/* Class = "UILabel"; text = "SAR 0"; ObjectID = "UDo-S2-J8O"; */
+"UDo-S2-J8O.text" = "SAR 0";
 
 /* Class = "UILabel"; text = "SAR 430"; ObjectID = "UFM-XC-o9V"; */
 "UFM-XC-o9V.text" = "SAR 430";
@@ -796,6 +763,9 @@
 
 /* Class = "UIButton"; normalTitle = "CODE: SAVE20"; ObjectID = "USu-nO-Ktu"; */
 "USu-nO-Ktu.normalTitle" = "الكود: SAVE20";
+
+/* Class = "UILabel"; text = "Total  Points : "; ObjectID = "UaZ-SX-K4u"; */
+"UaZ-SX-K4u.text" = "مجمل النقاط :";
 
 /* Class = "UILabel"; text = "To"; ObjectID = "Uvc-KL-YXt"; */
 "Uvc-KL-YXt.text" = "ل";
@@ -810,15 +780,15 @@
 "VNx-eb-CjQ.placeholder" = "كلمه السر";
 
 /* Class = "UITextField"; placeholder = "Paste a link"; ObjectID = "VOB-Hq-I9p"; */
-"VOB-Hq-I9p.placeholder" = "الصق ارتباط";
+"VOB-Hq-I9p.placeholder" = "Paste a link";
 
 /* Class = "UITextField"; placeholder = "eg: +919233778273"; ObjectID = "VZW-os-IFh"; */
-"VZW-os-IFh.placeholder" = "على سبيل المثال: 132123123";
+"VZW-os-IFh.placeholder" = "eg: +919233778273";
 
 /* Class = "UILabel"; text = "Accessories Total"; ObjectID = "Vd3-Ma-p3m"; */
 "Vd3-Ma-p3m.text" = "ملحقات المجموع";
 
-/* Class = "UILabel"; text = "Placed On: 12-Jan-2021"; ObjectID = "VdX-Ai-9B2"; */
+/* Class = "UILabel"; text = "Placed On: "; ObjectID = "VdX-Ai-9B2"; */
 "VdX-Ai-9B2.text" = "موضوع على:";
 
 /* Class = "UIButton"; normalTitle = "Male"; ObjectID = "Vfq-eM-icI"; */
@@ -830,14 +800,23 @@
 /* Class = "UILabel"; text = "SAR 1000"; ObjectID = "Vsw-9Y-E09"; */
 "Vsw-9Y-E09.text" = "SAR 1000";
 
+/* Class = "UIButton"; normalTitle = "Update Photo"; ObjectID = "Vt1-f7-6EZ"; */
+"Vt1-f7-6EZ.normalTitle" = "تحديث الصورة";
+
 /* Class = "UILabel"; text = "Description of item that describes it shdhf jhdjfhjf"; ObjectID = "VtD-he-exe"; */
 "VtD-he-exe.text" = "Description of item that describes it shdhf jhdjfhjf";
 
-/* Class = "UITextField"; placeholder = "eg: vikramsingh@gmail.com"; ObjectID = "WNG-fj-00n"; */
+/* Class = "UILabel"; text = "SAR 0.00"; ObjectID = "W7r-z1-20m"; */
+"W7r-z1-20m.text" = "SAR 0.00";
+
+/* Class = "UITextField"; placeholder = "Address(House No., Building, Street, Area)"; ObjectID = "WB3-kp-ajC"; */
+"WB3-kp-ajC.placeholder" = "العنوان (رقم المنزل ، المبنى ، الشارع ، المنطقة)";
+
+/* Class = "UITextField"; placeholder = "eg: jamesbond@gmail.com"; ObjectID = "WNG-fj-00n"; */
 "WNG-fj-00n.placeholder" = "على سبيل المثال: jamesbond@gmail.com";
 
-/* Class = "UILabel"; text = "SAR 50"; ObjectID = "WWt-Nb-5tR"; */
-"WWt-Nb-5tR.text" = "SAR 50";
+/* Class = "UILabel"; text = "SAR 0.00"; ObjectID = "WWt-Nb-5tR"; */
+"WWt-Nb-5tR.text" = "SAR 0.00";
 
 /* Class = "UILabel"; text = "Both Side"; ObjectID = "Wec-i3-M9c"; */
 "Wec-i3-M9c.text" = "كلا الجانبين";
@@ -855,7 +834,7 @@
 "Wyd-0V-rYs.text" = "SAR 1000";
 
 /* Class = "UILabel"; text = "Customized Thode 1"; ObjectID = "WzR-7I-sl9"; */
-"WzR-7I-sl9.text" = "الثوب المخصص 1";
+"WzR-7I-sl9.text" = "Customized Thobe 1";
 
 /* Class = "UIButton"; normalTitle = "Request For Invoice"; ObjectID = "X2z-bj-TDh"; */
 "X2z-bj-TDh.normalTitle" = "طلب فاتورة";
@@ -872,14 +851,23 @@
 /* Class = "UILabel"; text = "Your order #76281 is confirmed"; ObjectID = "XL7-uZ-qae"; */
 "XL7-uZ-qae.text" = "Your order #76281 is confirmed";
 
+/* Class = "UIButton"; normalTitle = "Place Order"; ObjectID = "XMH-ob-g1d"; */
+"XMH-ob-g1d.normalTitle" = "Place Order";
+
 /* Class = "UILabel"; text = "Thobe Total"; ObjectID = "XuL-aZ-uRg"; */
 "XuL-aZ-uRg.text" = "مجموع الثوب";
 
 /* Class = "UIButton"; normalTitle = "Continue Shopping"; ObjectID = "Y6I-6F-dxc"; */
 "Y6I-6F-dxc.normalTitle" = "مواصلة التسوق";
 
+/* Class = "UIButton"; normalTitle = "Measurement"; ObjectID = "YHO-ht-utm"; */
+"YHO-ht-utm.normalTitle" = "قياس";
+
 /* Class = "UILabel"; text = "SAR 430"; ObjectID = "YKB-lJ-HOZ"; */
 "YKB-lJ-HOZ.text" = "SAR 430";
+
+/* Class = "UIButton"; normalTitle = "My Thobe"; ObjectID = "YOg-he-0Ie"; */
+"YOg-he-0Ie.normalTitle" = "ثوبي";
 
 /* Class = "UILabel"; text = "Placket"; ObjectID = "YZd-sc-T0u"; */
 "YZd-sc-T0u.text" = "بلاكيت";
@@ -899,11 +887,14 @@
 /* Class = "UILabel"; text = "Do you have any discount code?"; ObjectID = "a8F-cS-EOX"; */
 "a8F-cS-EOX.text" = "هل لديك اي كود خصم؟";
 
-/* Class = "UILabel"; text = "Order ID: PUBG12345"; ObjectID = "a8K-WY-hiM"; */
-"a8K-WY-hiM.text" = "معرف الطلب: ";
+/* Class = "UILabel"; text = "Order ID: "; ObjectID = "a8K-WY-hiM"; */
+"a8K-WY-hiM.text" = "رقم التعريف الخاص بالطلب:";
 
 /* Class = "UILabel"; text = "15 Kg"; ObjectID = "a8u-B6-cWQ"; */
 "a8u-B6-cWQ.text" = "15 Kg";
+
+/* Class = "UIButton"; normalTitle = "Make Payment"; ObjectID = "aA0-3A-MmY"; */
+"aA0-3A-MmY.normalTitle" = "قم بالدفع";
 
 /* Class = "UILabel"; text = "SAR 550"; ObjectID = "aHL-M5-lsa"; */
 "aHL-M5-lsa.text" = "SAR 550";
@@ -923,14 +914,11 @@
 /* Class = "UILabel"; text = "Accessories Total"; ObjectID = "adC-5X-k37"; */
 "adC-5X-k37.text" = "ملحقات المجموع";
 
-/* Class = "UILabel"; text = "Continue"; ObjectID = "ah1-Ox-E9W"; */
-"ah1-Ox-E9W.text" = "يكمل";
-
 /* Class = "UITextField"; placeholder = "Confirm Password"; ObjectID = "aoj-QG-F7G"; */
 "aoj-QG-F7G.placeholder" = "تأكيد كلمة المرور";
 
-/* Class = "UIButton"; normalTitle = "Less Details"; ObjectID = "aps-pe-fkW"; */
-"aps-pe-fkW.normalTitle" = "تفاصيل أقل";
+/* Class = "UIButton"; normalTitle = "More Details^"; ObjectID = "aps-pe-fkW"; */
+"aps-pe-fkW.normalTitle" = "مزيد من التفاصيل ^";
 
 /* Class = "UILabel"; text = "Enter OTP"; ObjectID = "asy-9D-z9z"; */
 "asy-9D-z9z.text" = "أدخل OTP";
@@ -938,11 +926,8 @@
 /* Class = "UILabel"; text = "Credit Card/ Debit Card"; ObjectID = "awi-xa-Irn"; */
 "awi-xa-Irn.text" = "بطاقة الائتمان بطاقة الخصم";
 
-/* Class = "UILabel"; text = "SAR 300"; ObjectID = "b87-up-dSg"; */
-"b87-up-dSg.text" = "SAR 300";
-
 /* Class = "UILabel"; text = "Customized Thode 1"; ObjectID = "bFh-9P-v0J"; */
-"bFh-9P-v0J.text" = "الثوب المخصص 1";
+"bFh-9P-v0J.text" = "Customized Thobe 1";
 
 /* Class = "UIButton"; normalTitle = "Add"; ObjectID = "bM2-3R-PIw"; */
 "bM2-3R-PIw.normalTitle" = "يضيف";
@@ -952,6 +937,9 @@
 
 /* Class = "UILabel"; text = "Split"; ObjectID = "bln-0h-rzK"; */
 "bln-0h-rzK.text" = "Split";
+
+/* Class = "UIButton"; normalTitle = "-"; ObjectID = "bn1-aK-O82"; */
+"bn1-aK-O82.normalTitle" = "-";
 
 /* Class = "UILabel"; text = "Message from the sender added here displays like this one."; ObjectID = "bq5-UQ-4WG"; */
 "bq5-UQ-4WG.text" = "Message from the sender added here displays like this one.";
@@ -965,11 +953,8 @@
 /* Class = "UILabel"; text = "Gift Details"; ObjectID = "bwi-ge-y6E"; */
 "bwi-ge-y6E.text" = "تفاصيل الهدية";
 
-/* Class = "UILabel"; text = "SAR 780"; ObjectID = "bxs-JI-IwU"; */
-"bxs-JI-IwU.text" = "SAR 780";
-
-/* Class = "UILabel"; text = "Smiley's store  marked your order #1982984 as shipped Smiley's store  marked your order #1982984 as shipped Smiley's store  marked your order #1982984 as shipped Smiley's store  marked your order #1982984 as shipped"; ObjectID = "bzo-jd-F3P"; */
-"bzo-jd-F3P.text" = "Smiley's store  marked your order #1982984 as shipped Smiley's store  marked your order #1982984 as shipped Smiley's store  marked your order #1982984 as shipped Smiley's store  marked your order #1982984 as shipped";
+/* Class = "UILabel"; text = "SAR 0.00"; ObjectID = "bxs-JI-IwU"; */
+"bxs-JI-IwU.text" = "SAR 0.00";
 
 /* Class = "UIButton"; normalTitle = "."; ObjectID = "c3n-cw-TMf"; */
 "c3n-cw-TMf.normalTitle" = ".";
@@ -986,7 +971,7 @@
 /* Class = "UILabel"; text = "Label"; ObjectID = "cNR-ho-3i9"; */
 "cNR-ho-3i9.text" = "Label";
 
-/* Class = "UIButton"; normalTitle = "Other"; ObjectID = "cOE-NI-vX0"; */
+/* Class = "UIButton"; normalTitle = "Work"; ObjectID = "cOE-NI-vX0"; */
 "cOE-NI-vX0.normalTitle" = "عمل";
 
 /* Class = "UILabel"; text = "Other"; ObjectID = "cQh-Bq-zeD"; */
@@ -1004,7 +989,7 @@
 /* Class = "UITextField"; placeholder = "Confirm New Password"; ObjectID = "cfK-D0-R3q"; */
 "cfK-D0-R3q.placeholder" = "تأكيد كلمة المرور الجديدة";
 
-/* Class = "UILabel"; text = "No Data Found"; ObjectID = "cs6-IB-ooa"; */
+/* Class = "UILabel"; text = "NO DATA FOUND"; ObjectID = "cs6-IB-ooa"; */
 "cs6-IB-ooa.text" = "لاتوجد بيانات";
 
 /* Class = "UITextField"; placeholder = "Full Name"; ObjectID = "d8M-dr-ylu"; */
@@ -1049,17 +1034,14 @@
 /* Class = "UILabel"; text = "Delivery Charges"; ObjectID = "eSQ-to-VV8"; */
 "eSQ-to-VV8.text" = "رسوم التوصيل";
 
-/* Class = "UILabel"; text = "Label"; ObjectID = "emT-sX-MJY"; */
-"emT-sX-MJY.text" = "Label";
-
 /* Class = "UILabel"; text = "Send Anonymously"; ObjectID = "epM-FH-iy5"; */
 "epM-FH-iy5.text" = "إرسال مجهول";
 
 /* Class = "UITextField"; placeholder = "Mobile Number"; ObjectID = "esL-R7-7VC"; */
 "esL-R7-7VC.placeholder" = "رقم الهاتف المحمول";
 
-/* Class = "UILabel"; text = "SAR 1000"; ObjectID = "euC-W4-mc9"; */
-"euC-W4-mc9.text" = "SAR 1000";
+/* Class = "UIButton"; normalTitle = "Collar"; ObjectID = "f5U-mA-sds"; */
+"f5U-mA-sds.normalTitle" = "طوق";
 
 /* Class = "UILabel"; text = "Choose your Thobe"; ObjectID = "f6P-i0-oOd"; */
 "f6P-i0-oOd.text" = "اختر ثوبك";
@@ -1106,8 +1088,8 @@
 /* Class = "UILabel"; text = "Item Details"; ObjectID = "fvI-EV-bqZ"; */
 "fvI-EV-bqZ.text" = "تفاصيل العنصر";
 
-/* Class = "UIButton"; normalTitle = "Less Details"; ObjectID = "g1U-Wc-Xse"; */
-"g1U-Wc-Xse.normalTitle" = "تفاصيل أقل";
+/* Class = "UIButton"; normalTitle = "Continue Shopping"; ObjectID = "g6l-Yk-zT0"; */
+"g6l-Yk-zT0.normalTitle" = "مواصلة التسوق";
 
 /* Class = "UILabel"; text = "Cufflinks"; ObjectID = "gGl-bS-JKr"; */
 "gGl-bS-JKr.text" = "Cufflinks";
@@ -1117,9 +1099,6 @@
 
 /* Class = "UILabel"; text = "Grand Total"; ObjectID = "gRx-Bw-rUc"; */
 "gRx-Bw-rUc.text" = "المجموع الإجمالي";
-
-/* Class = "UILabel"; text = "GPO Cheese and Wine Room, 1 Martin PI, Sydney, 110056, AUS"; ObjectID = "gU9-TR-n69"; */
-"gU9-TR-n69.text" = "";
 
 /* Class = "UILabel"; text = "Reviews"; ObjectID = "gY2-2V-G4a"; */
 "gY2-2V-G4a.text" = "المراجعات";
@@ -1136,7 +1115,7 @@
 /* Class = "UILabel"; text = "SAR 0"; ObjectID = "h26-3J-28k"; */
 "h26-3J-28k.text" = "SAR 0";
 
-/* Class = "UITextView"; text = "Type your message here...."; ObjectID = "h5G-uL-mFW"; */
+/* Class = "UITextView"; text = "Type your message here..."; ObjectID = "h5G-uL-mFW"; */
 "h5G-uL-mFW.text" = "اكتب رسالتك هنا....";
 
 /* Class = "UIButton"; normalTitle = "SAR 10"; ObjectID = "hLi-rG-w5v"; */
@@ -1154,29 +1133,20 @@
 /* Class = "UIButton"; normalTitle = "+ Add Address"; ObjectID = "hfP-Ll-Tji"; */
 "hfP-Ll-Tji.normalTitle" = "+ أضف العنوان";
 
-/* Class = "UILabel"; text = "Customized Thode 1"; ObjectID = "hlL-Cv-KF8"; */
-"hlL-Cv-KF8.text" = "الثوب المخصص 1";
-
 /* Class = "UILabel"; text = "Item Details"; ObjectID = "hqT-rc-gar"; */
 "hqT-rc-gar.text" = "تفاصيل العنصر";
 
 /* Class = "UILabel"; text = "Create New Password"; ObjectID = "hu9-WD-Jtb"; */
 "hu9-WD-Jtb.text" = "إنشاء كلمة مرور جديدة";
 
-/* Class = "UILabel"; text = "SAR 990"; ObjectID = "huZ-VL-Zqd"; */
-"huZ-VL-Zqd.text" = "SAR 0.00";
+/* Class = "UILabel"; text = " SAR 0.00"; ObjectID = "huZ-VL-Zqd"; */
+"huZ-VL-Zqd.text" = " SAR 0.00";
 
 /* Class = "UILabel"; text = "My Thobe"; ObjectID = "im3-ln-cEP"; */
 "im3-ln-cEP.text" = "ثوبي";
 
-/* Class = "UILabel"; text = "*Advance Payment of 25%"; ObjectID = "ipz-xF-CG1"; */
-"ipz-xF-CG1.text" = "* دفعة مقدمة 25٪";
-
 /* Class = "UILabel"; text = "Lorem ipsum dolor sit amet"; ObjectID = "iqi-7B-9Ek"; */
 "iqi-7B-9Ek.text" = "Lorem ipsum dolor sit amet";
-
-/* Class = "UILabel"; text = "Collar"; ObjectID = "j03-uf-VDz"; */
-"j03-uf-VDz.text" = "طوق";
 
 /* Class = "UILabel"; text = "SAR 1000"; ObjectID = "j3M-2Q-kRY"; */
 "j3M-2Q-kRY.text" = "SAR 1000";
@@ -1186,9 +1156,6 @@
 
 /* Class = "UIButton"; normalTitle = "Continue"; ObjectID = "jJN-Zb-zaw"; */
 "jJN-Zb-zaw.normalTitle" = "يكمل";
-
-/* Class = "UILabel"; text = "Smiley's store  marked your order #1982984 as shipped Smiley's store  marked your order #1982984 as shipped Smiley's store  marked your order #1982984 as shipped Smiley's store  marked your order #1982984 as shipped"; ObjectID = "jLF-Rt-gaP"; */
-"jLF-Rt-gaP.text" = "Smiley's store  marked your order #1982984 as shipped Smiley's store  marked your order #1982984 as shipped Smiley's store  marked your order #1982984 as shipped Smiley's store  marked your order #1982984 as shipped";
 
 /* Class = "UILabel"; text = "Item Details"; ObjectID = "jN1-Z5-28n"; */
 "jN1-Z5-28n.text" = "تفاصيل العنصر";
@@ -1202,17 +1169,14 @@
 /* Class = "UILabel"; text = "Recipent Name"; ObjectID = "jc1-hp-Byu"; */
 "jc1-hp-Byu.text" = "اسم المستلم";
 
-/* Class = "UILabel"; text = "SAR 0"; ObjectID = "jfg-1Q-zIc"; */
-"jfg-1Q-zIc.text" = "SAR 0";
+/* Class = "UILabel"; text = " SAR 0.00"; ObjectID = "jfg-1Q-zIc"; */
+"jfg-1Q-zIc.text" = " SAR 0.00";
 
 /* Class = "UILabel"; text = "Address"; ObjectID = "jst-O3-vGs"; */
 "jst-O3-vGs.text" = "عنوان";
 
 /* Class = "UILabel"; text = "Black Floral Print dress with a Belt"; ObjectID = "jvD-vO-m9m"; */
 "jvD-vO-m9m.text" = "Black Floral Print dress with a Belt";
-
-/* Class = "UILabel"; text = "SAR 50"; ObjectID = "jxn-gB-1qB"; */
-"jxn-gB-1qB.text" = "SAR 50";
 
 /* Class = "UILabel"; text = "Delivered On"; ObjectID = "jyg-Yt-cye"; */
 "jyg-Yt-cye.text" = "تم التسليم";
@@ -1229,17 +1193,26 @@
 /* Class = "UILabel"; text = "SAR 20"; ObjectID = "kGs-Ai-XuK"; */
 "kGs-Ai-XuK.text" = "SAR 20";
 
-/* Class = "UILabel"; text = "Order placed"; ObjectID = "kkx-Km-4fA"; */
-"kkx-Km-4fA.text" = "Order placed";
+/* Class = "UILabel"; text = "Pocket"; ObjectID = "kNv-8X-fw6"; */
+"kNv-8X-fw6.text" = "جيب";
+
+/* Class = "UILabel"; text = "Cuff"; ObjectID = "kXO-sO-4rO"; */
+"kXO-sO-4rO.text" = "صفعة";
 
 /* Class = "UITextField"; placeholder = "eg: +919233778273"; ObjectID = "knQ-CE-cGa"; */
-"knQ-CE-cGa.placeholder" = "على سبيل المثال: 132123123";
+"knQ-CE-cGa.placeholder" = "eg: +919233778273";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "knv-Pn-5b1"; */
 "knv-Pn-5b1.text" = "Label";
 
+/* Class = "UIButton"; normalTitle = "+"; ObjectID = "koJ-r1-DZR"; */
+"koJ-r1-DZR.normalTitle" = "+";
+
 /* Class = "UIButton"; normalTitle = "View All"; ObjectID = "ktw-t9-Agr"; */
 "ktw-t9-Agr.normalTitle" = "مشاهدة الكل";
+
+/* Class = "UILabel"; text = "Collar"; ObjectID = "l1c-S3-CTE"; */
+"l1c-S3-CTE.text" = "طوق";
 
 /* Class = "UIButton"; normalTitle = "Design Your Own"; ObjectID = "l57-Iz-wGp"; */
 "l57-Iz-wGp.normalTitle" = "صمم بنفسك";
@@ -1250,8 +1223,11 @@
 /* Class = "UILabel"; text = "Categories"; ObjectID = "lDn-dL-x4k"; */
 "lDn-dL-x4k.text" = "Categories";
 
-/* Class = "UILabel"; text = "SAR 550"; ObjectID = "lWo-9A-dki"; */
-"lWo-9A-dki.text" = "SAR 0.00";
+/* Class = "UILabel"; text = "SAR 0.00"; ObjectID = "lJq-kZ-Er9"; */
+"lJq-kZ-Er9.text" = "SAR 0.00";
+
+/* Class = "UILabel"; text = " SAR 0.00"; ObjectID = "lWo-9A-dki"; */
+"lWo-9A-dki.text" = " SAR 0.00";
 
 /* Class = "UIButton"; normalTitle = "Create Git"; ObjectID = "lgd-d7-yqM"; */
 "lgd-d7-yqM.normalTitle" = "اصنع هدية";
@@ -1265,20 +1241,14 @@
 /* Class = "UITextField"; text = "Female"; ObjectID = "lmm-3q-CzB"; */
 "lmm-3q-CzB.text" = "أنثى";
 
-/* Class = "UILabel"; text = "Black Floral Print dress with a Belt"; ObjectID = "lr0-VQ-StK"; */
-"lr0-VQ-StK.text" = "Black Floral Print dress with a Belt";
-
-/* Class = "UILabel"; text = "Attars"; ObjectID = "mAt-bq-8B1"; */
-"mAt-bq-8B1.text" = "Attars";
-
-/* Class = "UILabel"; text = "Label"; ObjectID = "mGE-V2-cXL"; */
-"mGE-V2-cXL.text" = "Label";
+/* Class = "UILabel"; text = "Loyality Points"; ObjectID = "lyn-fF-2J9"; */
+"lyn-fF-2J9.text" = "نقاط الولاء";
 
 /* Class = "UIButton"; normalTitle = "Go to Home"; ObjectID = "mIp-z1-Omh"; */
 "mIp-z1-Omh.normalTitle" = "اذهب إلى الصفحة الرئيسية";
 
 /* Class = "UILabel"; text = "Store Name: Alquot"; ObjectID = "mUS-R3-kri"; */
-"mUS-R3-kri.text" = "اسم المتجر:";
+"mUS-R3-kri.text" = "Store Name: Alquot";
 
 /* Class = "UITextField"; text = "Male"; ObjectID = "mVT-nR-23w"; */
 "mVT-nR-23w.text" = "ذكر";
@@ -1289,14 +1259,14 @@
 /* Class = "UILabel"; text = "15 Kg"; ObjectID = "meK-Mj-dzJ"; */
 "meK-Mj-dzJ.text" = "15 Kg";
 
-/* Class = "UILabel"; text = "SAR 990"; ObjectID = "mod-P7-kLT"; */
-"mod-P7-kLT.text" = "SAR 990";
+/* Class = "UILabel"; text = " SAR 0.00"; ObjectID = "mod-P7-kLT"; */
+"mod-P7-kLT.text" = " SAR 0.00";
 
 /* Class = "UILabel"; text = "Buttons"; ObjectID = "mp5-p4-0Cx"; */
 "mp5-p4-0Cx.text" = "أزرار";
 
-/* Class = "UILabel"; text = "SAR 50"; ObjectID = "mvl-BC-iZP"; */
-"mvl-BC-iZP.text" = "SAR 50";
+/* Class = "UILabel"; text = "0.00"; ObjectID = "mvl-BC-iZP"; */
+"mvl-BC-iZP.text" = "0.00";
 
 /* Class = "UILabel"; text = "Delivery Address"; ObjectID = "n0n-60-QAz"; */
 "n0n-60-QAz.text" = "عنوان التسليم";
@@ -1316,17 +1286,14 @@
 /* Class = "UILabel"; text = "Terms & Conditions"; ObjectID = "nVW-iA-2Hi"; */
 "nVW-iA-2Hi.text" = "البنود و الظروف";
 
-/* Class = "UILabel"; text = "SAR 990"; ObjectID = "nVe-0Y-nQ1"; */
-"nVe-0Y-nQ1.text" = "SAR 990";
-
 /* Class = "UILabel"; text = "GPO Cheese and Wine Room, 1 Martin PI, Sydney, 110056, AUS"; ObjectID = "o40-F5-9Hy"; */
-"o40-F5-9Hy.text" = "GPO Cheese and Wine Room, 1 Martin PI, Sydney, 110056, AUS";
+"o40-F5-9Hy.text" = "العنوان (رقم المنزل ، المبنى ، الشارع ، المنطقة)";
 
 /* Class = "UILabel"; text = "Sign Up"; ObjectID = "oJ5-AC-FbB"; */
 "oJ5-AC-FbB.text" = "اشتراك";
 
 /* Class = "UILabel"; text = "Store Address: Shop No. 123, Saudi Arabia"; ObjectID = "ocI-fh-gXd"; */
-"ocI-fh-gXd.text" = "عنوان المتجر:";
+"ocI-fh-gXd.text" = "Store Address: Shop No. 123, Saudi Arabia";
 
 /* Class = "UILabel"; text = "Summer"; ObjectID = "okq-k9-2iP"; */
 "okq-k9-2iP.text" = "صيف";
@@ -1334,8 +1301,8 @@
 /* Class = "UIButton"; normalTitle = "View All"; ObjectID = "otf-zK-kZK"; */
 "otf-zK-kZK.normalTitle" = "مشاهدة الكل";
 
-/* Class = "UILabel"; text = "-SAR 550"; ObjectID = "oxG-Cm-Lai"; */
-"oxG-Cm-Lai.text" = "-SAR 550";
+/* Class = "UILabel"; text = "0.00"; ObjectID = "oxG-Cm-Lai"; */
+"oxG-Cm-Lai.text" = "0.00";
 
 /* Class = "UILabel"; text = "Design your Thode"; ObjectID = "p0w-Nv-qfA"; */
 "p0w-Nv-qfA.text" = "صمم ثوبك";
@@ -1352,23 +1319,23 @@
 /* Class = "UILabel"; text = "CATEGORY"; ObjectID = "q6e-JW-b8L"; */
 "q6e-JW-b8L.text" = "CATEGORY";
 
-/* Class = "UILabel"; text = "SAR 1000"; ObjectID = "qHi-lU-IRO"; */
-"qHi-lU-IRO.text" = "SAR 1000";
-
 /* Class = "UILabel"; text = "Which side you want?"; ObjectID = "qOZ-RY-u6k"; */
 "qOZ-RY-u6k.text" = "أي جانب تريد؟";
 
 /* Class = "UILabel"; text = "OUT OF STOCK"; ObjectID = "qi6-Gp-L5f"; */
 "qi6-Gp-L5f.text" = "إنتهى من المخزن";
 
-/* Class = "UITextField"; placeholder = "eg: +919233778273"; ObjectID = "qiz-Qr-EgR"; */
-"qiz-Qr-EgR.placeholder" = "g: 10: 02 AM";
+/* Class = "UITextField"; placeholder = "eg: 10:02AM"; ObjectID = "qiz-Qr-EgR"; */
+"qiz-Qr-EgR.placeholder" = "على سبيل المثال: 10:30 صباحًا";
 
 /* Class = "UIButton"; normalTitle = "Sign Up"; ObjectID = "r4H-w5-yo9"; */
 "r4H-w5-yo9.normalTitle" = "اشتراك";
 
 /* Class = "UILabel"; text = "01"; ObjectID = "r71-I1-bO6"; */
 "r71-I1-bO6.text" = "01";
+
+/* Class = "UITextField"; text = "1"; ObjectID = "rCS-2B-P84"; */
+"rCS-2B-P84.text" = "1";
 
 /* Class = "UILabel"; text = "20-25 Days"; ObjectID = "rDb-XM-kBf"; */
 "rDb-XM-kBf.text" = "20-25 Days";
@@ -1395,13 +1362,10 @@
 "rh1-sO-d4g.title" = "DiscussPopup_VC";
 
 /* Class = "UILabel"; text = "2,557 Reviews"; ObjectID = "rmP-7r-gqt"; */
-"rmP-7r-gqt.text" = "2,557 Reviews";
+"rmP-7r-gqt.text" = "2,557 المراجعات";
 
 /* Class = "UILabel"; text = "SAR 430"; ObjectID = "rpt-qb-zCB"; */
 "rpt-qb-zCB.text" = "SAR 430";
-
-/* Class = "UILabel"; text = "Collar"; ObjectID = "rqZ-HT-RPg"; */
-"rqZ-HT-RPg.text" = "طوق";
 
 /* Class = "UILabel"; text = "Mobile Number"; ObjectID = "rrN-4j-ugy"; */
 "rrN-4j-ugy.text" = "رقم الهاتف المحمول";
@@ -1422,13 +1386,13 @@
 "sbB-TI-0MB.text" = "اسم";
 
 /* Class = "UILabel"; text = "Coupon Applied(save20)"; ObjectID = "smY-pQ-lh0"; */
-"smY-pQ-lh0.text" = "الكوبون المطبق (save20)";
+"smY-pQ-lh0.text" = "الكوبون المطبق";
 
 /* Class = "UILabel"; text = "Message from the sender added here displays like this one."; ObjectID = "sqI-oi-wDe"; */
 "sqI-oi-wDe.text" = "Message from the sender added here displays like this one.";
 
-/* Class = "UILabel"; text = "Order Packed"; ObjectID = "t3o-Z2-6sq"; */
-"t3o-Z2-6sq.text" = "Order Packed";
+/* Class = "UILabel"; text = "Button"; ObjectID = "srz-vZ-5oh"; */
+"srz-vZ-5oh.text" = "زر";
 
 /* Class = "UILabel"; text = "CUFFLINKS 06"; ObjectID = "tJh-Td-esV"; */
 "tJh-Td-esV.text" = "CUFFLINKS 06";
@@ -1446,7 +1410,7 @@
 "u0z-mC-Kfh.text" = "اسم المستلم";
 
 /* Class = "UILabel"; text = "Order ID: PUBG12345"; ObjectID = "u5m-Mp-x4r"; */
-"u5m-Mp-x4r.text" = "معرف الطلب: PUBG12345";
+"u5m-Mp-x4r.text" = "رقم التعريف الخاص بالطلب:";
 
 /* Class = "UITabBarItem"; title = "Home"; ObjectID = "uDI-gh-0gI"; */
 "uDI-gh-0gI.title" = "منزل، بيت";
@@ -1454,17 +1418,20 @@
 /* Class = "UILabel"; text = "SAR 160.00"; ObjectID = "uFo-b0-CyW"; */
 "uFo-b0-CyW.text" = "SAR 160.00";
 
-/* Class = "UILabel"; text = "SAR 780"; ObjectID = "uJM-ce-NGe"; */
-"uJM-ce-NGe.text" = "SAR 780";
+/* Class = "UILabel"; text = "0.00"; ObjectID = "uJM-ce-NGe"; */
+"uJM-ce-NGe.text" = "0.00";
 
 /* Class = "UITabBarItem"; title = "Cart"; ObjectID = "uLg-j5-NTa"; */
-"uLg-j5-NTa.title" = "Cart";
+"uLg-j5-NTa.title" = "عربة التسوق";
 
 /* Class = "UITextField"; placeholder = "Email"; ObjectID = "uNg-Nr-RXo"; */
 "uNg-Nr-RXo.placeholder" = "بريد إلكتروني";
 
 /* Class = "UILabel"; text = "SAR 30"; ObjectID = "uNq-Ak-j3o"; */
 "uNq-Ak-j3o.text" = "SAR 30";
+
+/* Class = "UIButton"; normalTitle = "Arabic"; ObjectID = "uV6-di-m5f"; */
+"uV6-di-m5f.normalTitle" = "Arabic";
 
 /* Class = "UILabel"; text = "Log In"; ObjectID = "uln-uN-nvP"; */
 "uln-uN-nvP.text" = "تسجيل الدخول";
@@ -1475,23 +1442,23 @@
 /* Class = "UILabel"; text = "Your order #76281 is confirmed"; ObjectID = "ut7-uR-wpq"; */
 "ut7-uR-wpq.text" = "Your order #76281 is confirmed";
 
-/* Class = "UILabel"; text = "Details"; ObjectID = "v3q-hs-FmR"; */
-"v3q-hs-FmR.text" = "تفاصيل";
+/* Class = "UILabel"; text = "SAR 0.00"; ObjectID = "v2I-2K-tiD"; */
+"v2I-2K-tiD.text" = "SAR 0.00";
+
+/* Class = "UILabel"; text = "Cart Total Amount"; ObjectID = "v3q-hs-FmR"; */
+"v3q-hs-FmR.text" = "المبلغ الإجمالي لسلة التسوق";
 
 /* Class = "UIButton"; normalTitle = "SAR 10"; ObjectID = "v4s-xu-xQ9"; */
 "v4s-xu-xQ9.normalTitle" = "SAR 10";
 
-/* Class = "UILabel"; text = "Make Payment"; ObjectID = "v6u-C4-XoY"; */
-"v6u-C4-XoY.text" = "قم بالدفع";
+/* Class = "UIButton"; normalTitle = "Side Pocket"; ObjectID = "vBn-HW-OYF"; */
+"vBn-HW-OYF.normalTitle" = "جيب جانبي";
 
 /* Class = "UILabel"; text = "ORDER ID"; ObjectID = "vCv-fT-VBx"; */
 "vCv-fT-VBx.text" = "رقم التعريف الخاص بالطلب";
 
 /* Class = "UILabel"; text = "Items"; ObjectID = "vM4-4H-hV0"; */
-"vM4-4H-hV0.text" = "Items";
-
-/* Class = "UILabel"; text = "3"; ObjectID = "vMZ-iE-Ugc"; */
-"vMZ-iE-Ugc.text" = "3";
+"vM4-4H-hV0.text" = "العناصر";
 
 /* Class = "UILabel"; text = "My Orders"; ObjectID = "vOb-X2-qhl"; */
 "vOb-X2-qhl.text" = "طلباتي";
@@ -1516,9 +1483,6 @@
 
 /* Class = "UIButton"; normalTitle = "Send OTP"; ObjectID = "vrz-lI-Cos"; */
 "vrz-lI-Cos.normalTitle" = "أرسل OTP";
-
-/* Class = "UILabel"; text = "Order Confirmed"; ObjectID = "vvE-od-dBv"; */
-"vvE-od-dBv.text" = "Order Confirmed";
 
 /* Class = "UILabel"; text = "Enter Details"; ObjectID = "w0b-eg-sv0"; */
 "w0b-eg-sv0.text" = "أدخل التفاصيل";
@@ -1547,9 +1511,6 @@
 /* Class = "UILabel"; text = "Smiley's store"; ObjectID = "x0Q-pv-jEo"; */
 "x0Q-pv-jEo.text" = "Smiley's store";
 
-/* Class = "UILabel"; text = "Remaining Amount"; ObjectID = "xDE-UM-4sN"; */
-"xDE-UM-4sN.text" = "الكمية المتبقية";
-
 /* Class = "UILabel"; text = "Home Delivery"; ObjectID = "xRf-Co-ir8"; */
 "xRf-Co-ir8.text" = "توصيل منزلي";
 
@@ -1565,8 +1526,8 @@
 /* Class = "UILabel"; text = "Items"; ObjectID = "xdb-G2-qHh"; */
 "xdb-G2-qHh.text" = "العناصر";
 
-/* Class = "UITextField"; placeholder = "eg: James Bond"; ObjectID = "xeJ-Xy-lBg"; */
-"xeJ-Xy-lBg.placeholder" = " eg: 2021/02/01";
+/* Class = "UITextField"; placeholder = "eg: 02/05/2021"; ObjectID = "xeJ-Xy-lBg"; */
+"xeJ-Xy-lBg.placeholder" = "eg: 02/05/2021";
 
 /* Class = "UILabel"; text = "Black Floral Print dress with a Belt"; ObjectID = "xt6-8V-rFe"; */
 "xt6-8V-rFe.text" = "Black Floral Print dress with a Belt";
@@ -1577,6 +1538,9 @@
 /* Class = "UIButton"; normalTitle = "Delete Address"; ObjectID = "xwz-cA-F1I"; */
 "xwz-cA-F1I.normalTitle" = "حذف العنوان";
 
+/* Class = "UILabel"; text = "Fabric"; ObjectID = "yGk-dj-vSn"; */
+"yGk-dj-vSn.text" = "قماش";
+
 /* Class = "UILabel"; text = "t"; ObjectID = "yJD-8g-in6"; */
 "yJD-8g-in6.text" = "t";
 
@@ -1585,9 +1549,6 @@
 
 /* Class = "UILabel"; text = "Delivered On"; ObjectID = "ydR-pF-vPv"; */
 "ydR-pF-vPv.text" = "تم التسليم";
-
-/* Class = "UILabel"; text = "Side Pocket"; ObjectID = "yhu-sE-Uwl"; */
-"yhu-sE-Uwl.text" = "جيب جانبي";
 
 /* Class = "UILabel"; text = "Qty: "; ObjectID = "yvC-AU-aBh"; */
 "yvC-AU-aBh.text" = "الكمية:";

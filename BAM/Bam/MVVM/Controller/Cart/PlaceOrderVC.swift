@@ -25,11 +25,11 @@ class PlaceOrderVC: UIViewController {
     var deliveryType = ""
     var paymentType = false
     
-    var attrs = [
-        NSAttributedString.Key.font : UIFont(name: "Helvetica-Medium", size: 15.0),/*UIFont.systemFont(ofSize: 17.0)*/
-        NSAttributedString.Key.foregroundColor : UIColor.darkGray,
-        NSAttributedString.Key.underlineStyle : 1] as [NSAttributedString.Key : Any]
-    var attributedString = NSMutableAttributedString(string:"")
+//    var attrs = [
+//        NSAttributedString.Key.font : UIFont(name: "Helvetica-Medium", size: 15.0),/*UIFont.systemFont(ofSize: 17.0)*/
+//        NSAttributedString.Key.foregroundColor : UIColor.darkGray,
+//        NSAttributedString.Key.underlineStyle : 1] as [NSAttributedString.Key : Any]
+//    var attributedString = NSMutableAttributedString(string:"")
     
     //MARK:- IBOutlet Properties
     @IBOutlet weak var headingLbl: UILabel!
@@ -57,7 +57,15 @@ class PlaceOrderVC: UIViewController {
         priceLbl.text = "SAR \(total)"
         homeTickIV.isHidden = true
         apiHelper.responseDelegate = self
+        nextCustomizeLbl.setTitle(LocalizationSystem.sharedInstance.localizedStringForKey(key: "Make Payment", comment: "") , for: .normal)
         
+        if LocalizationSystem.sharedInstance.getLanguage() == "ar" {
+            homeLbl.textAlignment = .right
+            storeLbl.textAlignment = .right
+        } else {
+            homeLbl.textAlignment = .left
+            storeLbl.textAlignment = .left
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -82,12 +90,12 @@ class PlaceOrderVC: UIViewController {
     }
     
     @IBAction func btnTap_NextCustomize(_ sender: UIButton) {
-        if deliveryType == "Store Pickup" && paymentSelected == "Credit Card/ Debit Card" {
+        if deliveryType == "Store Pickup" && paymentSelected == LocalizationSystem.sharedInstance.localizedStringForKey(key: "Credit Card/Debit Card", comment: "") {
             apiHit()
-        } else if deliveryType == "Home Delivery" && deliverySelected != "" && paymentSelected == "Credit Card/ Debit Card" {
+        } else if deliveryType == "Home Delivery" && deliverySelected != "" && paymentSelected == LocalizationSystem.sharedInstance.localizedStringForKey(key: "Credit Card/Debit Card", comment: "") {
             apiHit()
         } else {
-            SnackBar().showSnackBar(view: self.view, text: "Select Delivery type", interval: 4)
+            SnackBar().showSnackBar(view: self.view, text: LocalizationSystem.sharedInstance.localizedStringForKey(key: "Select Delivery type", comment: ""), interval: 4)
         }
     }
     
@@ -161,7 +169,12 @@ extension PlaceOrderVC: UITableViewDelegate, UITableViewDataSource {
         if deliveryType == "Home Delivery" {
             if indexPath.section == 1 {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "SavedMeasurementTVCell", for: indexPath) as! SavedMeasurementTVCell
-                cell.nameLbl.text = "Credit Card/ Debit Card"
+                cell.nameLbl.text = LocalizationSystem.sharedInstance.localizedStringForKey(key: "Credit Card/Debit Card", comment: "")
+                if /*Bundle.getLanguage()*/UserDefaults.standard.string(forKey: "lang") == "ar" {
+                    cell.nameLbl.textAlignment = .right
+                } else {
+                    cell.nameLbl.textAlignment = .left
+                }
                 if paymentSelected == cell.nameLbl.text {
                     cell.tickIV.isHidden = false
                 } else {
@@ -182,8 +195,13 @@ extension PlaceOrderVC: UITableViewDelegate, UITableViewDataSource {
             }
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "SavedMeasurementTVCell", for: indexPath) as! SavedMeasurementTVCell
-            cell.nameLbl.text = "Credit Card/ Debit Card"
-            if paymentSelected == cell.nameLbl.text {
+            cell.nameLbl.text = LocalizationSystem.sharedInstance.localizedStringForKey(key: "Credit Card/Debit Card", comment: "")
+            if /*Bundle.getLanguage()*/UserDefaults.standard.string(forKey: "lang") == "ar" {
+                cell.nameLbl.textAlignment = .right
+            } else {
+                cell.nameLbl.textAlignment = .left
+            }
+            if paymentSelected == LocalizationSystem.sharedInstance.localizedStringForKey(key: "Credit Card/Debit Card", comment: "") {
                 cell.tickIV.isHidden = false
             } else {
                 cell.tickIV.isHidden = true
@@ -207,26 +225,39 @@ extension PlaceOrderVC: UITableViewDelegate, UITableViewDataSource {
                     deliverySelected = "\(addressModel?.data?[indexPath.row].id ?? 0)"
                 }
             } else {
-                if paymentSelected == "Credit Card/ Debit Card" {
+                if paymentSelected == LocalizationSystem.sharedInstance.localizedStringForKey(key: "Credit Card/Debit Card", comment: "") {
                     paymentSelected = ""
                     priceLbl.textAlignment = .center
                     nextCustomizeSV.isHidden = true
                 } else {
-                    paymentSelected = "Credit Card/ Debit Card"
-                    priceLbl.textAlignment = .left
+                    paymentSelected = LocalizationSystem.sharedInstance.localizedStringForKey(key: "Credit Card/Debit Card", comment: "")
                     nextCustomizeSV.isHidden = false
+                    if /*Bundle.getLanguage()*/UserDefaults.standard.string(forKey: "lang") == "ar" {
+                        priceLbl.textAlignment = .right
+                        nextCustomizeLbl.titleLabel?.textAlignment = .left
+                    } else {
+                        priceLbl.textAlignment = .left
+                        nextCustomizeLbl.contentHorizontalAlignment = .right
+                    }
                 }
             }
             
         } else {
-            if paymentSelected == "Credit Card/ Debit Card" {
+            if paymentSelected == LocalizationSystem.sharedInstance.localizedStringForKey(key: "Credit Card/Debit Card", comment: "") {
                 paymentSelected = ""
                 priceLbl.textAlignment = .center
                 nextCustomizeSV.isHidden = true
             } else {
-                paymentSelected = "Credit Card/ Debit Card"
-                priceLbl.textAlignment = .left
+                paymentSelected = LocalizationSystem.sharedInstance.localizedStringForKey(key: "Credit Card/Debit Card", comment: "")
                 nextCustomizeSV.isHidden = false
+                if /*Bundle.getLanguage()*/UserDefaults.standard.string(forKey: "lang") == "ar" {
+                    priceLbl.textAlignment = .right
+                    nextCustomizeLbl.titleLabel?.textAlignment = .left
+                } else {
+                    priceLbl.textAlignment = .left
+                    nextCustomizeLbl.contentHorizontalAlignment = .right
+
+                }
             }
         }
         tableView.reloadData()
@@ -255,23 +286,35 @@ extension PlaceOrderVC: UITableViewDelegate, UITableViewDataSource {
 
         let label = UILabel(frame: CGRect(x: 10, y: 5, width: UIScreen.main.bounds.width - 85, height: 30))
         let addButton = UIButton(frame: CGRect(x: label.frame.origin.x + label.frame.size.width + 5, y: 5, width: 65, height: 30))
-        let buttonTitleStr = NSMutableAttributedString(string:"+ Add New", attributes:attrs)
+        let buttonTitleStr = NSMutableAttributedString(string: LocalizationSystem.sharedInstance.localizedStringForKey(key: "+ Add New", comment: ""), attributes:attrs)
         attributedString.append(buttonTitleStr)
         addButton.setAttributedTitle(attributedString, for: .normal)
+        addButton.actions(forTarget: #selector(addButtonTapPressed), forControlEvent: .touchUpInside)
         if deliveryType == "Store Pickup" {
-            label.text = "Payment"
+            label.text = LocalizationSystem.sharedInstance.localizedStringForKey(key: "Payment", comment: "")
         } else {
         if section == 1 {
-            label.text = "Payment"
+            label.text = LocalizationSystem.sharedInstance.localizedStringForKey(key: "Payment", comment: "")
         } else {
-            label.text = "Saved Address"
+            label.text = LocalizationSystem.sharedInstance.localizedStringForKey(key: "Saved Address", comment: "")
         }
         }
-        label.font = UIFont.boldSystemFont(ofSize: 15)//UIFont(name: "", size: 16)
-//        label.text = self.sectionArray[section]//sectionHeaderTitleArray[section]
+        getLang(label: [label], btn: [addButton])
+//        if /*Bundle.getLanguage()*/UserDefaults.standard.string(forKey: "lang") == "ar" {
+//            label.textAlignment = .right
+//        } else {
+//            label.textAlignment = .left
+//        }
+        label.font = UIFont.boldSystemFont(ofSize: 15)
+        returnedView.addSubview(addButton)
         returnedView.addSubview(label)
 
         return returnedView
+    }
+    
+    @objc func addButtonTapPressed() {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "AddAddressVC") as! AddAddressVC
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 
@@ -341,7 +384,7 @@ extension PlaceOrderVC: ApiResponseDelegate {
         SnackBar().showSnackBar(view: self.view, text: "\(msg)", interval: 4)
     }
 
-       func onError(error: AFError) {
+    func onError(error: AFError) {
         LoadingIndicatorView.hide()
         SnackBar().showSnackBar(view: self.view, text: "\(error)", interval: 4)
     }

@@ -30,7 +30,6 @@ class AddresssBookVC: UIViewController {
     // MARK:- View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-//        headingLbl.text = LocalizationSystem.sharedInstance.localizedStringForKey(key: "Address", comment: "")
 //        addAddressBtn.setTitle(LocalizationSystem.sharedInstance.localizedStringForKey(key: "Add A New Address", comment: ""), for: .normal)
         tableView.backgroundColor = UIColor.white
         tableView.tableFooterView = UIView()
@@ -77,7 +76,7 @@ extension AddresssBookVC: UITableViewDelegate, UITableViewDataSource {
         messageLabel.sizeToFit()
         self.tableView.backgroundView = messageLabel;
         if addressModel?.data?.count == 0 {
-            messageLabel.text = "NO DATA FOUND"
+            messageLabel.text = LocalizationSystem.sharedInstance.localizedStringForKey(key: "NO DATA FOUND", comment: "")
         } else {
             messageLabel.text = ""
         }
@@ -89,6 +88,7 @@ extension AddresssBookVC: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "AddressBookTVCell", for: indexPath) as? AddressBookTVCell
         cell?.headingLbl.text = addressModel?.data?[indexPath.row].home_type
         cell?.descriptionLbl.text = addressModel?.data?[indexPath.row].address
+        getLang(label: [cell!.headingLbl, cell!.descriptionLbl], btn: nil)
         return cell!
     }
     

@@ -30,9 +30,10 @@ class TrackOrderVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         scanQrBtn.isHidden = true
-        orderIdLbl.text = "Order ID: \(orderModel?.data?.order_id ?? "")"
-        placedOnLbl.text = "Placed On: \(orderModel?.data?.placed_on ?? "")"
+        orderIdLbl.text = LocalizationSystem.sharedInstance.localizedStringForKey(key: "Order ID", comment: "") + ": \(orderModel?.data?.order_id ?? "")"
+        placedOnLbl.text = LocalizationSystem.sharedInstance.localizedStringForKey(key: "Placed On", comment: "") + ": \(orderModel?.data?.placed_on ?? "")"
         deliveryLbl.text = orderModel?.data?.delivery_time ?? ""
+        getLang(label: [orderIdLbl, placedOnLbl, deliveryLbl], btn: nil)
         
         let orderMod = orderModel?.data?.status_message
         var myPoints = [ISPoint]()

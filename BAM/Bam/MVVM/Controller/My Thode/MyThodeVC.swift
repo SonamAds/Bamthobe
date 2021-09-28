@@ -24,8 +24,6 @@ class MyThodeVC: UIViewController {
     @IBOutlet weak var checkoutBtn: UIButton!
     @IBOutlet weak var itemsLbl: UILabel!
     @IBOutlet weak var headingLbl: UILabel!
-    @IBOutlet weak var btn_AddCart: UIButton!
-    @IBOutlet weak var btn_GoHome: UIButton!
     @IBOutlet weak var backCustomizeBtn: UIButton!
     @IBOutlet weak var nextCustomizeSV: UIStackView!
     @IBOutlet weak var nextCustomizeLbl: UIButton!
@@ -36,9 +34,9 @@ class MyThodeVC: UIViewController {
     //MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-//        btn_AddCart.setTitle(LocalizationSystem.sharedInstance.localizedStringForKey(key: "Add To Cart", comment: ""), for: .normal)
-//        btn_GoHome.setTitle(LocalizationSystem.sharedInstance.localizedStringForKey(key: "Go to Home", comment: ""), for: .normal)
-//        headingLbl.text = LocalizationSystem.sharedInstance.localizedStringForKey(key: "My Thobe", comment: "")
+
+        backCustomizeLbl.setTitle(LocalizationSystem.sharedInstance.localizedStringForKey(key: "Side Pocket", comment: ""), for: .normal)
+        nextCustomizeLbl.setTitle(LocalizationSystem.sharedInstance.localizedStringForKey(key: "Measurement", comment: ""), for: .normal)
         apiHelper.responseDelegate = self
     }
     
@@ -121,6 +119,7 @@ extension MyThodeVC: UITableViewDelegate, UITableViewDataSource {
         }
         
         cell.cuffsPriceLbl.text = "SAR \(thobeArr[2]["price"] ?? "")"
+        cell.cuffsLbl.text = LocalizationSystem.sharedInstance.localizedStringForKey(key: "Cuff", comment: "")
         cell.cuffsIV.sd_setImage(with: URL(string: thobeArr[2]["image"] ?? "")!, placeholderImage: nil, options: .refreshCached) { (image, error, cacheType, url) in
             cell.fabricIV.image = image
             cell.fabricIV.contentMode = .scaleAspectFit

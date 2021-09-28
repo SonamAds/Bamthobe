@@ -25,7 +25,7 @@ class SupportWebVC: UIViewController, WKUIDelegate {
     // MARK:- View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        headingLbl.text = LocalizationSystem.sharedInstance.localizedStringForKey(key: selectedIndex == 0 ? "Terms & Conditions" : selectedIndex == 1 ? "About Us" : selectedIndex == 2 ? "FAQ's" : selectedIndex == 3 ? "Contact Us" : "Privacy Policy", comment: "")
+        headingLbl.text = LocalizationSystem.sharedInstance.localizedStringForKey(key: selectedIndex == 0 ? "Terms & Condition" : selectedIndex == 1 ? "About Us" : selectedIndex == 2 ? "FAQ's" : selectedIndex == 3 ? "Contact Us" : "Privacy Policy", comment: "")
 
       //  headingLbl.text = selectedIndex == 0 ? "Terms & Conditions" : selectedIndex == 1 ? "About Us" : selectedIndex == 2 ? "FAQ's" : selectedIndex == 3 ? "Contact Us" : "Privacy Policy"
         LoadingIndicatorView.show()

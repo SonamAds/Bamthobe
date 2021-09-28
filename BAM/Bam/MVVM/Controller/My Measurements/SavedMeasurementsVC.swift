@@ -38,7 +38,7 @@ class SavedMeasurementsVC: UIViewController {
     //MARK:-  View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-//        headingLbl.text = LocalizationSystem.sharedInstance.localizedStringForKey(key: "My Measurements", comment: "")
+        headingLbl.text = LocalizationSystem.sharedInstance.localizedStringForKey(key: "Measurement", comment: "")
         tableView.backgroundColor = UIColor.white
         tableView.tableFooterView = UIView()
         if thobeDict["product_id"] != "1" {
@@ -70,7 +70,7 @@ class SavedMeasurementsVC: UIViewController {
     }
     
     @IBAction func btnTap_NextCustomize(_ sender: UIButton) {
-        if nextCustomizeLbl.currentTitle == "Continue" {
+        if nextCustomizeLbl.currentTitle == LocalizationSystem.sharedInstance.localizedStringForKey(key: "Continue", comment: "") {
 //            addCartApi()
             
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -147,35 +147,32 @@ extension SavedMeasurementsVC: UITableViewDelegate, UITableViewDataSource {
                 cell.usrIV.image = #imageLiteral(resourceName: "home2")
                 cell.backgView.backgroundColor = AppUsedColors.appColor
             }
+            
+//            if LocalizationSystem.sharedInstance.getLanguage() == "ar" {
+//                cell.nameLbl.textAlignment = .right
+//            } else {
+//                cell.nameLbl.textAlignment = .left
+//            }
+            
+            getLang(label: [cell.nameLbl], btn: nil)
         } else {
             cell.nameLbl.text = measurementModel?.data?[indexPath.row].name
             cell.nameLbl.textColor = UIColor.black
             cell.backgView.backgroundColor = UIColor(red: 236/255, green: 236/255, blue: 236/255, alpha: 1)
+            cell.usrIV.image = #imageLiteral(resourceName: "measuring")
             if thobeDict["measurement"] == "\(measurementModel?.data?[indexPath.row].id ?? 0)" {
                 cell.tickIV.isHidden = false
             } else {
                 cell.tickIV.isHidden = true
             }
-//            cell.backgView.backgroundColor = UIColor.
         }
+        getLang(label: [cell.nameLbl], btn: nil)
 
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 //        let cell = tableView.cellForRow(at: indexPath) as! SavedMeasurementTVCell
-//        if selectedValue == saved[indexPath.section][indexPath.row] {
-//            selectedValue = ""
-//            nextCustomizeSV.isHidden = true
-//        } else {
-//            nextCustomizeSV.isHidden = false
-//            selectedValue = saved[indexPath.row]
-//            if indexPath.section == 1 {
-//                nextCustomizeLbl.text = "Appointment"
-//            } else {
-//                nextCustomizeLbl.text = "Continue"
-//            }
-//        }
         
         if indexPath.section == 1 {
             if  thobeDict["measurement_type"] == "\(indexPath.row)" {
@@ -187,10 +184,7 @@ extension SavedMeasurementsVC: UITableViewDelegate, UITableViewDataSource {
                 thobeDict["measurement_type"] = "\(indexPath.row)"
                 thobeDict["measurement"] = ""
 //                if indexPath.section == 1 {
-                nextCustomizeLbl.setTitle("Appointment", for: .normal)
-//                } else {
-//                    nextCustomizeLbl.text = "Continue"
-//                }
+                nextCustomizeLbl.setTitle(LocalizationSystem.sharedInstance.localizedStringForKey(key: "Appointment", comment: ""), for: .normal)
             }
         } else {
             if thobeDict["measurement"] == "\(measurementModel?.data?[indexPath.row].id ?? 0)" {
@@ -201,11 +195,7 @@ extension SavedMeasurementsVC: UITableViewDelegate, UITableViewDataSource {
                 nextCustomizeSV.isHidden = false
                 thobeDict["measurement_type"] = ""
                 thobeDict["measurement"] = "\(measurementModel?.data?[indexPath.row].id ?? 0)"
-//                if indexPath.section == 1 {
-//                    nextCustomizeLbl.text = "Appointment"
-//                } else {
-                nextCustomizeLbl.setTitle("Continue", for: .normal)
-//                }
+                nextCustomizeLbl.setTitle(LocalizationSystem.sharedInstance.localizedStringForKey(key: "Continue", comment: ""), for: .normal)
             }
         }
         tableView.reloadData()
@@ -224,9 +214,11 @@ extension SavedMeasurementsVC: UITableViewDelegate, UITableViewDataSource {
 
         let label = UILabel(frame: CGRect(x: 10, y: 5, width: UIScreen.main.bounds.width - 20, height: 30))
         if section == 1 {
-            label.text = "New Measurement"
+            label.text = LocalizationSystem.sharedInstance.localizedStringForKey(key: "New Measurement", comment: "")
+
         } else {
-            label.text = "Saved Measurement"
+            label.text = LocalizationSystem.sharedInstance.localizedStringForKey(key: "Saved Measurement", comment: "")
+
         }
         label.font = UIFont.boldSystemFont(ofSize: 15)//UIFont(name: "", size: 16)
         returnedView.addSubview(label)

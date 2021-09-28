@@ -74,14 +74,11 @@ extension NotificationVC: UITableViewDelegate, UITableViewDataSource {
 //        cell.dateLbl.text = notificationModel?.data?[indexPath.row].title
         cell.descriptionLbl.text = notificationModel?.data?[indexPath.row].notification
         cell.usrIV.image = #imageLiteral(resourceName: "Mask")
-//        let element = notificationDict["data"][indexPath.row]
-//
-//        //        let messagestr = notificationData[indexPath.row]["message"].stripHTML()
-//        //        let result2 = messagestr.replacingOccurrences(of: "&nbsp;", with: "")
-//        cell.dateLbl.text =  /*fromFormat("y-M-d", toFormat: "d-M-y", from: */element["date"].stringValue//)
-//        cell.titleLbl.text =  element["title"].stringValue
-//        cell.messageLbl.attributedText = (element["message"].stringValue).htmlToAttributedString
-
+        if /*Bundle.getLanguage()*/UserDefaults.standard.string(forKey: "lang") == "ar" {
+            cell.dateLbl.textAlignment = .left
+        } else {
+            cell.dateLbl.textAlignment = .right
+        }
         return cell
     }
     

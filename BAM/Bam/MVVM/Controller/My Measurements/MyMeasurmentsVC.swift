@@ -76,6 +76,7 @@ extension MyMeasurmentsVC: UITableViewDelegate, UITableViewDataSource {
         let data = measurementModel?.data?[indexPath.row]
         cell.descriptionLbl.text = data?.name
         cell.dateLbl.text = data?.updated_at
+        getLang(label: [cell.descriptionLbl], btn: nil)
 //        cell.usrIV.isHidden = true
         return cell
     }

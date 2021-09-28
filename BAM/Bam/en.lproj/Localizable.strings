@@ -2,9 +2,11 @@
   Localizable.strings
   Bam
 
-  Created by ADS N URL on 25/06/21.
+  Created by ADS N URL on 24/09/21.
   
 */
+
+
 "Arabic" = "عربى";
 "English" = "English";
 
@@ -27,17 +29,17 @@
 "Email" = "Email";
 "Password" = "Password";
 "Confirm Password" = "Confirm Password";
-"Don't have an Account? Sign In" = "Don't have an Account? Sign In";
+"Already have an Account? Sign In" = "Already have an Account? Sign In";
 "Don't have an Account? Sign Up" = "Don't have an Account? Sign Up";
 "Sign In" = "Sign In";
 "Mobile Number/Email ID" = "Mobile Number/Email ID";
-"Full name is required" = "Full name is required";
-"Mobile number is required" = "Mobile number is required";
+"Full name is required" = "Full Name is required";
+"Mobile number is required" = "Mobile Number is required";
 "Email is required" = "Email is required";
 "Invalid Email" = "Invalid Email";
 "Password is required" = "Password is required";
-"Confirm password is required" = "Confirm password is required";
-"Password and Confirm password are not matching" = "Password and Confirm password are not matching";
+"Confirm password is required" = "Confirm Password is required";
+"Password and Confirm password are not matching" = "Password and Confirm Password are not matching";
 "Enter OTP" = "Enter OTP";
 "Next" = "Next";
 "Resend OTP" = "Resend OTP";
@@ -86,7 +88,7 @@
 "Winter" = "Winter";
 "View Fabric" = "View Fabric";
 "Select Collar" = "Select Collar";
-"Select Cuffs" = "Select Cuffs";
+"Select Cuffs" = "Select Cuff";
 "Select Fabric" = "Select Fabric";
 "Select Pocket" = "Select Pocket";
 "Select Placket" = "Select Placket";
@@ -116,7 +118,7 @@
 "Select Branch" = "Select Branch";
 "Choose" = "Choose";
 "Enter Name" = "Enter Name";
-"Enter mobile Number" = "Enter mobile Number";
+"Enter Mobile Number" = "Enter Mobile Number";
 "My Thobe" = "My Thobe";
 "Side Pocket + Coin Pocket" = "Side Pocket + Coin Pocket";
 "Go to Home" = "Go to Home";
@@ -128,13 +130,13 @@
 "Ongoing Order" = "Ongoing Order";
 "Previous Order" = "Previous Order";
 "Order ID:" = "Order ID:";
-"Placed On:" = "Placed On:";
+"Placed On" = "Placed On";
 "Link" = "Link";
 "Reciepent Name" = "Reciepent Name";
 "Phone Number" = "Phone Number";
 "Date & Time" = "Date & Time";
 "Request For Invoice" = "Request For Invoice";
-"Total Items:" = "Total Items:";
+"Total Items" = "Total Items";
 "View Details" = "View Details";
 "Estimated Delivery" = "Estimated Delivery";
 "Scan QR Code To Pay" = "Scan QR Code To Pay";
@@ -142,7 +144,7 @@
 "Delivered On" = "Delivered On";
 "Qty:" = "Qty:";
 "Delivery Address" = "Delivery Address";
-"Price Details(1 Item)" = "Price Details(1 Item)";
+"Price Details" = "Price Details";
 "Customized Thobe Total" = "Customized Thobe Total";
 "Sub-Total" = "Sub-Total";
 "Invoice will be sent to your registered Email ID" = "Invoice will be sent to your registered Email ID";
@@ -150,7 +152,7 @@
 
 //Loyality/Gift Section
 "TOTAL AVAILABLE POINTS" = "TOTAL AVAILABLE POINTS";
-"ORDER ID" = "ORDER ID";
+"Order ID" = "ORDER ID";
 "POINTS EARNED" = "POINTS EARNED";
 "DATE" = "DATE";
 "Gift" = "Gift";
@@ -163,7 +165,7 @@
 "Enter the details to continue" = "Enter the details to continue";
 "To" = "To";
 "eg. Jaison" = "eg. Jaison";
-"Type your card message here..." = "Type your card message here....";
+"Type your card message here..." = "Type your card message here...";
 "From" = "From";
 "Share Your Feelings with a" = "Share Your Feelings with a";
 "Send Anonymously" = "Send Anonymously";
@@ -182,7 +184,7 @@
 //Cart Section
 "My Cart" = "My Cart";
 "Less Details" = "Less Details";
-"Items" = "Items";
+"Items" = "Item";
 "Checkout" = "Checkout";
 "Do you have any discount code?" = "Do you have any discount code?";
 "Use Loyality Points" = "Use Loyality Points";
@@ -193,7 +195,7 @@
 "Accessories Total" = "Accessories Total";
 "Gift Card Amount" = "Gift Card Amount";
 "Delivery Charges" = "Delivery Charges";
-"Coupon Applied(Save20)" = "Coupon Applied(Save20)";
+"Coupon Applied(Save20)" = "Coupon Applied";
 "Enter Discount Code" = "Enter Discount Code";
 "Thode Details" = "Thobe Details";
 "Customization Total Charges" = "Customization Total Charges";
@@ -206,7 +208,7 @@
 "Saved Address" = "Saved Address";
 "Payment" = "Payment";
 "Add" = "Add";
-"Credit Card/Debit Card" = "Credit Card/Debit Card";
+"Credit Card/Debit Card" = "Credit Card/ Debit Card";
 "Make Payment" = "Make Payment";
 "Thank you" = "Thank you";
 "View Order Status" = "View Order Status";
@@ -246,8 +248,8 @@
 "Older Appointment" = "Older Appointment";
 "Ongoing Appointment" = "Ongoing Appointment";
 "SELECT BRANCH" = "SELECT BRANCH";
-"CODE: SAVE20" = "CODE: SAVE20";
-"Expiry: 25 Feb 2021" = "Expiry: 25 Feb 2021";
+"CODE" = "CODE";
+"Expiry" = "Expiry";
 "Booking ID:" = "Booking ID:";
 "Store Name:" = "Store Name:";
 "Store Address:" = "Store Address:";
@@ -281,4 +283,24 @@
 "Cancel" = "Cancel";
 
 
+"Select Delivery type" = "Select Delivery type";
+"+ Add New" = "+ Add New";
+"You don't have enough loyality points!" = "You don't have enough loyality points!";
+"Place Order" = "Place Order";
+"Make Payment" = "Make Payment";
+"Back" = "Back";
+"Coming Soon" = "Coming Soon";
+"Enter Email ID" = "Enter Email ID";
+"Enter Valid Email ID" = "Enter Valid Email ID";
+"Enter Message" = "Enter Message";
+"Select Date" = "Select Date";
+"Enter Address" = "Enter Address";
+"Select Tag" = "Select Tag";
+"Enter Full Name" = "Enter Full Name";
+"Select Gender" = "Select Gender";
+"Enter message here..." = "Enter message here...";
 
+
+"Loyalty Points" = "Loyalty Points";
+"Total Points" = "Total Points";
+"Loyalty Points (100 Points = SAR 10)" = "Loyalty Points (100 Points = SAR 10)";

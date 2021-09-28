@@ -39,7 +39,7 @@ class ContactUsVC: UIViewController {
     // MARK:- View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-//        messageTF.text = "Type your message here...."
+        messageTF.text = LocalizationSystem.sharedInstance.localizedStringForKey(key: "Type your message here…", comment: "")
         messageTF.textColor = UIColor.lightGray
         messageTF.delegate = self
         mobileTF.delegate = self
@@ -51,19 +51,6 @@ class ContactUsVC: UIViewController {
         emailView.layer.borderColor = UIColor.lightGray.cgColor
         messageView.layer.borderWidth = 1
         messageView.layer.borderColor = UIColor.lightGray.cgColor
-//        submitBtn.setTitle(LocalizationSystem.sharedInstance.localizedStringForKey(key: "Submit", comment: ""), for: .normal)
-//       // headingLbl.text = LocalizationSystem.sharedInstance.localizedStringForKey(key: "Contact Us", comment: "")
-//
-//        name.text = LocalizationSystem.sharedInstance.localizedStringForKey(key: "Name", comment: "")
-//        mobileNumber.text = LocalizationSystem.sharedInstance.localizedStringForKey(key: "Mobile Number", comment: "")
-//        email.text = LocalizationSystem.sharedInstance.localizedStringForKey(key: "Email ID", comment: "")
-//        message.text = LocalizationSystem.sharedInstance.localizedStringForKey(key: "Message", comment: "")
-//        messageTF.text = LocalizationSystem.sharedInstance.localizedStringForKey(key: "Type your message here…", comment: "")
-//         
-//        mobileTF.placeholder = LocalizationSystem.sharedInstance.localizedStringForKey(key: "eg: +919233778273", comment: "")
-//        nameTF.placeholder = LocalizationSystem.sharedInstance.localizedStringForKey(key: "eg: James Bond", comment: "")
-//        emailTF.placeholder = LocalizationSystem.sharedInstance.localizedStringForKey(key: "eg: jamesbond@gmail.com", comment: "")
-
         apiHelper.responseDelegate = self
     }
     
@@ -85,23 +72,23 @@ class ContactUsVC: UIViewController {
     
     @IBAction func btnTap_submit(_ sender: UIButton) {
         if nameTF.text == "" {
-            SnackBar().showSnackBar(view: self.view, text: "Enter Name", interval: 4)
+            SnackBar().showSnackBar(view: self.view, text: LocalizationSystem.sharedInstance.localizedStringForKey(key: "Enter Name", comment: ""), interval: 4)
             return
             
         } else if mobileTF.text == "" {
-            SnackBar().showSnackBar(view: self.view, text: "Enter Mobile", interval: 4)
+            SnackBar().showSnackBar(view: self.view, text: LocalizationSystem.sharedInstance.localizedStringForKey(key: "Enter Mobile Number", comment: ""), interval: 4)
             return
             
         } else if emailTF.text == "" {
-            SnackBar().showSnackBar(view: self.view, text: "Enter Email ID", interval: 4)
+            SnackBar().showSnackBar(view: self.view, text: LocalizationSystem.sharedInstance.localizedStringForKey(key: "Enter Email ID", comment: ""), interval: 4)
             return
             
         } else if emailTF.text != "" && isValidEmail(testStr: emailTF.text!) != true {
-            SnackBar().showSnackBar(view: self.view, text: "Enter Valid Email ID", interval: 4)
+            SnackBar().showSnackBar(view: self.view, text: LocalizationSystem.sharedInstance.localizedStringForKey(key: "Enter Valid Email ID", comment: ""), interval: 4)
             return
         
         } else if messageTF.text == "" {
-            SnackBar().showSnackBar(view: self.view, text: "Enter Message", interval: 4)
+            SnackBar().showSnackBar(view: self.view, text: LocalizationSystem.sharedInstance.localizedStringForKey(key: "Enter Message", comment: ""), interval: 4)
             return
             
         } else {
@@ -121,7 +108,7 @@ extension ContactUsVC: UITextViewDelegate {
     }
     func textViewDidEndEditing(_ textView: UITextView) {
         if messageTF.text.isEmpty {
-            messageTF.text = LocalizationSystem.sharedInstance.localizedStringForKey(key: "Type your message here…", comment: "")//"Type your message here...."
+            messageTF.text = LocalizationSystem.sharedInstance.localizedStringForKey(key: "Type your message here…", comment: "")
             messageTF.textColor = UIColor.lightGray
         }
     }

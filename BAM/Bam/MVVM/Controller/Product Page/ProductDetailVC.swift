@@ -59,14 +59,21 @@ class ProductDetailVC: UIViewController {
     
     @IBOutlet weak var reviewBtn:UIButton!
     @IBOutlet weak var reviewView:UIView!
+    @IBOutlet weak var likeView:UIView!
     @IBOutlet weak var viewAllBtn:UIButton!
     @IBOutlet weak var tableView:UITableView!
-        
+    @IBOutlet weak var collectionView: UICollectionView!
+
+    @IBOutlet weak var bottomHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var scrollBottomConstraint: NSLayoutConstraint!
+
 
     // MARK:- View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         bottomView.isHidden = true
+//        scrollBottomConstraint.constant = 0
+        bottomHeightConstraint.constant = 0
         addView.layer.borderWidth = 1
         addView.layer.borderColor = AppUsedColors.appColor.cgColor
         apiHelper.responseDelegate = self
@@ -74,6 +81,7 @@ class ProductDetailVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        tableView.tableFooterView = UIView()
         apiHit()
     }
     
@@ -138,6 +146,7 @@ class ProductDetailVC: UIViewController {
         detailView.isHidden = true
         reviewView.isHidden = true
         productView.isHidden = false
+        likeView.isHidden = false
     }
     
     @IBAction func btnTap_Details(_ sender: UIButton) {
@@ -150,6 +159,7 @@ class ProductDetailVC: UIViewController {
         detailView.isHidden = false
         reviewView.isHidden = true
         productView.isHidden = true
+        likeView.isHidden = false
     }
     
     @IBAction func btnTap_Review(_ sender: UIButton) {
@@ -162,6 +172,7 @@ class ProductDetailVC: UIViewController {
         detailView.isHidden = true
         reviewView.isHidden = false
         productView.isHidden = true
+        likeView.isHidden = true
     }
     
     @IBAction func btnTap_ViewAllReview(_ sender: UIButton) {
@@ -202,11 +213,19 @@ class ProductDetailVC: UIViewController {
             addToCartApiHit()
             if cartAddValue != 0 {
                 bottomView.isHidden = false
+//                scrollBottomConstraint.constant = 0
+                if UIDevice.current.hasNotch {
+                    bottomHeightConstraint.constant = 84
+                } else {
+                    bottomHeightConstraint.constant = 60
+                }
                 let total = Int(productDetailModel?.cost ?? "")
                 cartPriceLbl.text = "SAR \(total ?? 0 * cartAddValue)"
                 cartValue.text = "\(cartAddValue)"
             } else {
                 bottomView.isHidden = true
+//                scrollBottomConstraint.constant = 0
+                bottomHeightConstraint.constant = 0
                 cartPriceLbl.text = "SAR 00.00"
                 cartValue.text = "0"
             }
@@ -223,6 +242,12 @@ class ProductDetailVC: UIViewController {
             if cartAddValue != 0 {
                 addCartValueTF.text = "\(cartAddValue)"
                 bottomView.isHidden = false
+//                scrollBottomConstraint.constant = 0
+                if UIDevice.current.hasNotch {
+                    bottomHeightConstraint.constant = 84
+                } else {
+                    bottomHeightConstraint.constant = 60
+                }
                 let total = Int((productDetailModel?.cost)!)
                 cartPriceLbl.text = "SAR \(total ?? 0 * cartAddValue)"
                 cartValue.text = "\(cartAddValue)"
@@ -232,6 +257,8 @@ class ProductDetailVC: UIViewController {
                 plusBtn.setTitle("Add", for: .normal)
                 cartAddValue = 0
                 bottomView.isHidden = true
+//                scrollBottomConstraint.constant = 0
+                bottomHeightConstraint.constant = 0
                 cartPriceLbl.text = "SAR 00.00"
                 cartValue.text = "0"
             }
@@ -281,7 +308,7 @@ extension ProductDetailVC: UITableViewDelegate, UITableViewDataSource {
 //        messageLabel.sizeToFit()
 //        self.tableView.backgroundView = messageLabel;
 //        if ongoingAppointmentModel?.data?.count == 0 || olderAppointmentModel?.data?.count == 0 {
-//            messageLabel.text = "NO DATA FOUND"
+//            messageLabel.text = LocalizationSystem.sharedInstance.localizedStringForKey(key: "NO DATA FOUND", comment: "")
 //        } else {
 //            messageLabel.text = ""
 //        }
@@ -343,6 +370,57 @@ extension ProductDetailVC: UITableViewDelegate, UITableViewDataSource {
     
 }
 
+//MARK: Collectionview Methods
+extension ProductDetailVC: UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+
+        let rect = CGRect(origin: CGPoint(x: 0,y :0), size: CGSize(width: self.collectionView.bounds.size.width, height: self.collectionView.bounds.size.height))
+        let messageLabel = UILabel(frame: rect)
+        messageLabel.textColor = UIColor.lightGray
+        messageLabel.numberOfLines = 0
+        messageLabel.textAlignment = .center
+        messageLabel.sizeToFit()
+        self.collectionView.backgroundView = messageLabel
+        if productDetailModel?.like?.count == 0 {
+            messageLabel.text = LocalizationSystem.sharedInstance.localizedStringForKey(key: "NO DATA FOUND", comment: "")
+            
+        } else {
+            messageLabel.text = ""
+        }
+        return productDetailModel?.like?.count ?? 0
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GridCell", for: indexPath) as! GridCell
+        cornerRadius(viewName: cell.img_food, radius: 6.0)
+        cornerRadius(viewName: cell.lbl_Price, radius: 6.0)
+        cornerRadius(viewName: cell.btn_Favorites, radius: 6.0)
+//            cornerRadius(viewName: cell.btn_Addtocart, radius: 6.0)
+//            cornerRadius(viewName: cell.lbl_outofStock, radius: 10.0)
+        let data =  productDetailModel?.like?[indexPath.row]
+        let url = "\(data?.image?[0] ?? "")"
+        cell.img_food.sd_setImage(with: URL(string: url)!, placeholderImage: nil, options: .refreshCached) { (image, error, cacheType, url) in
+            cell.img_food.image = image
+        }
+        cell.lbl_Name.text = data?.title
+        cell.lbl_Price.text = "SAR \(data?.cost ?? "0")"
+        return cell
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: (UIScreen.main.bounds.width - 45.0) / 2, height: 215)
+    }
+    
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "ProductDetailVC") as! ProductDetailVC
+        vc.productId = productDetailModel?.like?[indexPath.row].id ?? 0
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+}
+
+
+
 
 //MARk: - API Success
 extension ProductDetailVC: ApiResponseDelegate {
@@ -357,9 +435,7 @@ extension ProductDetailVC: ApiResponseDelegate {
                     if response.status == true/*200*/{
                     // create session here
                         productDetailModel = response.data
-//                        if productDetailModel?.is_measurement_required == "1" {
-//
-//                        }
+
                         imageSliderData()
                         productNameLbl.text = productDetailModel?.title
                         productDescLbl.text = productDetailModel?.description
@@ -372,6 +448,7 @@ extension ProductDetailVC: ApiResponseDelegate {
                         tableView.delegate = self
                         tableView.dataSource = self
                         tableView.reloadData()
+                        collectionView.reloadData()
                     } else if response.status == false {
                         LoadingIndicatorView.hide()
                     SnackBar().showSnackBar(view: self.view, text: "\(response.message ?? "")", interval: 4)
@@ -389,7 +466,15 @@ SnackBar().showSnackBar(view: self.view, text: "\(error.localizedDescription)", 
                     if response.status == true/*200*/{
                         // create session here
                         print("", response.message)
-                    
+                        if addCartValueTF.text == "" || addCartValueTF.text == "Add" {
+                            cartPriceLbl.text = "SAR 00.00"
+                        } else {
+                        let prodCost = ((productDetailModel?.cost ?? "0") as NSString).integerValue
+                        let cartCost = (addCartValueTF.text as! NSString).integerValue
+                        var total = 0
+                        total = total + prodCost * cartCost
+                        cartPriceLbl.text = "SAR \(total)"
+                        }
                     } else if response.status == false {
                         LoadingIndicatorView.hide()
                     SnackBar().showSnackBar(view: self.view, text: "\(response.message ?? "")", interval: 4)

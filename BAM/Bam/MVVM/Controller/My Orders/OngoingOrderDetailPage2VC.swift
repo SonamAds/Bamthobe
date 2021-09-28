@@ -28,22 +28,28 @@ class OngoingOrderDetailPage2VC: UIViewController {
     @IBOutlet weak var orderIdLbl: UILabel!
     @IBOutlet weak var placedOnLbl: UILabel!
     @IBOutlet weak var deliveryLbl: UILabel!
-    
+    @IBOutlet weak var estimatedLbl: UILabel!
+
     @IBOutlet weak var itemNameLbl: UILabel!
     @IBOutlet weak var qtyLbl: UILabel!
     @IBOutlet weak var qtyHeading: UILabel!
     @IBOutlet weak var descriptionLbl: UILabel!
     @IBOutlet weak var priceLbl: UILabel!
     @IBOutlet weak var deliveredAddressLbl: UILabel!
-   
+
     @IBOutlet weak var addressTagLbl: UILabel!
     @IBOutlet weak var addressDetailLbl: UILabel!
+    @IBOutlet weak var giftLbl: UILabel!
     @IBOutlet weak var customizedThodePriceLbl: UILabel!
     @IBOutlet weak var vistingPriceLbl: UILabel!
     @IBOutlet weak var deliveryPriceLbl: UILabel!
     @IBOutlet weak var couponPriceLbl: UILabel!
     @IBOutlet weak var advancePriceLbl: UILabel!
+    @IBOutlet weak var giftPriceLbl: UILabel!
     @IBOutlet weak var remainingPriceLbl: UILabel!
+
+    @IBOutlet weak var couponSV: UIStackView!
+    @IBOutlet weak var giftPriceSV: UIStackView!
 
     @IBOutlet weak var totalLbl: UILabel!
     @IBOutlet weak var userIV: UIImageView!
@@ -104,8 +110,10 @@ extension OngoingOrderDetailPage2VC: ApiResponseDelegate {
                 orderModel = try jsonDecoder.decode(TrackOrderModel.self, from: responseData.data!)
                 if orderModel?.status == true/*200*/{
                     // create session here
-                    orderIdLbl.text = "Order ID: \(subOrderId)"//\(orderModel?.data?.id ?? 0)"
-                    placedOnLbl.text = "Placed On: \(orderModel?.data?.placed_on ?? "")"
+                    orderIdLbl.text = LocalizationSystem.sharedInstance.localizedStringForKey(key: "Order ID", comment: "") + ": \(subOrderId)"
+                    
+                    placedOnLbl.text = LocalizationSystem.sharedInstance.localizedStringForKey(key: "Placed On", comment: "") + ": \(orderModel?.data?.placed_on ?? "")"
+                    getLang(label: [orderIdLbl, placedOnLbl, descriptionLbl, itemNameLbl, priceLbl, estimatedLbl, addressDetailLbl], btn: nil)
 //                    deliveryLbl.text = orderModel?.data?.delivery_time
                     itemNameLbl.text = orderModel?.data?.title
                     userIV.sd_setImage(with: URL(string: orderModel?.data?.image ?? "")!, placeholderImage: nil, options: .refreshCached) { (image, error, cacheType, url) in
@@ -121,8 +129,10 @@ extension OngoingOrderDetailPage2VC: ApiResponseDelegate {
                     remainingPriceLbl.text = "SAR \(orderModel?.data?.remaining ?? "0")"
                     vistingPriceLbl.text = "SAR \(orderModel?.data?.visiting_charge ?? "0")"
                     advancePriceLbl.text = "SAR \(orderModel?.data?.advanced_payment ?? "0")"
-
-                    
+//                    giftPriceLbl.text = "SAR \(orderModel?.data?.gift ?? "0")"
+                    let tagLbl = orderModel?.data?.address?.components(separatedBy: " ")
+                    addressTagLbl.text = tagLbl?[0]//orderModel?.data?.
+                    addressDetailLbl.text = orderModel?.data?.address
                 } else if orderModel?.status == false {
                     LoadingIndicatorView.hide()
                     SnackBar().showSnackBar(view: self.view, text: "\(orderModel?.message ?? "")", interval: 4)

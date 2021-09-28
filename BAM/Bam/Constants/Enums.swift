@@ -40,15 +40,6 @@ enum TabItem: Int {
     }
 }
 
-enum ViewControllerID {
-//    static let mainViewController = "MainViewController"
-//    static let sideMenuVC = "SideMenuVC"
-//    static let rightMenuViewController = "RightMenuViewController"
-//    static let secondViewController = "SecondViewController"
-//    static let nonMenuViewController = "NonMenuViewController"
-//    static let customTabbarViewController = "CustomTabBarViewController"
-//    static let settingsViewController = "SettingsViewController"
-}
 
 enum ViewID {
     static let leftHeaderView = "LeftHeaderView"
@@ -58,3 +49,4 @@ enum ViewID {
 enum StoryboardID {
     static let main = "Main"
 }
+

@@ -36,6 +36,7 @@ struct ProductModelData : Codable {
     let description : String?
     let image : String?
     let cost : String?
+    let is_measurement_required : String?
     let featured : String?
     let status : Int?
     let created_at : String?
@@ -44,7 +45,7 @@ struct ProductModelData : Codable {
     enum CodingKeys: String, CodingKey {
 
         case id, category_id, status
-        case sub_category_id, title, description, image, cost, featured, created_at, updated_at
+        case sub_category_id, title, description, image, cost, featured, created_at, updated_at, is_measurement_required
     }
 
     init(from decoder: Decoder) throws {
@@ -60,6 +61,8 @@ struct ProductModelData : Codable {
         status = try values.decodeIfPresent(Int.self, forKey: .status)
         created_at = try values.decodeIfPresent(String.self, forKey: .created_at)
         updated_at = try values.decodeIfPresent(String.self, forKey: .updated_at)
+        is_measurement_required = try values.decodeIfPresent(String.self, forKey: .is_measurement_required)
+
     }
 
 }

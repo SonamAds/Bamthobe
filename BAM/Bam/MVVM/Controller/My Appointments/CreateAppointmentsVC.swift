@@ -99,9 +99,9 @@ class CreateAppointmentsVC: UIViewController {
         dateComponents.year = 3
         let threeYearLater = Calendar.current.date(byAdding: dateComponents, to: currentDate)
 
-        datePicker.show("Select Date",
-                        doneButtonTitle: "Save",
-                        cancelButtonTitle: "Cancel",
+        datePicker.show(LocalizationSystem.sharedInstance.localizedStringForKey(key: "Select Date", comment: ""),
+                        doneButtonTitle: LocalizationSystem.sharedInstance.localizedStringForKey(key: "Save", comment: ""),
+                        cancelButtonTitle: LocalizationSystem.sharedInstance.localizedStringForKey(key: "Cancel", comment: ""),
                         minimumDate: currentDate,
                         maximumDate: threeYearLater,
                         datePickerMode: .date) { (date) in
@@ -120,9 +120,9 @@ class CreateAppointmentsVC: UIViewController {
         dateComponents.year = 3
         let threeYearLater = Calendar.current.date(byAdding: dateComponents, to: currentDate)
 
-        datePicker.show("Select Time",
-                        doneButtonTitle: "Save",
-                        cancelButtonTitle: "Cancel",
+        datePicker.show(LocalizationSystem.sharedInstance.localizedStringForKey(key: "Select Time", comment: ""),
+                        doneButtonTitle: LocalizationSystem.sharedInstance.localizedStringForKey(key: "Save", comment: ""),
+                        cancelButtonTitle: LocalizationSystem.sharedInstance.localizedStringForKey(key: "Cancel", comment: ""),
                         minimumDate: currentDate,
                         maximumDate: threeYearLater,
                         datePickerMode: .time) { (date) in
@@ -137,10 +137,9 @@ class CreateAppointmentsVC: UIViewController {
                 let dateFormatter = DateFormatter()
                 dateFormatter.dateFormat = "h:mm a"
                 dateFormatter.locale = Locale(identifier: "en_US_POSIX") // fixes nil if device time in 24 hour format
-                let date = dateFormatter.date(from: self.timeTF.text ?? "00:00 PM")
-
+                let date = dt
                 dateFormatter.dateFormat = "HH:mm"
-                let date24 = dateFormatter.string(from: date!)
+                let date24 = dateFormatter.string(from: date)
                 self.thobeDict["time"] = date24
 
             }
@@ -155,19 +154,19 @@ class CreateAppointmentsVC: UIViewController {
     
     @IBAction func btnTap_Continue(_ sender: UIButton) {
         if nameTF.text == "" {
-            SnackBar().showSnackBar(view: self.view, text: "Enter Name", interval: 4)
+            SnackBar().showSnackBar(view: self.view, text: LocalizationSystem.sharedInstance.localizedStringForKey(key: "Enter Name", comment: ""), interval: 4)
 
         } else if mobileTF.text == "" {
-            SnackBar().showSnackBar(view: self.view, text: "Enter mobile Number", interval: 4)
+            SnackBar().showSnackBar(view: self.view, text: LocalizationSystem.sharedInstance.localizedStringForKey(key: "Enter Mobile Number", comment: ""), interval: 4)
 
         } else if dateTF.text == "" {
-            SnackBar().showSnackBar(view: self.view, text: "Select Dtae", interval: 4)
+            SnackBar().showSnackBar(view: self.view, text: LocalizationSystem.sharedInstance.localizedStringForKey(key: "Select Date", comment: ""), interval: 4)
 
         } else if branchTF.text == "" && thobeDict["measurement_type"] == "0" {//== "Branch Appointment" {
-            SnackBar().showSnackBar(view: self.view, text: "Select Branch", interval: 4)
+            SnackBar().showSnackBar(view: self.view, text: LocalizationSystem.sharedInstance.localizedStringForKey(key: "Select Branch", comment: ""), interval: 4)
        
         } else if timeTF.text == "" && thobeDict["measurement_type"] == "1" {
-            SnackBar().showSnackBar(view: self.view, text: "Select Time", interval: 4)
+            SnackBar().showSnackBar(view: self.view, text: LocalizationSystem.sharedInstance.localizedStringForKey(key: "Select Time", comment: ""), interval: 4)
         
         } else {
             thobeDict["name"] = nameTF.text

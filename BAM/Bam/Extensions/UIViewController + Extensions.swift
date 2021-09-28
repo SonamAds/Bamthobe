@@ -11,6 +11,52 @@ import SideMenu
 
 extension UIViewController {
     
+    func customShadowView(vew: UIView, shadowSize: CGFloat, shadowOpacity: Float) {
+        //let shadowSize : CGFloat = 4.0
+        let shadowPath = UIBezierPath(rect: CGRect(x: -shadowSize / 2,
+                        y: -shadowSize / 2,
+                        width: vew.frame.size.width + shadowSize,
+                        height: vew.frame.size.height + shadowSize))
+        vew.layer.masksToBounds = false
+        vew.layer.shadowColor = UIColor.white.cgColor
+        vew.layer.shadowOffset = CGSize(width: 0.0, height: 0.0)
+        vew.layer.shadowOpacity = shadowOpacity//0.4
+        vew.layer.shadowPath = shadowPath.cgPath
+    }
+    
+    func customShadowImage(vew: UIImageView, shadowSize: CGFloat, shadowOpacity: Float) {
+        let shadowSize : CGFloat = 1.0
+        let shadowPath = UIBezierPath(rect: CGRect(x: -shadowSize / 2,
+                        y: -shadowSize / 2,
+                        width: vew.frame.size.width + shadowSize,
+                        height: vew.frame.size.height + shadowSize))
+        vew.layer.masksToBounds = false
+        vew.layer.shadowColor = UIColor.black.cgColor
+        vew.layer.shadowOffset = CGSize(width: 0.0, height: 0.0)
+        vew.layer.shadowOpacity = 0.2
+        vew.layer.shadowPath = shadowPath.cgPath
+    }
+    
+    
+    //Language Check
+    func getLang(label: [UILabel]?, btn: [UIButton]?) {
+        if LocalizationSystem.sharedInstance.getLanguage() == "ar" {
+            for i in 0..<(label?.count ?? 0) {
+                label?[i].textAlignment = .right
+            }
+            for i in 0..<(btn?.count ?? 0) {
+                btn?[i].titleLabel?.textAlignment = .right
+            }
+        } else {
+            for i in 0..<(label?.count ?? 0) {
+                label?[i].textAlignment = .left
+            }
+            for i in 0..<(btn?.count ?? 0) {
+                btn?[i].titleLabel?.textAlignment = .left
+            }
+        }
+    }
+    
     
     //For Email Validation
     func isValidEmail(testStr: String) -> Bool {
@@ -31,8 +77,6 @@ extension UIViewController {
                     SideMenuManager.default.menuPresentMode = modes[0]
         SideMenuManager.default.menuPushStyle = .default
         SideMenuManager.default.leftMenuNavigationController?.setNavigationBarHidden(true, animated: false)
-       // SideMenuManager.default.addPanGestureToPresent(toView: self.navigationController!.navigationBar)
-       // SideMenuManager.default.addScreenEdgePanGesturesToPresent(toView: self.navigationController!.view)
         SideMenuManager.default.menuFadeStatusBar = false
             SideMenuManager.default.menuWidth =  min(round(min((self.navigationController!.view.frame.width), (self.navigationController!.view.frame.height)) * 0.75), 350)
     }

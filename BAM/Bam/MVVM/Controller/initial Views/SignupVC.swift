@@ -32,14 +32,15 @@ class SignupVC: UIViewController {
     @IBOutlet weak var dontAccountLbl: UILabel!
     @IBOutlet weak var backBtn: UIButton!
     
+    
     //For Localizable files
-    let fullNameMessage        = NSLocalizedString("Full name is required.", comment: "")
-    let MobileNumberMessage         = NSLocalizedString("Mobile number is required.", comment: "")
-    let emailMessage            = NSLocalizedString("Email is required.", comment: "")
-    let emailValidationMessage    = NSLocalizedString("Invalid Email.", comment: "")
-    let passwordMessage         = NSLocalizedString("Password is required.", comment: "")
-    let confirmPasswordMessage  = NSLocalizedString("Confirm password is required.", comment: "")
-    let mismatchPasswordMessage = NSLocalizedString("Password and Confirm password are not matching.", comment: "")
+    let fullNameMessage        = LocalizationSystem.sharedInstance.localizedStringForKey(key: "Full name is required", comment: "")// LocalizationSystem.sharedInstance.localizedStringForKey(key: "Full name is required.", comment: "")
+    let MobileNumberMessage         = LocalizationSystem.sharedInstance.localizedStringForKey(key: "Mobile number is required", comment: "")//LocalizationSystem.sharedInstance.localizedStringForKey(key: "Mobile number is required.", comment: "")
+    let emailMessage            = LocalizationSystem.sharedInstance.localizedStringForKey(key: "Email is required", comment: "")//LocalizationSystem.sharedInstance.localizedStringForKey(key: "Email is required.", comment: "")
+    let emailValidationMessage    = LocalizationSystem.sharedInstance.localizedStringForKey(key: "Invalid Email", comment: "")//LocalizationSystem.sharedInstance.localizedStringForKey(key: "Invalid Email.", comment: "")
+    let passwordMessage         = LocalizationSystem.sharedInstance.localizedStringForKey(key: "Password is required", comment: "")//LocalizationSystem.sharedInstance.localizedStringForKey(key: "Password is required.", comment: "")
+    let confirmPasswordMessage  = LocalizationSystem.sharedInstance.localizedStringForKey(key: "Confirm Password is required", comment: "")//LocalizationSystem.sharedInstance.localizedStringForKey(key: "Confirm password is required.", comment: "")
+    let mismatchPasswordMessage = LocalizationSystem.sharedInstance.localizedStringForKey(key: "Password and Confirm Password are not matching", comment: "")//LocalizationSystem.sharedInstance.localizedStringForKey(key: "Password and Confirm password are not matching.", comment: "")
 
     
     //MARK: - View Life Cycle
@@ -48,13 +49,11 @@ class SignupVC: UIViewController {
         self.backBtn.transform = CGAffineTransform(rotationAngle: CGFloat(M_PI_2))
         
         txtMobileNumber.delegate = self
-//        btn_Signup.setTitle(LocalizationSystem.sharedInstance.localizedStringForKey(key: "Sign Up", comment: ""), for: .normal)
-//        signup.text = LocalizationSystem.sharedInstance.localizedStringForKey(key: "Sign Up", comment: "")
-//        txtFullName.placeholder = LocalizationSystem.sharedInstance.localizedStringForKey(key: "Full Name", comment: "")
-//        txtMobileNumber.placeholder = LocalizationSystem.sharedInstance.localizedStringForKey(key: "Mobile Number", comment: "")
-//        txtEmail.placeholder = LocalizationSystem.sharedInstance.localizedStringForKey(key: "Email", comment: "")
-//        txtPassword.placeholder = LocalizationSystem.sharedInstance.localizedStringForKey(key: "Password", comment: "")
-//        txtConfirmPassword.placeholder = LocalizationSystem.sharedInstance.localizedStringForKey(key: "Confirm Password", comment: "")
+        let quote = "Already have an Account? Sign In" //"Don't have an Account? Sign Up"
+        let attributedQuote = NSMutableAttributedString(string: quote)
+        attributedQuote.addAttribute(.foregroundColor, value: UIColor.red, range: NSRange(location: 25, length: 7))
+        
+        dontAccountLbl.attributedText = attributedQuote
         apiHelper.responseDelegate = self
     }
     
@@ -77,10 +76,10 @@ class SignupVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
     //MARK: - Helping Method
     func apiHit() {
         apiHelper.PostData(urlString: KSignUp, tag: SIGNUP, params: ["device_token":userManager.getDeviceToken(), "name":"\(txtFullName.text ?? "")","email":"\(txtEmail.text ?? "")","mobile":"\(txtMobileNumber.text ?? "")","password":"\(txtPassword.text ?? "")","password_confirmation":"\(txtPassword.text ?? "")"])
-
     }
     
     //MARK: - IBActions
@@ -104,17 +103,17 @@ class SignupVC: UIViewController {
     }
     
     @IBAction func onBtnGoogleClicked(_ sender: Any) {
-        SnackBar().showSnackBar(view: self.view, text: "Coming Soon", interval: 4)
+        SnackBar().showSnackBar(view: self.view, text: LocalizationSystem.sharedInstance.localizedStringForKey(key: "Coming Soon", comment: ""), interval: 4)
 
     }
     
     @IBAction func onBtnTwitterClicked(_ sender: Any) {
-        SnackBar().showSnackBar(view: self.view, text: "Coming Soon", interval: 4)
+        SnackBar().showSnackBar(view: self.view, text: LocalizationSystem.sharedInstance.localizedStringForKey(key: "Coming Soon", comment: ""), interval: 4)
 
     }
     
     @IBAction func onBtnInstagramClicked(_ sender: Any) {
-        SnackBar().showSnackBar(view: self.view, text: "Coming Soon", interval: 4)
+        SnackBar().showSnackBar(view: self.view, text: LocalizationSystem.sharedInstance.localizedStringForKey(key: "Coming Soon", comment: ""), interval: 4)
 
     }
     

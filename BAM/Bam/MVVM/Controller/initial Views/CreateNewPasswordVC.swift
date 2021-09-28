@@ -26,20 +26,20 @@ class CreateNewPasswordVC: UIViewController {
     @IBOutlet weak var backBtn: UIButton!
     
     //For Localizable files
-    let passwordMessage         = NSLocalizedString("Password is required.", comment: "")
-    let confirmPasswordMessage  = NSLocalizedString("Confirm password is required.", comment: "")
-    let mismatchPasswordMessage = NSLocalizedString("Password and Confirm password are not matching.", comment: "")
+    let passwordMessage         = LocalizationSystem.sharedInstance.localizedStringForKey(key: "Password is required.", comment: "")
+    let confirmPasswordMessage  = LocalizationSystem.sharedInstance.localizedStringForKey(key: "Confirm password is required.", comment: "")
+    let mismatchPasswordMessage = LocalizationSystem.sharedInstance.localizedStringForKey(key: "Password and Confirm password are not matching.", comment: "")
     
     
     //MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.backBtn.transform = CGAffineTransform(rotationAngle: CGFloat(M_PI_2))
-//        btn_Submit.setTitle(LocalizationSystem.sharedInstance.localizedStringForKey(key: "Submit", comment: ""), for: .normal)
-//        passwordLbl.text = LocalizationSystem.sharedInstance.localizedStringForKey(key: "Change Password", comment: "")
-//        txtPassword.placeholder = LocalizationSystem.sharedInstance.localizedStringForKey(key: "Password", comment: "")
-//        txtConfirmPassword.placeholder = LocalizationSystem.sharedInstance.localizedStringForKey(key: "Confirm Password", comment: "")
-        
+
+//        let quote = "Don't have an Account? Sign Up"
+//        let attributedQuote = NSMutableAttributedString(string: quote)
+//        attributedQuote.addAttribute(.foregroundColor, value: UIColor.red, range: NSRange(location: 23, length: 7))
+//        dontAccountLbl.attributedText = attributedQuote
         apiHelper.responseDelegate = self
     }
     

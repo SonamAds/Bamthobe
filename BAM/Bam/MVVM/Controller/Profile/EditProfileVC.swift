@@ -80,19 +80,19 @@ class EditProfileVC: UIViewController {
     
     @IBAction func btnTap_saveChanges(_ sender: UIButton) {
         if NameLbl.text == "" {
-            SnackBar().showSnackBar(view: self.view, text: "Enter Name", interval: 2)
+            SnackBar().showSnackBar(view: self.view, text: LocalizationSystem.sharedInstance.localizedStringForKey(key: "Enter Name", comment: ""), interval: 2)
             return
             
         } else if phoneNumberLbl.text == "" {
-            SnackBar().showSnackBar(view: self.view, text: "Enter Mobile Number", interval: 2)
+            SnackBar().showSnackBar(view: self.view, text: LocalizationSystem.sharedInstance.localizedStringForKey(key: "Enter Mobile Number", comment: ""), interval: 2)
             return
             
         } else if emailLbl.text == "" {
-            SnackBar().showSnackBar(view: self.view, text: "Enter Email ID", interval: 2)
+            SnackBar().showSnackBar(view: self.view, text: LocalizationSystem.sharedInstance.localizedStringForKey(key: "Enter Email ID", comment: ""), interval: 2)
             return
             
         } else if genderSlected == 0 {
-            SnackBar().showSnackBar(view: self.view, text: "Select Gender", interval: 2)
+            SnackBar().showSnackBar(view: self.view, text: LocalizationSystem.sharedInstance.localizedStringForKey(key: "Select Gender", comment: ""), interval: 2)
             return
             
         } else {

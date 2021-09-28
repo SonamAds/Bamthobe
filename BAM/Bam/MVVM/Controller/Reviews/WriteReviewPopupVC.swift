@@ -9,11 +9,17 @@ import UIKit
 import Alamofire
 
 
+protocol PassValueDelegate {
+    func passValue(str: String)
+}
+
 class WriteReviewPopupVC: UIViewController {
     
     //MARK: - Variables
-    var productId = 0
+    var productId = "0"
+    var subOrderId = "0"
     var rating = 0
+    var delegate : PassValueDelegate?
     var productDetailModel: ProductDetailModelData?
     var apiHelper = ApiHelper()
     var ADDREVIEW = "1"
@@ -34,7 +40,7 @@ class WriteReviewPopupVC: UIViewController {
     // MARK:- View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        messageTF.text = "Type your message"
+        messageTF.text = LocalizationSystem.sharedInstance.localizedStringForKey(key: "Type your message here…", comment: "")
         messageTF.textColor = UIColor.lightGray
         messageView.layer.borderWidth = 1
         messageView.layer.borderColor = UIColor.lightGray.cgColor
@@ -48,7 +54,7 @@ class WriteReviewPopupVC: UIViewController {
 
     //MARK: - Helper Method
     func apiHit() {
-        apiHelper.PostData(urlString: kAddReview, tag: ADDREVIEW, params: ["star":"\(rating)", "product_id":"\(productId)", "comments":messageTF.text ?? ""])
+        apiHelper.PostData(urlString: kAddReview, tag: ADDREVIEW, params: ["star":"\(rating)", "product_id":productId, "comments":messageTF.text ?? "", "sub_order_id": subOrderId])
     }
     
     //MARK: Actions
@@ -144,7 +150,7 @@ class WriteReviewPopupVC: UIViewController {
     
     @IBAction func btnTap_save(_ sender: UIButton) {
         if rating == 0 {
-            
+            SnackBar().showSnackBar(view: self.view, text: "Please Select atleast one Star to rate", interval: 4)
         } else {
             apiHit()
         }
@@ -167,7 +173,7 @@ extension WriteReviewPopupVC: UITextViewDelegate {
     }
     func textViewDidEndEditing(_ textView: UITextView) {
         if messageTF.text.isEmpty {
-            messageTF.text = "Type your message"
+            messageTF.text = LocalizationSystem.sharedInstance.localizedStringForKey(key: "Type your message here…", comment: "")
             messageTF.textColor = UIColor.lightGray
         }
     }
@@ -186,7 +192,11 @@ extension WriteReviewPopupVC: ApiResponseDelegate {
                     let response = try jsonDecoder.decode(LoginModel.self, from: responseData.data!)
                     if response.status == true/*200*/{
                     // create session here
-                        self.dismiss(animated: true, completion: nil)
+                        SnackBar().showSnackBar(view: self.view, text: "\(response.message ?? "")", interval: 4)
+                        self.dismiss(animated: false, completion: { () -> Void   in
+                            
+                            self.delegate?.passValue(str: "api")
+                        })
                         
                     } else if response.status == false {
                         LoadingIndicatorView.hide()

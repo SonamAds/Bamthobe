@@ -16,8 +16,9 @@ class LoginVC: UIViewController {
     var LOGNIN = "-1"
     var userManager = UserManager.userManager
     //For Localizable files
-    let MobileNoMessage         = NSLocalizedString("Mobile Number is required.", comment: "")
-    let passwordMessage         = NSLocalizedString("Password is required.", comment: "")
+    let MobileNoMessage         = LocalizationSystem.sharedInstance.localizedStringForKey(key: "Mobile number is required", comment: "")
+    let passwordMessage         = LocalizationSystem.sharedInstance.localizedStringForKey(key: "Password is required", comment: "")
+    
     
     //MARK: - IBOutlet Propreties
     @IBOutlet weak var scrollView: UIScrollView!
@@ -39,10 +40,27 @@ class LoginVC: UIViewController {
         if #available(iOS 13.0, *) {
             txtMobileNumber.overrideUserInterfaceStyle = .light
             txtPassword.overrideUserInterfaceStyle = .light
-
         } else {
-            // Fallback on earlier versions
         }
+//        let buttonTitleStr = NSMutableAttributedString(string: LocalizationSystem.sharedInstance.localizedStringForKey(key: "Don't have an Account? Sign Up", comment: ""), attributes:attrs)
+//        attributedString.append(buttonTitleStr)
+//        dontAccountLbl.attributedText = attributedString
+        let font = UIFont.systemFont(ofSize: 72)
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = .center
+        paragraphStyle.firstLineHeadIndent = 5.0
+
+        let attributes: [NSAttributedString.Key: Any] = [
+            .font: font,
+            .foregroundColor: UIColor.blue,
+            .paragraphStyle: paragraphStyle
+        ]
+
+        
+        let quote = "Don't have an Account? Sign Up"
+        let attributedQuote = NSMutableAttributedString(string: quote)
+        attributedQuote.addAttribute(.foregroundColor, value: UIColor.red, range: NSRange(location: 23, length: 7))
+        dontAccountLbl.attributedText = attributedQuote
 
         apiHelper.responseDelegate = self
     }
@@ -120,17 +138,17 @@ class LoginVC: UIViewController {
     }
     
     @IBAction func onBtnGoogleClicked(_ sender: Any) {
-        SnackBar().showSnackBar(view: self.view, text: "Coming Soon", interval: 4)
+        SnackBar().showSnackBar(view: self.view, text: LocalizationSystem.sharedInstance.localizedStringForKey(key: "Coming Soon", comment: ""), interval: 4)
 
     }
     
     @IBAction func onBtnTwitterClicked(_ sender: Any) {
-        SnackBar().showSnackBar(view: self.view, text: "Coming Soon", interval: 4)
+        SnackBar().showSnackBar(view: self.view, text: LocalizationSystem.sharedInstance.localizedStringForKey(key: "Coming Soon", comment: ""), interval: 4)
 
     }
     
     @IBAction func onBtnInstagramClicked(_ sender: Any) {
-        SnackBar().showSnackBar(view: self.view, text: "Coming Soon", interval: 4)
+        SnackBar().showSnackBar(view: self.view, text: LocalizationSystem.sharedInstance.localizedStringForKey(key: "Coming Soon", comment: ""), interval: 4)
 
     }
     

@@ -29,7 +29,9 @@ class CheckoutVC: UIViewController {
     
     @IBOutlet weak var itemsLbl: UILabel!
     @IBOutlet weak var loyaltyPointsLbl: UILabel!
-    @IBOutlet weak var loyaltyPointsSlider: UISwitch!
+    @IBOutlet weak var loyaltyPointsUseLbl: UILabel!
+    @IBOutlet weak var TotalLoyaltyPointsLbl: UILabel!
+    @IBOutlet weak var TotalLoyaltyPointsPriceLbl: UILabel!
     @IBOutlet weak var discountTF: UITextField!
     @IBOutlet weak var applyBtn: UIButton!
     
@@ -39,14 +41,17 @@ class CheckoutVC: UIViewController {
     @IBOutlet weak var deliveryChargePriceLbl: UILabel!
     @IBOutlet weak var couponAppliedPriceLbl: UILabel!
     @IBOutlet weak var loyaltyPointsPriceLbl: UILabel!
+    @IBOutlet weak var remainingPriceLbl: UILabel!
+    @IBOutlet weak var advancePriceLbl: UILabel!
+    @IBOutlet weak var payablePriceLbl: UILabel!
     @IBOutlet weak var grandTotalPriceLbl: UILabel!
-   
-    @IBOutlet weak var TotalLoyaltyPointsLbl: UILabel!
 
     @IBOutlet weak var thodeTotalSV: UIStackView!
     @IBOutlet weak var accessoriesTotalSV: UIStackView!
     @IBOutlet weak var giftCardSV: UIStackView!
     @IBOutlet weak var couponSV: UIStackView!
+    @IBOutlet weak var remainingSV: UIStackView!
+    @IBOutlet weak var advanceSV: UIStackView!
     @IBOutlet weak var deliveryChargeSV: UIStackView!
     
     @IBOutlet weak var loyaltySwitch: UISwitch!
@@ -64,6 +69,12 @@ class CheckoutVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         apiHelper.responseDelegate = self
+        nextCustomizeLbl.setTitle(LocalizationSystem.sharedInstance.localizedStringForKey(key: "Place Order", comment: ""), for: .normal)
+        loyaltyPointsUseLbl.text = LocalizationSystem.sharedInstance.localizedStringForKey(key: "Loyalty Points (100 Points = SAR 10)", comment: "")
+        loyaltyPointsLbl.text = LocalizationSystem.sharedInstance.localizedStringForKey(key: "Loyalty Points", comment: "")
+        TotalLoyaltyPointsLbl.text = LocalizationSystem.sharedInstance.localizedStringForKey(key: "Total Points", comment: "") + " : "
+
+        priceLbl.isHidden = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -97,13 +108,13 @@ class CheckoutVC: UIViewController {
     
     @IBAction func btnTap_NextCustomize(_ sender: UIButton) {
         let vc = storyboard?.instantiateViewController(withIdentifier: "PlaceOrderVC") as! PlaceOrderVC
-        vc.total = "\(cartModel?.data?.grand_total ?? "")"
+        vc.total = "\(cartModel?.data?.payable_amount ?? "0")"
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func btnTap_Apply(_ sender: UIButton) {
         if discountTF.text == "" {
-            SnackBar().showSnackBar(view: self.view, text: "Coupon Code is Empty", interval: 4)
+            SnackBar().showSnackBar(view: self.view, text: LocalizationSystem.sharedInstance.localizedStringForKey(key: "You don't have enough loyality points!", comment: ""), interval: 4)
         } else {
             couponApiHit()
         }
@@ -113,7 +124,7 @@ class CheckoutVC: UIViewController {
         if loyaltySwitch.isOn {
             if TotalLoyaltyPointsLbl.text == "" || TotalLoyaltyPointsLbl.text == "SAR 0.00" || TotalLoyaltyPointsLbl.text == "SAR 0"  {
                 loyaltySwitch.setOn(false, animated: true)
-                SnackBar().showSnackBar(view: self.view, text: "You don't have enough loyality points!", interval: 4)
+                SnackBar().showSnackBar(view: self.view, text: LocalizationSystem.sharedInstance.localizedStringForKey(key: "You don't have enough loyality points!", comment: ""), interval: 4)
             } else {
                 loyaltySwitch.setOn(true, animated: true)
                 loyaltyApiHit()
@@ -139,7 +150,9 @@ extension CheckoutVC: ApiResponseDelegate {
                     cartModel = try jsonDecoder.decode(CartModel.self, from: responseData.data!)
                     if cartModel?.status == true/*200*/{
                     // create session here
-                        itemsLbl.text = "Items (\(cartModel?.data?.total_quantity ?? 0))"
+                        itemsLbl.text = LocalizationSystem.sharedInstance.localizedStringForKey(key: "Items", comment: "") + " (\(cartModel?.data?.total_quantity ?? 0))"
+//                        loyaltyPointsLbl.text =  LocalizationSystem.sharedInstance.localizedStringForKey(key: "Loyalty Points", comment: "") //+ "(www)"
+                        loyaltyPointsPriceLbl.text = "SAR \(cartModel?.data?.loyality_point ?? 0)"
                         thodeTotalPriceLbl.text = "SAR \(cartModel?.data?.thobe_total ?? 0)"
                         accessoriesTotalPriceLbl.text = "SAR \(cartModel?.data?.accessories_total ?? 0)"
                         giftCardPriceLbl.text = "SAR \(cartModel?.data?.gift_card_amount ?? 0)"
@@ -148,31 +161,34 @@ extension CheckoutVC: ApiResponseDelegate {
                         grandTotalPriceLbl.text = "SAR  \(cartModel?.data?.grand_total ?? "")"
                         priceLbl.text = "SAR \(cartModel?.data?.grand_total ?? "")"
                         loyaltyPointsPriceLbl.text = "SAR \(cartModel?.data?.loyality_point ?? 0)"
-//                        if cartModel?.data?.thobe_total != 0 {//} || cartModel?.data?.thobe_total != "0" {
-//                            thodeTotalSV.isHidden = false
-//                        } else {
-//                            thodeTotalSV.isHidden = true
-//                        }
-//                        if cartModel?.data?.accessories_total != 0 {//} || cartModel?.data?.accessories_total != "0" {
-//                            accessoriesTotalSV.isHidden = false
-//                        } else {
-//                            accessoriesTotalSV.isHidden = true
-//                        }
-//                        if cartModel?.data?.gift_card_amount != 0 {//} || cartModel?.data?.gift_card_amount != "0" {
-//                            giftCardSV.isHidden = false
-//                        } else {
-//                            giftCardSV.isHidden = true
-//                        }
-//                        if cartModel?.data?.delivery_charge != 0 {//} || cartModel?.data?.delivery_charge != "0" {
-//                            deliveryChargeSV.isHidden = false
-//                        } else {
-//                            deliveryChargeSV.isHidden = true
-//                        }
-//                        if cartModel?.data?.coupon_applied != 0{//} || cartModel?.data?.coupon_applied != "0" {
-//                            couponSV.isHidden = false
-//                        } else {
-//                            couponSV.isHidden = true
-//                        }
+                        remainingPriceLbl.text = "SAR \(cartModel?.data?.remaining ?? "0")"
+                        advancePriceLbl.text = "SAR \(cartModel?.data?.advance_payment ?? "0")"
+                        payablePriceLbl.text = "SAR \(cartModel?.data?.payable_amount ?? "0")"
+                        
+                        if UserDefaults.standard.string(forKey: "lang") == "ar" {
+//                            priceLbl.textAlignment = .left
+                            nextCustomizeLbl.titleLabel?.textAlignment = .left
+                            loyaltyPointsLbl.textAlignment = .right
+//                            thodeTotalPriceLbl.textAlignment = .left
+//                            accessoriesTotalPriceLbl.textAlignment = .left
+//                            giftCardPriceLbl.textAlignment = .left
+//                            deliveryChargePriceLbl.textAlignment = .left
+//                            couponAppliedPriceLbl.textAlignment = .left
+//                            grandTotalPriceLbl.textAlignment = .left
+//                            loyaltyPointsPriceLbl.textAlignment = .left
+                        } else {
+//                            priceLbl.textAlignment = .right
+                            nextCustomizeLbl.contentHorizontalAlignment = .right
+                            loyaltyPointsLbl.textAlignment = .left
+//                            thodeTotalPriceLbl.textAlignment = .right
+//                            accessoriesTotalPriceLbl.textAlignment = .right
+//                            giftCardPriceLbl.textAlignment = .right
+//                            deliveryChargePriceLbl.textAlignment = .right
+//                            couponAppliedPriceLbl.textAlignment = .right
+//                            grandTotalPriceLbl.textAlignment = .right
+//                            loyaltyPointsPriceLbl.textAlignment = .right
+                        }
+
                         LoadingIndicatorView.hide()
                     } else if cartModel?.status == false {
                         LoadingIndicatorView.hide()
@@ -239,8 +255,8 @@ extension CheckoutVC: ApiResponseDelegate {
                     print(responseData)
                     let response = try jsonDecoder.decode(LoyaltyModel.self, from: responseData.data!)
                     if response.status == true/*200*/{
-                        TotalLoyaltyPointsLbl.text = "\(response.data?.total_points ?? 0)"
-                    
+                        TotalLoyaltyPointsPriceLbl.text = "SAR \(response.data?.total_points ?? 0)"
+                        
                     } else if response.status == false {
                         LoadingIndicatorView.hide()
                         SnackBar().showSnackBar(view: self.view, text: "\(response.message ?? "")", interval: 4)
@@ -270,88 +286,3 @@ extension CheckoutVC: ApiResponseDelegate {
 
 }
 
-
-
-
-//MARK: - UITableView Delegate and DataSource
-//extension CheckoutVC: UITableViewDelegate, UITableViewDataSource {
-//
-//    func numberOfSections(in tableView: UITableView) -> Int {
-//        return 3
-//    }
-//
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        if section == 0 {
-//            return cartModel?.data?.normal?.count ?? 0
-//        } else if section == 2 {
-//            return cartModel?.data?.gift_cart?.count ?? 0
-//        } else {
-//            return cartModel?.data?.customize?.count ?? 0
-//        }
-//    }
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "CartTVCell", for: indexPath) as! CartTVCell
-//        cell.giftDeleteBtn.tag = indexPath.row + 1
-//        cell.thodeDeleteBtn.tag = indexPath.row + 1
-//        cell.giftPriceLbl.tag = indexPath.section
-//        cell.thodeLbl.tag = indexPath.section
-////        cell.deleteDelegate = self
-//        if indexPath.section == 0 {
-//            let data = cartModel?.data?.normal?[indexPath.row]
-//            cell.thodeLbl.text = data?.title
-//            cell.thodeDescriptionLbl.text = data?.description
-//            cell.thodeQtyLbl.text = data?.quantity
-//            let cost = String(data!.total_cost!)
-//            cell.thodePriceLbl.text = "SAR \(cost)"
-//            let url = (data?.image ?? "")
-//            cell.thodeIV.sd_setImage(with: URL(string: url)!, placeholderImage: nil, options: .refreshCached) { (image, error, cacheType, url) in
-//                cell.thodeIV.image = image
-//            }
-//            cell.giftView.isHidden = true
-//            cell.priceView.isHidden = true
-//            cell.thodeView.isHidden = false
-//            cell.lessDetailHeightConstraint.constant = 0
-//        } else if indexPath.section == 2 {
-//            let data = cartModel?.data?.gift_cart?[indexPath.row]
-////            cell.giftLbl.text = data?.title
-////            cell.giftQtyLbl.text = "1"//data?.
-//            cell.giftDescriptionLbl.text = data?.description
-//            cell.giftPriceLbl.text = "SAR " + "\(data?.price ?? 0)"
-//            let url = (data?.image ?? "")
-//            cell.giftIV.sd_setImage(with: URL(string: url)!, placeholderImage: nil, options: .refreshCached) { (image, error, cacheType, url) in
-//                cell.giftIV.image = image
-//            }
-//            cell.giftView.isHidden = false
-//            cell.priceView.isHidden = true
-//            cell.thodeView.isHidden = true
-//            cell.lessDetailHeightConstraint.constant = 0
-//        } else {
-//            let data = cartModel?.data?.customize?[indexPath.row]
-//            let url = (data?.image ?? "")
-//            cell.thodeIV.sd_setImage(with: URL(string: url)!, placeholderImage: nil, options: .refreshCached) { (image, error, cacheType, url) in
-//                cell.thodeIV.image = image?.withRenderingMode(.alwaysTemplate)
-//                cell.thodeIV.tintColor = hexStringToUIColor(hex: data?.view_more?.color_code ?? "")
-//
-//            }
-//
-//            cell.thodeLbl.text = data?.title
-//            cell.thodeDescriptionLbl.text = data?.description
-//            cell.thodeQtyLbl.text = "\(data?.quantity ?? 0)"
-//            let cost = String((data?.quantity ?? 0) * (data?.price ?? 0))
-//            cell.thodePriceLbl.text = "SAR \(cost)"
-//            cell.customizedPriceLbl.text = "SAR \(data?.view_more?.Customization_charge ?? 0)"
-//            cell.visitingChargePriceLbl.text = "SAR \(data?.view_more?.visiting_charge ?? 0)"
-//            cell.advancePriceLbl.text = "SAR \(data?.view_more?.advanced_payment ?? 0)"
-//            cell.remPriceLbl.text = "SAR \(data?.view_more?.remaining ?? 0)"
-//            cell.subTotalPriceLbl.text = "SAR \(cost)"//"\(data?.view_more?.thodePriceLbl ?? 0)"
-//
-//            cell.giftView.isHidden = true
-//            cell.thodeView.isHidden = false
-//            cell.lessDetailHeightConstraint.constant = 25
-//        }
-//        return cell
-//    }
-//
-//}

@@ -300,28 +300,28 @@ class CustomizeThodeVC: UIViewController {
         print("thobeDict", thobeDict)
 
         if presentValue == 0 && thobeDict["fabric"] == "" {
-            SnackBar().showSnackBar(view: self.view, text: "Select Fabric", interval: 2)
+            SnackBar().showSnackBar(view: self.view, text: LocalizationSystem.sharedInstance.localizedStringForKey(key: "Select Fabric", comment: ""), interval: 2)
         } else if presentValue == 1 && thobeDict["collar"] == "" {
-            SnackBar().showSnackBar(view: self.view, text: "Select Collar", interval: 2)
+            SnackBar().showSnackBar(view: self.view, text: LocalizationSystem.sharedInstance.localizedStringForKey(key: "Select Collar", comment: ""), interval: 2)
         } else if presentValue == 2 && thobeDict["cuffs"] == "" {
-            SnackBar().showSnackBar(view: self.view, text: "Select Cuffs", interval: 2)
+            SnackBar().showSnackBar(view: self.view, text: LocalizationSystem.sharedInstance.localizedStringForKey(key: "Select Cuffs", comment: ""), interval: 2)
         } else if presentValue == 3 && thobeDict["pocket"] == "" {
-            SnackBar().showSnackBar(view: self.view, text: "Select Pocket", interval: 2)
+            SnackBar().showSnackBar(view: self.view, text: LocalizationSystem.sharedInstance.localizedStringForKey(key: "Select Pocket", comment: ""), interval: 2)
         } else if presentValue == 4 && thobeDict["placket"] == "" {
-            SnackBar().showSnackBar(view: self.view, text: "Select Placket", interval: 2)
+            SnackBar().showSnackBar(view: self.view, text: LocalizationSystem.sharedInstance.localizedStringForKey(key: "Select Placket", comment: ""), interval: 2)
         } else if presentValue == 5 && thobeDict["button"] == "" {
-            SnackBar().showSnackBar(view: self.view, text: "Select Button", interval: 2)
+            SnackBar().showSnackBar(view: self.view, text: LocalizationSystem.sharedInstance.localizedStringForKey(key: "Select Button", comment: ""), interval: 2)
         } else if presentValue == 6 && sidePocket == "yes" && thobeDict["side_pocket"] == "" {
-                SnackBar().showSnackBar(view: self.view, text: "Choose Side Pocket", interval: 2)
+                SnackBar().showSnackBar(view: self.view, text: LocalizationSystem.sharedInstance.localizedStringForKey(key: "Choose Side Pocket", comment: ""), interval: 2)
             
         } else if presentValue == 6 && sidePocket == "yes" && thobeDict["side_pocket"] == "" && thobeDict["side_pocket_2"] == "" && sidePocket2 == "" {
-                SnackBar().showSnackBar(view: self.view, text: "Choose Side Pocket", interval: 2)
+                SnackBar().showSnackBar(view: self.view, text: LocalizationSystem.sharedInstance.localizedStringForKey(key: "Choose Side Pocket", comment: ""), interval: 2)
             
 //        } else if presentValue == 6 && sidePocket == "yes" {
 //            if thobeDict["side_pocket"] == "" {
-//                SnackBar().showSnackBar(view: self.view, text: "Choose Side Pocket", interval: 2)
+//                SnackBar().showSnackBar(view: self.view, text: LocalizationSystem.sharedInstance.localizedStringForKey(key: "You don't have enough loyality points!", comment: "")"Choose Side Pocket", interval: 2)
 //            } else if thobeDict["side_pocket_2"] == "" && sidePocket2 == "" {
-//                SnackBar().showSnackBar(view: self.view, text: "Choose Side Pocket", interval: 2)
+//                SnackBar().showSnackBar(view: self.view, text: LocalizationSystem.sharedInstance.localizedStringForKey(key: "You don't have enough loyality points!", comment: "")"Choose Side Pocket", interval: 2)
 //            }
         } else {
         if selectedThodeArr[presentValue] != "" {
@@ -331,8 +331,8 @@ class CustomizeThodeVC: UIViewController {
                     fabricView.isHidden = true
                     collectionView.isHidden = true
                     sidePocketSV.isHidden = false
-                    nextCustomizeLbl.setTitle("Button", for: .normal)
-                    nextCustomizeLbl.setTitle("My Thobe", for: .normal)
+                    nextCustomizeLbl.setTitle(LocalizationSystem.sharedInstance.localizedStringForKey(key: "Button", comment: ""), for: .normal)
+                    nextCustomizeLbl.setTitle(LocalizationSystem.sharedInstance.localizedStringForKey(key: "My Thobe", comment: ""), for: .normal)
                    // nextCustomizeLbl.text = "Measurement"
                 } else {
                     if presentValue == 0 {
@@ -412,11 +412,11 @@ class CustomizeThodeVC: UIViewController {
     func showBottomUI() {
         if presentValue == 0 {
             backCustomizeSV.isHidden = true
-            nextCustomizeLbl.setTitle(thodeArr[presentValue + 1], for: .normal)
+            nextCustomizeLbl.setTitle(LocalizationSystem.sharedInstance.localizedStringForKey(key:  thodeArr[presentValue + 1], comment: ""), for: .normal)
 //            nextCustomizeLbl.text = thodeArr[presentValue + 1]
         } else {
-            nextCustomizeLbl.setTitle(thodeArr[presentValue + 1], for: .normal)
-            backCustomizeLbl.setTitle(thodeArr[presentValue - 1], for: .normal)
+            nextCustomizeLbl.setTitle(LocalizationSystem.sharedInstance.localizedStringForKey(key:  thodeArr[presentValue + 1], comment: ""), for: .normal)
+            backCustomizeLbl.setTitle(LocalizationSystem.sharedInstance.localizedStringForKey(key: thodeArr[presentValue - 1], comment: ""), for: .normal)
 
 //            nextCustomizeLbl.text = thodeArr[presentValue + 1]
 //            backCustomizeLbl.text = thodeArr[presentValue - 1]
@@ -471,7 +471,7 @@ extension CustomizeThodeVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "CutomizeThobeTVCell")
-        cell?.textLabel?.text = thodeArr[indexPath.row]
+        cell?.textLabel?.text = LocalizationSystem.sharedInstance.localizedStringForKey(key: thodeArr[indexPath.row], comment: "")
         cell?.textLabel?.transform = CGAffineTransform(rotationAngle: .pi/2)
         if indexPath.row == presentValue {
             cell?.textLabel?.textColor = UIColor.black
@@ -530,7 +530,7 @@ extension CustomizeThodeVC: UICollectionViewDelegate, UICollectionViewDataSource
                 }
                 cell.colorLbl.setTitle(data.fabrics, for: .normal)
                 cell.priceLbl.setTitle("SAR \(data.price ?? "0")", for: .normal)
-                cell.viewFabricBtn.setTitle("View Fabric", for: .normal)
+                cell.viewFabricBtn.setTitle(LocalizationSystem.sharedInstance.localizedStringForKey(key: "View Fabric", comment: ""), for: .normal)
                 if thobeDict["fabric"] == "" || thobeDict["fabric"] != "\(data.id ?? 0)" {
                     cell.tickIV.isHidden = true
                 } else {
@@ -546,7 +546,7 @@ extension CustomizeThodeVC: UICollectionViewDelegate, UICollectionViewDataSource
                 }
                 cell.colorLbl.setTitle(data.fabrics, for: .normal)
                 cell.priceLbl.setTitle("SAR \(data.price ?? "0")", for: .normal)
-                cell.viewFabricBtn.setTitle("View Fabric", for: .normal)
+                cell.viewFabricBtn.setTitle(LocalizationSystem.sharedInstance.localizedStringForKey(key: "Details", comment: ""), for: .normal)
                 if thobeDict["fabric"] == "" || thobeDict["fabric"] != "\(data.id ?? 0)" {
                     cell.tickIV.isHidden = true
                 } else {
@@ -564,7 +564,7 @@ extension CustomizeThodeVC: UICollectionViewDelegate, UICollectionViewDataSource
             }
             cell.colorLbl.setTitle(data?.collar_style, for: .normal)
             cell.priceLbl.setTitle("SAR \(data?.price ?? "0")", for: .normal)
-            cell.viewFabricBtn.setTitle("Details", for: .normal)
+            cell.viewFabricBtn.setTitle(LocalizationSystem.sharedInstance.localizedStringForKey(key: "Details", comment: ""), for: .normal)
             if thobeDict["collar"] == "" || thobeDict["collar"] != "\(collarModel?.data?[indexPath.row].id ?? 0)"{
                 cell.tickIV.isHidden = true
             } else {
@@ -581,7 +581,7 @@ extension CustomizeThodeVC: UICollectionViewDelegate, UICollectionViewDataSource
             }
             cell.colorLbl.setTitle(data?.cuff, for: .normal)
             cell.priceLbl.setTitle("SAR \(data?.price ?? "0")", for: .normal)
-            cell.viewFabricBtn.setTitle("Details", for: .normal)
+            cell.viewFabricBtn.setTitle(LocalizationSystem.sharedInstance.localizedStringForKey(key: "Details", comment: ""), for: .normal)
             if thobeDict["cuffs"] == "" || thobeDict["cuffs"] != "\(cuffsModel?.data?[indexPath.row].id ?? 0)" {
                 cell.tickIV.isHidden = true
             } else {
@@ -598,7 +598,7 @@ extension CustomizeThodeVC: UICollectionViewDelegate, UICollectionViewDataSource
             }
             cell.colorLbl.setTitle(data?.pocket, for: .normal)
             cell.priceLbl.setTitle("SAR \(data?.price ?? "0")", for: .normal)
-            cell.viewFabricBtn.setTitle("Details", for: .normal)
+            cell.viewFabricBtn.setTitle(LocalizationSystem.sharedInstance.localizedStringForKey(key: "Details", comment: ""), for: .normal)
             if thobeDict["pocket"] == "" || thobeDict["pocket"] != "\(pocketModel?.data?[indexPath.row].id ?? 0)" {
                 cell.tickIV.isHidden = true
             } else {
@@ -615,7 +615,7 @@ extension CustomizeThodeVC: UICollectionViewDelegate, UICollectionViewDataSource
             }
             cell.colorLbl.setTitle(data?.style, for: .normal)
             cell.priceLbl.setTitle("SAR \(data?.price ?? "0")", for: .normal)
-            cell.viewFabricBtn.setTitle("Details", for: .normal)
+            cell.viewFabricBtn.setTitle(LocalizationSystem.sharedInstance.localizedStringForKey(key: "Details", comment: ""), for: .normal)
             if thobeDict["placket"] == "" || thobeDict["placket"] != "\(placketModel?.data?[indexPath.row].id ?? 0)" {
                 cell.tickIV.isHidden = true
             } else {
@@ -632,7 +632,7 @@ extension CustomizeThodeVC: UICollectionViewDelegate, UICollectionViewDataSource
             }
             cell.colorLbl.setTitle(data?.buttons, for: .normal)
             cell.priceLbl.setTitle("SAR \(data?.price ?? "0")", for: .normal)
-            cell.viewFabricBtn.setTitle("Details", for: .normal)
+            cell.viewFabricBtn.setTitle(LocalizationSystem.sharedInstance.localizedStringForKey(key: "Details", comment: ""), for: .normal)
             if thobeDict["button"] == "" || thobeDict["button"] != "\(buttonModel?.data?[indexPath.row].id ?? 0)" {
                 cell.tickIV.isHidden = true
             } else {
