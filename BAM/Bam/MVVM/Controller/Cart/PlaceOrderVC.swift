@@ -285,7 +285,7 @@ extension PlaceOrderVC: UITableViewDelegate, UITableViewDataSource {
         returnedView.backgroundColor = .white
 
         let label = UILabel(frame: CGRect(x: 10, y: 5, width: UIScreen.main.bounds.width - 85, height: 30))
-        let addButton = UIButton(frame: CGRect(x: label.frame.origin.x + label.frame.size.width + 5, y: 5, width: 65, height: 30))
+        let addButton = UIButton(frame: CGRect(x: label.frame.origin.x + label.frame.size.width + 5, y: 5, width: 70, height: 30))
         let buttonTitleStr = NSMutableAttributedString(string: LocalizationSystem.sharedInstance.localizedStringForKey(key: "+ Add New", comment: ""), attributes:attrs)
         attributedString.append(buttonTitleStr)
         addButton.setAttributedTitle(attributedString, for: .normal)

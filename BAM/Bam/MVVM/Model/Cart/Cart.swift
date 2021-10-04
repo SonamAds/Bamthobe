@@ -44,14 +44,14 @@ struct CartModelData : Codable {
     let total_quantity : Int?
     let advance_payment : String?
     let remaining : String?
-    let payable_amount : String?
+    let paybel_amount : String?
     
     enum CodingKeys: String, CodingKey {
 
         case normal
         case gift_cart
         case customize
-        case payable_amount, remaining, advance_payment, grand_total
+        case paybel_amount, remaining, advance_payment, grand_total
         case thobe_total, accessories_total, gift_card_amount, delivery_charge, coupon_applied, points_apply, loyality_point, total_quantity
     }
 
@@ -72,7 +72,7 @@ struct CartModelData : Codable {
         
         advance_payment = try values.decodeIfPresent(String.self, forKey: .advance_payment)
         remaining = try values.decodeIfPresent(String.self, forKey: .remaining)
-        payable_amount = try values.decodeIfPresent(String.self, forKey: .payable_amount)
+        paybel_amount = try values.decodeIfPresent(String.self, forKey: .paybel_amount)
 
     }
 

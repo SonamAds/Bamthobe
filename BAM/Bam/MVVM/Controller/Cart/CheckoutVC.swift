@@ -108,7 +108,7 @@ class CheckoutVC: UIViewController {
     
     @IBAction func btnTap_NextCustomize(_ sender: UIButton) {
         let vc = storyboard?.instantiateViewController(withIdentifier: "PlaceOrderVC") as! PlaceOrderVC
-        vc.total = "\(cartModel?.data?.payable_amount ?? "0")"
+        vc.total = "\(cartModel?.data?.paybel_amount ?? "0")"
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -122,7 +122,7 @@ class CheckoutVC: UIViewController {
     
     @IBAction func switchChanged_Value(_ sender: UISwitch) {
         if loyaltySwitch.isOn {
-            if TotalLoyaltyPointsLbl.text == "" || TotalLoyaltyPointsLbl.text == "SAR 0.00" || TotalLoyaltyPointsLbl.text == "SAR 0"  {
+            if TotalLoyaltyPointsPriceLbl.text == "" || TotalLoyaltyPointsPriceLbl.text == "SAR 0.00" || TotalLoyaltyPointsPriceLbl.text == "SAR 0"  {
                 loyaltySwitch.setOn(false, animated: true)
                 SnackBar().showSnackBar(view: self.view, text: LocalizationSystem.sharedInstance.localizedStringForKey(key: "You don't have enough loyality points!", comment: ""), interval: 4)
             } else {
@@ -163,7 +163,7 @@ extension CheckoutVC: ApiResponseDelegate {
                         loyaltyPointsPriceLbl.text = "SAR \(cartModel?.data?.loyality_point ?? 0)"
                         remainingPriceLbl.text = "SAR \(cartModel?.data?.remaining ?? "0")"
                         advancePriceLbl.text = "SAR \(cartModel?.data?.advance_payment ?? "0")"
-                        payablePriceLbl.text = "SAR \(cartModel?.data?.payable_amount ?? "0")"
+                        payablePriceLbl.text = "SAR \(cartModel?.data?.paybel_amount ?? "0")"
                         
                         if UserDefaults.standard.string(forKey: "lang") == "ar" {
 //                            priceLbl.textAlignment = .left

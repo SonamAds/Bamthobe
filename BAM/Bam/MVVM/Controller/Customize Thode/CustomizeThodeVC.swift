@@ -22,12 +22,11 @@ class CustomizeThodeVC: UIViewController {
     var fabricSelected = 0
     var selectedThodeArr = [String]()
     var thobeArr = [[String: String]]()
-    var summerCollection = [FabricModelData]()
-    var winterCollection = [FabricModelData]()
     var sidePocket = ""
     var sidePocket1 = ""
     var sidePocket2 = ""
-//    var fabricModel: FabricModel?
+    var summerCollection = [FabricModelData]()
+    var winterCollection = [FabricModelData]()
     var cuffsModel: CuffsModel?
     var collarModel: CollarModel?
     var placketModel: PlacketModel?
@@ -202,7 +201,7 @@ class CustomizeThodeVC: UIViewController {
     @IBAction func btnTap_Yes(_ sender: Any) {
         //delegate.didTap(name: "", tag: sender.tag, row: rowtag)
         if sidePocket == "" || sidePocket == "no" {
-            yesBtn.setImage(#imageLiteral(resourceName: "circle_tick"), for: .normal)
+            yesBtn.setImage(#imageLiteral(resourceName: "Chech Mark"), for: .normal)
             noBtn.setImage(#imageLiteral(resourceName: "oval"), for: .normal)
             sidePocket = "yes"
             SideCoinSV.isHidden = false
@@ -220,7 +219,7 @@ class CustomizeThodeVC: UIViewController {
         WhichSideSV.isHidden = true
         if sidePocket == "" || sidePocket == "yes" {
             yesBtn.setImage(#imageLiteral(resourceName: "oval"), for: .normal)
-            noBtn.setImage(#imageLiteral(resourceName: "circle_tick"), for: .normal)
+            noBtn.setImage(#imageLiteral(resourceName: "Chech Mark"), for: .normal)
             sidePocket = "no"
 //            SideCoinSV.isHidden = true
         } else {
@@ -240,7 +239,7 @@ class CustomizeThodeVC: UIViewController {
 
 //            WhichSideSV.isHidden = false
         } else {
-            bothSideBtn.setImage(#imageLiteral(resourceName: "circle_tick"), for: .normal)
+            bothSideBtn.setImage(#imageLiteral(resourceName: "Chech Mark"), for: .normal)
             oneSideBtn.setImage(#imageLiteral(resourceName: "oval"), for: .normal)
             thobeDict["side_pocket"] = "1"
             sidePocket1 = "both"
@@ -256,7 +255,7 @@ class CustomizeThodeVC: UIViewController {
             sidePocket1 = ""
             WhichSideSV.isHidden = true
         } else {
-            oneSideBtn.setImage(#imageLiteral(resourceName: "circle_tick"), for: .normal)
+            oneSideBtn.setImage(#imageLiteral(resourceName: "Chech Mark"), for: .normal)
             bothSideBtn.setImage(#imageLiteral(resourceName: "oval"), for: .normal)
             thobeDict["side_pocket"] = "0"
             sidePocket1 = "one"
@@ -270,7 +269,7 @@ class CustomizeThodeVC: UIViewController {
             sidePocket2 = ""
             thobeDict["side_pocket_2"] = ""
         } else {
-            leftBtn.setImage(#imageLiteral(resourceName: "circle_tick"), for: .normal)
+            leftBtn.setImage(#imageLiteral(resourceName: "Chech Mark"), for: .normal)
             rightBtn.setImage(#imageLiteral(resourceName: "oval"), for: .normal)
             thobeDict["side_pocket_2"] = "0"
             sidePocket2 = "left"
@@ -284,7 +283,7 @@ class CustomizeThodeVC: UIViewController {
             sidePocket2 = ""
 
         } else {
-            rightBtn.setImage(#imageLiteral(resourceName: "circle_tick"), for: .normal)
+            rightBtn.setImage(#imageLiteral(resourceName: "Chech Mark"), for: .normal)
             leftBtn.setImage(#imageLiteral(resourceName: "oval"), for: .normal)
             thobeDict["side_pocket_2"] = "1"
             sidePocket2 = "right"

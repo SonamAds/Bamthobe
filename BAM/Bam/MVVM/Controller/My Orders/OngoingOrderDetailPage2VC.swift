@@ -122,13 +122,20 @@ extension OngoingOrderDetailPage2VC: ApiResponseDelegate {
                     priceLbl.text = "SAR \(orderModel?.data?.price ?? "0")"
                     descriptionLbl.text = orderModel?.data?.description
                     qtyLbl.text = "\(orderModel?.data?.quantity ?? 0)"
-                    customizedThodePriceLbl.text = "SAR \(orderModel?.data?.price ?? "0")"
+                    
+                    let remCost = ((orderModel?.data?.remaining ?? "0") as NSString).integerValue
+                    let advanceCost = ((orderModel?.data?.advanced_payment ?? "0") as NSString).integerValue
+                    var total = 0
+                    total = remCost + advanceCost
+                    
+                    customizedThodePriceLbl.text = "SAR \(total)"//\(orderModel?.data?.price ?? "0")"
                     deliveryLbl.text = orderModel?.data?.delivery_time ?? ""
                     deliveryPriceLbl.text = "SAR \(orderModel?.data?.delivery_charge ?? 0)"
                     couponPriceLbl.text = "-SAR \(orderModel?.data?.coupon_applied ?? 0)"
                     remainingPriceLbl.text = "SAR \(orderModel?.data?.remaining ?? "0")"
                     vistingPriceLbl.text = "SAR \(orderModel?.data?.visiting_charge ?? "0")"
                     advancePriceLbl.text = "SAR \(orderModel?.data?.advanced_payment ?? "0")"
+                    totalLbl.text = "SAR \(orderModel?.data?.total ?? "0")"
 //                    giftPriceLbl.text = "SAR \(orderModel?.data?.gift ?? "0")"
                     let tagLbl = orderModel?.data?.address?.components(separatedBy: " ")
                     addressTagLbl.text = tagLbl?[0]//orderModel?.data?.
