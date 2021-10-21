@@ -94,17 +94,17 @@ class CreateAppointmentsVC: UIViewController {
     
     //MARK: - Helping Methods
     func datePickerTapped() {
-        let currentDate = Date()
+        let currentDate = Date.tomorrow
         var dateComponents = DateComponents()
         dateComponents.year = 3
         let threeYearLater = Calendar.current.date(byAdding: dateComponents, to: currentDate)
 
         datePicker.show(LocalizationSystem.sharedInstance.localizedStringForKey(key: "Select Date", comment: ""),
-                        doneButtonTitle: LocalizationSystem.sharedInstance.localizedStringForKey(key: "Save", comment: ""),
-                        cancelButtonTitle: LocalizationSystem.sharedInstance.localizedStringForKey(key: "Cancel", comment: ""),
-                        minimumDate: currentDate,
-                        maximumDate: threeYearLater,
-                        datePickerMode: .date) { (date) in
+        doneButtonTitle: LocalizationSystem.sharedInstance.localizedStringForKey(key: "Save", comment: ""),
+        cancelButtonTitle: LocalizationSystem.sharedInstance.localizedStringForKey(key: "Cancel", comment: ""),
+        minimumDate: currentDate,
+        maximumDate: threeYearLater,
+        datePickerMode: .date) { (date) in
             if let dt = date {
                 let formatter = DateFormatter()
                 formatter.dateFormat = "yyyy-MM-dd"
@@ -121,11 +121,11 @@ class CreateAppointmentsVC: UIViewController {
         let threeYearLater = Calendar.current.date(byAdding: dateComponents, to: currentDate)
 
         datePicker.show(LocalizationSystem.sharedInstance.localizedStringForKey(key: "Select Time", comment: ""),
-                        doneButtonTitle: LocalizationSystem.sharedInstance.localizedStringForKey(key: "Save", comment: ""),
-                        cancelButtonTitle: LocalizationSystem.sharedInstance.localizedStringForKey(key: "Cancel", comment: ""),
-                        minimumDate: currentDate,
-                        maximumDate: threeYearLater,
-                        datePickerMode: .time) { (date) in
+        doneButtonTitle: LocalizationSystem.sharedInstance.localizedStringForKey(key: "Save", comment: ""),
+        cancelButtonTitle: LocalizationSystem.sharedInstance.localizedStringForKey(key: "Cancel", comment: ""),
+        minimumDate: currentDate,
+        maximumDate: threeYearLater,
+        datePickerMode: .time) { (date) in
             if let dt = date {
 //                self.timeTF.text = formatter.string(from: dt)
                 let formatter = DateFormatter()
@@ -327,4 +327,26 @@ extension CreateAppointmentsVC: ApiResponseDelegate {
     }
 
 
+}
+
+
+
+extension Date {
+    static var yesterday: Date { return Date().dayBefore }
+    static var tomorrow:  Date { return Date().dayAfter }
+    var dayBefore: Date {
+        return Calendar.current.date(byAdding: .day, value: -1, to: noon)!
+    }
+    var dayAfter: Date {
+        return Calendar.current.date(byAdding: .day, value: 1, to: noon)!
+    }
+    var noon: Date {
+        return Calendar.current.date(bySettingHour: 12, minute: 0, second: 0, of: self)!
+    }
+    var month: Int {
+        return Calendar.current.component(.month,  from: self)
+    }
+    var isLastDayOfMonth: Bool {
+        return dayAfter.month != month
+    }
 }
