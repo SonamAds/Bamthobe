@@ -46,7 +46,7 @@ public class SnackBar: UIView {
         textView.font = UIFont.systemFont(ofSize: 14)
         textView.textAlignment = NSTextAlignment.left
         textView.numberOfLines = 0
-        self.backgroundColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
+        self.backgroundColor = #colorLiteral(red: 0.5803921569, green: 0.4784313725, blue: 0.3882352941, alpha: 1)
         view.addSubview(self)
         
         UIView.animate(withDuration: 0.5) {

@@ -10,7 +10,7 @@ import UIKit
 class LeftSideMenuVC: UIViewController {
     
     // MARK:- Variables
-    private let menuArr = ["Home", "My Orders", "Offers", "Loyality Points", "Gift Card", "Scan QR Code", "Address Book", "My Appointments"/*, "My Measurements"*/, "Settings", "Rate Our App", "Sign Out"]
+    private let menuArr = [/*"Home",*/ "My Orders", /*"Offers", */"Loyality Points", "Gift Card", "Scan QR Code", "Address Book", "My Appointments"/*, "My Measurements"*/, "Settings", "Rate Our App", "Sign Out"]
     var userManager = UserManager.userManager
 //    private let menuImgArr = [#imageLiteral(resourceName: "user"),#imageLiteral(resourceName: "Payment Method"),#imageLiteral(resourceName: "revenu"),#imageLiteral(resourceName: "atm"),#imageLiteral(resourceName: "INvite"),#imageLiteral(resourceName: "help"),#imageLiteral(resourceName: "Sign Out")]
     
@@ -91,7 +91,7 @@ extension LeftSideMenuVC : UITableViewDataSource,UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
-        case 0:
+        /*case 0:
 //            guard let tabViewController = storyboard?.instantiateViewController(withIdentifier: "TabBarVC") as? TabBarVC else {
 //                return
 //                }
@@ -103,7 +103,7 @@ extension LeftSideMenuVC : UITableViewDataSource,UITableViewDelegate {
             let appNavigation: UINavigationController = UINavigationController(rootViewController: objVC)
             appNavigation.setNavigationBarHidden(true, animated: true)
             UIApplication.shared.windows[0].rootViewController = TabViewController
-            
+       
 //        case 6:
 //            let urlString = BASE_URL + logout
 //            if UserDefaults.standard.string(forKey: UD_LoginType) == "Twitter" {
@@ -118,44 +118,36 @@ extension LeftSideMenuVC : UITableViewDataSource,UITableViewDelegate {
 ////                UserDefaults.standard.removeObject(forKey: UD_Token)
 //            }
 //            Webservice_logoutHit(url: urlString)
-        
-        case 1:
-//            let currentIndex : Int? = self.tabBarController?.selectedIndex
-//
-//            self.tabBarController?.selectedIndex = 2
-//
-//            if let ramTBC =  self.tabBarController,
-//                let current = currentIndex {
-//                ramTBC.selectedIndex = 2
-//    //            ramTBC.setSelectIndex(from: current, to: 2)
-//            }
+        */
+        case /*1*/0:
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let mainTabBarController = storyboard.instantiateViewController(withIdentifier: "TabBarVC") as! TabBarVC
             mainTabBarController.selectedIndex = 2
             mainTabBarController.modalPresentationStyle = .fullScreen
             self.present(mainTabBarController, animated: true, completion: nil)
+//            self.present(MyOrdersVC, animated: true, completion: nil)
 
-        case 2:
+       /* case 2:
             let vc = storyboard?.instantiateViewController(withIdentifier: "MyOffersVC") as! MyOffersVC
             self.navigationController?.pushViewController(vc, animated: true)
-            
-        case 3:
+          */
+        case 1://3:
             let vc = storyboard?.instantiateViewController(withIdentifier: "LoyaltyPointsVC") as! LoyaltyPointsVC
             self.navigationController?.pushViewController(vc, animated: true)
             
-        case 4:
+        case 2:
             let vc = storyboard?.instantiateViewController(withIdentifier: "GiftListVC") as! GiftListVC
             self.navigationController?.pushViewController(vc, animated: true)
        
-        case 5:
+        case 3:
 //            let vc = storyboard?.instantiateViewController(withIdentifier: "SenderGiftDetailVC") as! SenderGiftDetailVC
 //            self.navigationController?.pushViewController(vc, animated: true)
             break
-        case 6:
+        case 4:
             let vc = storyboard?.instantiateViewController(withIdentifier: "AddresssBookVC") as! AddresssBookVC
             self.navigationController?.pushViewController(vc, animated: true)
            
-        case 7:
+        case 5:
             let vc = storyboard?.instantiateViewController(withIdentifier: "MyAppointmentsVC") as! MyAppointmentsVC
             self.navigationController?.pushViewController(vc, animated: true)
             
@@ -163,14 +155,14 @@ extension LeftSideMenuVC : UITableViewDataSource,UITableViewDelegate {
             let vc = storyboard?.instantiateViewController(withIdentifier: "MyMeasurmentsVC") as! MyMeasurmentsVC
             self.navigationController?.pushViewController(vc, animated: true)*/
             
-        case 8:
+        case 6:
             let vc = storyboard?.instantiateViewController(withIdentifier: "SettingVC") as! SettingVC
             self.navigationController?.pushViewController(vc, animated: true)
 //        case :
 //            let vc = storyboard?.instantiateViewController(withIdentifier: "SettingVC") as! SettingVC
 //            self.navigationController?.pushViewController(vc, animated: true)
        
-        case 10:
+        case 8:
 //            let defaults = UserDefaults.standard
 //            let dictionary = defaults.dictionaryRepresentation()
 //            dictionary.keys.forEach { key in
