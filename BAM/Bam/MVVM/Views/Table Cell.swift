@@ -352,6 +352,9 @@ class CartTVCell: UITableViewCell {
 //MARK: - My Thode Cell
 class MyThodeTVCell: UITableViewCell {
     
+    //MARK: - Variables
+    var delegate: ThodeDetailDelegate?
+    
     //MARK: - IBOutlets
     @IBOutlet weak var thodeView:UIView!
     @IBOutlet weak var thodeIV:UIImageView!
@@ -431,24 +434,31 @@ class MyThodeTVCell: UITableViewCell {
     }
     
     @IBAction func btnTap_FabricEdit(_ sender: Any) {
+        delegate?.didTap(row: 0, selectedThobe: 0)
     }
     
     @IBAction func btnTap_CuffsEdit(_ sender: Any) {
+        delegate?.didTap(row: 2, selectedThobe: 2)
     }
     
     @IBAction func btnTap_CollarEdit(_ sender: Any) {
+        delegate?.didTap(row: 1, selectedThobe: 1)
     }
     
     @IBAction func btnTap_ButtonEdit(_ sender: Any) {
+        delegate?.didTap(row: 5, selectedThobe: 5)
     }
     
     @IBAction func btnTap_PocketEdit(_ sender: Any) {
+        delegate?.didTap(row: 3, selectedThobe: 3)
     }
     
     @IBAction func btnTap_PlacketEdit(_ sender: Any) {
+        delegate?.didTap(row: 4, selectedThobe: 4)
     }
     
     @IBAction func btnTap_SidePocketEdit(_ sender: Any) {
+        delegate?.didTap(row: 6, selectedThobe: 6)
     }
     
 }

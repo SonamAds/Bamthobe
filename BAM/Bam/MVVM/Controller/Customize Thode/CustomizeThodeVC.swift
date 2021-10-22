@@ -22,6 +22,7 @@ class CustomizeThodeVC: UIViewController {
     var fabricSelected = 0
     var selectedThodeArr = [String]()
     var thobeArr = [[String: String]]()
+    var selectedController = ""
     var sidePocket = ""
     var sidePocket1 = ""
     var sidePocket2 = ""
@@ -292,70 +293,78 @@ class CustomizeThodeVC: UIViewController {
     }
     
     @IBAction func btnTap_NextCustomize(_ sender: UIButton) {
-
-        selectedThodeArr.insert("Thobe\(presentValue)", at: presentValue)
-        print("selectedThodeArr", selectedThodeArr)
-        print("presentValue", presentValue)
-        print("thobeDict", thobeDict)
-
-        if presentValue == 0 && thobeDict["fabric"] == "" {
-            SnackBar().showSnackBar(view: self.view, text: LocalizationSystem.sharedInstance.localizedStringForKey(key: "Select Fabric", comment: ""), interval: 2)
-        } else if presentValue == 1 && thobeDict["collar"] == "" {
-            SnackBar().showSnackBar(view: self.view, text: LocalizationSystem.sharedInstance.localizedStringForKey(key: "Select Collar", comment: ""), interval: 2)
-        } else if presentValue == 2 && thobeDict["cuffs"] == "" {
-            SnackBar().showSnackBar(view: self.view, text: LocalizationSystem.sharedInstance.localizedStringForKey(key: "Select Cuffs", comment: ""), interval: 2)
-        } else if presentValue == 3 && thobeDict["pocket"] == "" {
-            SnackBar().showSnackBar(view: self.view, text: LocalizationSystem.sharedInstance.localizedStringForKey(key: "Select Pocket", comment: ""), interval: 2)
-        } else if presentValue == 4 && thobeDict["placket"] == "" {
-            SnackBar().showSnackBar(view: self.view, text: LocalizationSystem.sharedInstance.localizedStringForKey(key: "Select Placket", comment: ""), interval: 2)
-        } else if presentValue == 5 && thobeDict["button"] == "" {
-            SnackBar().showSnackBar(view: self.view, text: LocalizationSystem.sharedInstance.localizedStringForKey(key: "Select Button", comment: ""), interval: 2)
-        } else if presentValue == 6 && sidePocket == "yes" && thobeDict["side_pocket"] == "" {
-                SnackBar().showSnackBar(view: self.view, text: LocalizationSystem.sharedInstance.localizedStringForKey(key: "Choose Side Pocket", comment: ""), interval: 2)
-            
-        } else if presentValue == 6 && sidePocket == "yes" && thobeDict["side_pocket"] == "" && thobeDict["side_pocket_2"] == "" && sidePocket2 == "" {
-                SnackBar().showSnackBar(view: self.view, text: LocalizationSystem.sharedInstance.localizedStringForKey(key: "Choose Side Pocket", comment: ""), interval: 2)
-            
-//        } else if presentValue == 6 && sidePocket == "yes" {
-//            if thobeDict["side_pocket"] == "" {
-//                SnackBar().showSnackBar(view: self.view, text: LocalizationSystem.sharedInstance.localizedStringForKey(key: "You don't have enough loyality points!", comment: "")"Choose Side Pocket", interval: 2)
-//            } else if thobeDict["side_pocket_2"] == "" && sidePocket2 == "" {
-//                SnackBar().showSnackBar(view: self.view, text: LocalizationSystem.sharedInstance.localizedStringForKey(key: "You don't have enough loyality points!", comment: "")"Choose Side Pocket", interval: 2)
-//            }
+        if selectedController == "My Thobe" {
+            let vc = storyboard?.instantiateViewController(withIdentifier: "MyThodeVC") as! MyThodeVC
+            vc.thobeDict = thobeDict
+            vc.thobeArr = thobeArr
+            vc.delegate = self
+            self.navigationController?.pushViewController(vc, animated: false)
         } else {
-        if selectedThodeArr[presentValue] != "" {
-            presentValue = presentValue + 1
-            if presentValue < 7 {
-                if presentValue == 6 {
-                    fabricView.isHidden = true
-                    collectionView.isHidden = true
-                    sidePocketSV.isHidden = false
-                    nextCustomizeLbl.setTitle(LocalizationSystem.sharedInstance.localizedStringForKey(key: "Button", comment: ""), for: .normal)
-                    nextCustomizeLbl.setTitle(LocalizationSystem.sharedInstance.localizedStringForKey(key: "My Thobe", comment: ""), for: .normal)
-                   // nextCustomizeLbl.text = "Measurement"
-                } else {
-                    if presentValue == 0 {
-                    fabricView.isHidden = false
-                } else {
-                    fabricView.isHidden = true
-                }
-                    collectionView.isHidden = false
-                    collectionView.reloadData()
-                    sidePocketSV.isHidden = true
-                    showBottomUI()
-                }
-                tableView.reloadData()
-                collectionView.reloadData()
+            selectedThodeArr.insert("Thobe\(presentValue)", at: presentValue)
+            print("selectedThodeArr", selectedThodeArr)
+            print("presentValue", presentValue)
+            print("thobeDict", thobeDict)
+
+            if presentValue == 0 && thobeDict["fabric"] == "" {
+                SnackBar().showSnackBar(view: self.view, text: LocalizationSystem.sharedInstance.localizedStringForKey(key: "Select Fabric", comment: ""), interval: 2)
+            } else if presentValue == 1 && thobeDict["collar"] == "" {
+                SnackBar().showSnackBar(view: self.view, text: LocalizationSystem.sharedInstance.localizedStringForKey(key: "Select Collar", comment: ""), interval: 2)
+            } else if presentValue == 2 && thobeDict["cuffs"] == "" {
+                SnackBar().showSnackBar(view: self.view, text: LocalizationSystem.sharedInstance.localizedStringForKey(key: "Select Cuffs", comment: ""), interval: 2)
+            } else if presentValue == 3 && thobeDict["pocket"] == "" {
+                SnackBar().showSnackBar(view: self.view, text: LocalizationSystem.sharedInstance.localizedStringForKey(key: "Select Pocket", comment: ""), interval: 2)
+            } else if presentValue == 4 && thobeDict["placket"] == "" {
+                SnackBar().showSnackBar(view: self.view, text: LocalizationSystem.sharedInstance.localizedStringForKey(key: "Select Placket", comment: ""), interval: 2)
+            } else if presentValue == 5 && thobeDict["button"] == "" {
+                SnackBar().showSnackBar(view: self.view, text: LocalizationSystem.sharedInstance.localizedStringForKey(key: "Select Button", comment: ""), interval: 2)
+            } else if presentValue == 6 && sidePocket == "yes" && thobeDict["side_pocket"] == "" {
+                    SnackBar().showSnackBar(view: self.view, text: LocalizationSystem.sharedInstance.localizedStringForKey(key: "Choose Side Pocket", comment: ""), interval: 2)
+                
+            } else if presentValue == 6 && sidePocket == "yes" && thobeDict["side_pocket"] == "" && thobeDict["side_pocket_2"] == "" && sidePocket2 == "" {
+                    SnackBar().showSnackBar(view: self.view, text: LocalizationSystem.sharedInstance.localizedStringForKey(key: "Choose Side Pocket", comment: ""), interval: 2)
+                
+    //        } else if presentValue == 6 && sidePocket == "yes" {
+    //            if thobeDict["side_pocket"] == "" {
+    //                SnackBar().showSnackBar(view: self.view, text: LocalizationSystem.sharedInstance.localizedStringForKey(key: "You don't have enough loyality points!", comment: "")"Choose Side Pocket", interval: 2)
+    //            } else if thobeDict["side_pocket_2"] == "" && sidePocket2 == "" {
+    //                SnackBar().showSnackBar(view: self.view, text: LocalizationSystem.sharedInstance.localizedStringForKey(key: "You don't have enough loyality points!", comment: "")"Choose Side Pocket", interval: 2)
+    //            }
             } else {
-                let data = ["id":"0", "thobe":thobeDict["side_pocket"] == "" ? "No" : thobeDict["side_pocket"] == "0" ? "One" : thobeDict["side_pocket"] == "1" ? "Both" : thobeDict["side_pocket_2"] == "0" ? "left" : "right", "price":thobeDict["side_pocket"] == "" ? "0.00" : thobeDict["side_pocket"] == "0" ? "35.00" : thobeDict["side_pocket"] == "1" ? "40.00" : "20.00", "description":"", "image":""]
-                thobeArr.insert(data, at: 6)
-                let vc = storyboard?.instantiateViewController(withIdentifier: "MyThodeVC") as! MyThodeVC
-//                let vc = storyboard?.instantiateViewController(withIdentifier: "SavedMeasurementsVC") as! SavedMeasurementsVC
-                vc.thobeDict = thobeDict
-                vc.thobeArr = thobeArr
-                self.navigationController?.pushViewController(vc, animated: false)
+            if selectedThodeArr[presentValue] != "" {
+                presentValue = presentValue + 1
+                if presentValue < 7 {
+                    if presentValue == 6 {
+                        fabricView.isHidden = true
+                        collectionView.isHidden = true
+                        sidePocketSV.isHidden = false
+                        nextCustomizeLbl.setTitle(LocalizationSystem.sharedInstance.localizedStringForKey(key: "Button", comment: ""), for: .normal)
+                        nextCustomizeLbl.setTitle(LocalizationSystem.sharedInstance.localizedStringForKey(key: "My Thobe", comment: ""), for: .normal)
+                       // nextCustomizeLbl.text = "Measurement"
+                    } else {
+                        if presentValue == 0 {
+                        fabricView.isHidden = false
+                    } else {
+                        fabricView.isHidden = true
+                    }
+                        collectionView.isHidden = false
+                        collectionView.reloadData()
+                        sidePocketSV.isHidden = true
+                        showBottomUI()
+                    }
+                    tableView.reloadData()
+                    collectionView.reloadData()
+                } else {
+                    let data = ["id":"0", "thobe":thobeDict["side_pocket"] == "" ? "No" : thobeDict["side_pocket"] == "0" ? "One" : thobeDict["side_pocket"] == "1" ? "Both" : thobeDict["side_pocket_2"] == "0" ? "left" : "right", "price":thobeDict["side_pocket"] == "" ? "0.00" : thobeDict["side_pocket"] == "0" ? "35.00" : thobeDict["side_pocket"] == "1" ? "40.00" : "20.00", "description":"", "image":""]
+                    thobeArr.insert(data, at: 6)
+                    let vc = storyboard?.instantiateViewController(withIdentifier: "MyThodeVC") as! MyThodeVC
+    //                let vc = storyboard?.instantiateViewController(withIdentifier: "SavedMeasurementsVC") as! SavedMeasurementsVC
+                    vc.thobeDict = thobeDict
+                    vc.thobeArr = thobeArr
+                    vc.delegate = self
+                    self.navigationController?.pushViewController(vc, animated: false)
+                }
+            } else {}
             }
-        } else {}
         }
     }
     
@@ -428,6 +437,34 @@ class CustomizeThodeVC: UIViewController {
 
 
 //MARK: - Custom Delegates
+extension CustomizeThodeVC: backDelegate {
+    func branchSelected(id: Int, name: String) {
+        selectedController = "My Thobe"
+        presentValue = id
+        if presentValue == 6 {
+            fabricView.isHidden = true
+            collectionView.isHidden = true
+            sidePocketSV.isHidden = false
+        } else {
+            if presentValue == 0 {
+            fabricView.isHidden = false
+        } else {
+            fabricView.isHidden = true
+        }
+            collectionView.isHidden = false
+            collectionView.reloadData()
+            sidePocketSV.isHidden = true
+//            showBottomUI()
+        }
+        tableView.reloadData()
+        collectionView.reloadData()
+        nextCustomizeLbl.setTitle(LocalizationSystem.sharedInstance.localizedStringForKey(key: "My Thobe", comment: ""), for: .normal)
+        backCustomizeSV.isHidden = true
+    }
+    
+    
+}
+
 extension CustomizeThodeVC: ThodeDetailDelegate {
     func didTap(row: Int, selectedThobe: Int) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)

@@ -39,54 +39,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "ED1FBC67-501E-4EE5-A690-754415FAD57E"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Bam/MVVM/Controller/Customize Thode/CustomizeThodeVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "317"
-            endingLineNumber = "317"
-            landmarkName = "btnTap_NextCustomize(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "ECB0F783-AA58-443A-A034-924B62520D63"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Bam/MVVM/Controller/Customize Thode/CustomizeThodeVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "314"
-            endingLineNumber = "314"
-            landmarkName = "btnTap_NextCustomize(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "E147880D-7DB0-43C5-A0E6-C6F3CA33638F"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Bam/MVVM/Controller/Customize Thode/CustomizeThodeVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "313"
-            endingLineNumber = "313"
-            landmarkName = "btnTap_NextCustomize(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "CA85B039-1825-4E13-8FC9-048997B26E0A"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -146,54 +98,6 @@
             endingLineNumber = "191"
             landmarkName = "onSuccess(responseData:tag:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "00A7CEDC-EDC1-42EE-9E03-8A34840B7FD2"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Bam/Api&apos;s/APIHelper.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
-            landmarkName = "GetData(urlString:tag:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "00A7CEDC-EDC1-42EE-9E03-8A34840B7FD2 - dabff11b57735f4"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Bam.ApiHelper.GetData(urlString: Swift.String, tag: Swift.String) -&gt; ()"
-                  moduleName = "Bam"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/adsnurl/Desktop/Bamthobe/BAM/Bam/Api&apos;s/APIHelper.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "29"
-                  endingLineNumber = "29"
-                  offsetFromSymbolStart = "1549">
-               </Location>
-               <Location
-                  uuid = "00A7CEDC-EDC1-42EE-9E03-8A34840B7FD2 - 20a68e684a785d1e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Any, Alamofire.AFError&gt;) -&gt; () in Bam.ApiHelper.GetData(urlString: Swift.String, tag: Swift.String) -&gt; ()"
-                  moduleName = "Bam"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/adsnurl/Desktop/Bamthobe/BAM/Bam/Api&apos;s/APIHelper.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "30"
-                  endingLineNumber = "30"
-                  offsetFromSymbolStart = "298">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

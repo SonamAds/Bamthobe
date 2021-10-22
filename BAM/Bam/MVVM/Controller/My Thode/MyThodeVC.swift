@@ -14,6 +14,7 @@ class MyThodeVC: UIViewController {
     //MARK: - Variables
     var thobeDict = [String: String]()
     var thobeArr = [[String: String]]()
+    var delegate : backDelegate?
     var apiHelper = ApiHelper()
     var ADDCART = "1"
     var userManager = UserManager.userManager
@@ -112,6 +113,9 @@ extension MyThodeVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyThodeTVCell", for: indexPath) as! MyThodeTVCell
+        
+        cell.fabricEditBtn.tag = indexPath.row + 1
+        cell.delegate = self
         cell.fabricPriceLbl.text = "SAR \(thobeArr[0]["price"] ?? "")"
         cell.fabricIV.sd_setImage(with: URL(string: thobeArr[0]["image"] ?? "")!, placeholderImage: nil, options: .refreshCached) { (image, error, cacheType, url) in
             cell.fabricIV.image = image
@@ -152,9 +156,24 @@ extension MyThodeVC: UITableViewDelegate, UITableViewDataSource {
         cell.sidePocketPriceLbl.text = "SAR \(thobeArr[6]["price"] ?? "")"
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+//        delegate?.branchSelected(id: 1, name: "My Thobe")
+//        navigationController?.popViewController(animated: true)
+    }
       
 }
 
+
+//MARK: - Custom Delegate
+extension MyThodeVC: ThodeDetailDelegate {
+    func didTap(row: Int, selectedThobe: Int) {
+        delegate?.branchSelected(id: selectedThobe, name: "My Thobe")
+        navigationController?.popViewController(animated: true)
+    }
+    
+}
 
 //MARk: - API Success
 extension MyThodeVC: ApiResponseDelegate {

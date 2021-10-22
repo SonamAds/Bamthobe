@@ -22,6 +22,7 @@ class NotificationVC: UIViewController {
     @IBOutlet weak var headingLbl: UILabel!
     @IBOutlet weak var notificationTable: UITableView!
   
+    
     //MARK:-  View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +40,7 @@ class NotificationVC: UIViewController {
     
     //MARK: - Helper Method
     func apiHit() {
-        apiHelper.GetData(urlString: "\(kGetNotification)\(userManager.getApiToken())", tag: GETNOTIFICATION)
+        apiHelper.GetData(urlString: kGetNotification/*)\(userManager.getApiToken())"*/, tag: GETNOTIFICATION)
     }
     
     //MARK: - IBAction
@@ -70,10 +71,8 @@ extension NotificationVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! NotificationTVCell
-//        cell.dateLbl.text = notificationModel?.data?[indexPath.row]
-//        cell.dateLbl.text = notificationModel?.data?[indexPath.row].title
+        cell.dateLbl.text = notificationModel?.data?[indexPath.row].created_at
         cell.descriptionLbl.text = notificationModel?.data?[indexPath.row].notification
-        cell.usrIV.image = #imageLiteral(resourceName: "Mask")
         if /*Bundle.getLanguage()*/UserDefaults.standard.string(forKey: "lang") == "ar" {
             cell.dateLbl.textAlignment = .left
         } else {

@@ -15,6 +15,7 @@ class CreateAppointmentsVC: UIViewController {
     var productId = ""
 //    var measrmntId = 0
     let datePicker = DatePickerDialog()
+//    let currentDate = Date.tomorrow
     var thobeDict = [String: String]()
     var thobeArr = [[String: String]]()
     var branchId = 0
@@ -115,33 +116,34 @@ class CreateAppointmentsVC: UIViewController {
     
     //MARK: - Helping Methods
     func timePickerTapped() {
-        let currentDate = Date()
-        var dateComponents = DateComponents()
-        dateComponents.year = 3
-        let threeYearLater = Calendar.current.date(byAdding: dateComponents, to: currentDate)
-
+        let dateformatter = DateFormatter()
+        dateformatter.dateFormat = "yyyy-MM-dd"
+        let formatter = DateFormatter()
+        formatter.dateFormat = "hh:mm a"
+        let date = Date()
+        let calendar = Calendar.current
+        let timeFormatter = DateFormatter()
+        timeFormatter.dateFormat = "HH:mm"
+        let hour = calendar.component(.hour, from: date)
+        let minutes = calendar.component(.minute, from: date)
+        let seconds = calendar.component(.second, from: date)
+        let currentTime = "\(hour):\(minutes)"
+        
+        
         datePicker.show(LocalizationSystem.sharedInstance.localizedStringForKey(key: "Select Time", comment: ""),
         doneButtonTitle: LocalizationSystem.sharedInstance.localizedStringForKey(key: "Save", comment: ""),
         cancelButtonTitle: LocalizationSystem.sharedInstance.localizedStringForKey(key: "Cancel", comment: ""),
-        minimumDate: currentDate,
-        maximumDate: threeYearLater,
         datePickerMode: .time) { (date) in
+                    
             if let dt = date {
-//                self.timeTF.text = formatter.string(from: dt)
-                let formatter = DateFormatter()
-                formatter.dateFormat = "hh:mm a"
-                //for weekday name "EEEE HH:mm"
-                //for 24 hour "HH:mm"
-                self.timeTF.text = formatter.string(from: dt)
-                
-                let dateFormatter = DateFormatter()
-                dateFormatter.dateFormat = "h:mm a"
-                dateFormatter.locale = Locale(identifier: "en_US_POSIX") // fixes nil if device time in 24 hour format
-                let date = dt
-                dateFormatter.dateFormat = "HH:mm"
-                let date24 = dateFormatter.string(from: date)
-                self.thobeDict["time"] = date24
+                let date24 = formatter.string(from: dt)
 
+                if (self.dateTF.text == formatter.string(from:Date.tomorrow)) &&  (date24 <= currentTime) {
+                    SnackBar().showSnackBar(view: self.view, text: "Time Should be greater than current time", interval: 2)
+                } else {
+                    self.timeTF.text = formatter.string(from: dt)
+                    self.thobeDict["time"] = date24
+                }
             }
         }
     }
