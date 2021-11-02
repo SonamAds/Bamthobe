@@ -791,8 +791,7 @@ extension CustomizeThodeVC: UICollectionViewDelegate, UICollectionViewDataSource
                 }
                 buttonIV.alpha = 0.3
             priceLbl.setTitle("SAR \(buttonModel?.data?[indexPath.row].price ?? "0")", for: .normal)
-
-//                buttonIV.isHidden = false
+                buttonIV.isHidden = false
             /*}*/
         }
         collectionView.reloadData()

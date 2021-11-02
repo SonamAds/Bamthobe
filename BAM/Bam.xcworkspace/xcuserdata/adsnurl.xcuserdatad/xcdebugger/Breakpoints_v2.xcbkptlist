@@ -78,8 +78,8 @@
             filePath = "Bam/MVVM/Controller/initial Views/SignupVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "251"
-            endingLineNumber = "251"
+            startingLineNumber = "252"
+            endingLineNumber = "252"
             landmarkName = "onSuccess(responseData:tag:)"
             landmarkType = "7">
          </BreakpointContent>
